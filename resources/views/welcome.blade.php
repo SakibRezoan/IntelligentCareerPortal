@@ -81,6 +81,7 @@
                 <div class="title m-b-md">
                     Welcome</br>
                     Intelligent Career Portal
+                    <p>worked in new branch</p>
                 </div>
 
                 <div class="links">
