@@ -79,7 +79,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Welcome To </br>
+                    Welcome</br>
                     Intelligent Career Portal
                 </div>
 
