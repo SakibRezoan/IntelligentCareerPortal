@@ -11,6 +11,24 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/','PagesController@getIndex');
+
+Route::get('contact','PagesController@getContact');
+
+Route::get('about', 'PagesController@getAbout');
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::prefix('jobseekerProfile')-> group(function (){
+
+    Route::get('generalinfo',['uses' => 'JobseekerGeneralInfoController@index', 'as' => 'jobseekerGeneral_Info.create'] );
+    Route::post('generalinfo',['uses' => 'JobseekerGeneralInfoController@store', 'as' => 'jobseekerGeneral_Info.store'] );
+
 });
