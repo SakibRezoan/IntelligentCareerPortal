@@ -28,7 +28,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::prefix('jobseekerProfile')-> group(function (){
 
-    Route::get('generalinfo',['uses' => 'JobseekerGeneralInfoController@index', 'as' => 'jobseekerGeneral_Info.create'] );
+    Route::get('generalinfo',['uses' => 'JobseekerGeneralInfoController@create', 'as' => 'jobseekerGeneral_Info.create'] );
     Route::post('generalinfo',['uses' => 'JobseekerGeneralInfoController@store', 'as' => 'jobseekerGeneral_Info.store'] );
 
 });
