@@ -15,12 +15,12 @@ class CreateJobseekerGeneralInfoTable extends Migration
     {
         Schema::create('jobseeker_general_info', function (Blueprint $table) {
             $table->increments('id');
-//            $table->integer('user_id')->unsigned();
+            $table->integer('user_id')->unsigned()->nullable();
 //            $table->foreign('user_id')
 //                ->references('id')->on('user')
 //                ->ondelete('cascade')
 //                ->onUpdate('cascade');
-            $table->binary('avatar')->nullable();
+            $table->string('avatar');
             $table->string('first_name');
             $table->string('last_name');
             $table->date('date_of_birth');
