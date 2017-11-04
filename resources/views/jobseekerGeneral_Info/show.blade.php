@@ -1,50 +1,68 @@
 @extends('main')
 
-@section('title', '| View Post')
+@section('title', 'General Information')
 
 @section('content')
 
-	<div class="row">
-		<div class="col-md-8">
-			<h3><u>General Information</u></h3>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
 
-			<p> First Name : {{ $info->first_name }}</p>
-			<p> Last Name :{{ $info->last_name }}</p>
-			<p> Date of Birth Name :{{ $info->date_of_birth }}</p>
-			<p> Gender :{{ $info->gender }}</p>
-			<p> Contact No :{{ $info->contact_no }}</p>
-			<p> Address :{{ $info->address }}</p>
-			<p>Profile Picture : <img height="240px" width="160px" src="/storage/{{ $info->avatar }}"> </p>
-
-		</div>
-		<div class="col-md-4">
-			<div class="well">
-				<dl class="dl-horizontal">
-					<dt>Created At :</dt>
-					<dd>{{ date('M j, Y h:ia',strtotime($info->created_at)) }}</dd>
-				</dl>
-				<dl class="dl-horizontal">
-					<dt>Last Updated :</dt>
-					<dd>{{ date('M j, Y h:ia',strtotime($info->updated_at)) }}</dd>
-				</dl>
-				<hr>
-
-				<div class="row">
-					<div class="col-sm-6">
-						{!! Html::linkRoute('jobseekerGeneral_Info.edit', 'Edit', array($info->id), array('class' => 'btn btn-primary btn-block')) !!}
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						<h3 class="panel-title">General Information</h3>
 					</div>
-					<div class="col-sm-6">
-						{!! Form::open(['route' => ['jobseekerGeneral_Info.delete', $info->id], 'method' => 'DELETE']) !!}
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-md-3 col-lg-3" align="center"> <img alt="User Pic" src="/storage/{{ $info->avatar }}"class="img-circle img-responsive">
+								<button type="button" class="btn btn-default btn-sm">
+									<span class="glyphicon glyphicon-pencil"></span> Update Avatar
+								</button>
+							</div>
 
-						{!! Form::submit('Delete', ['class' => 'btn btn-danger btn-block']) !!}
-
-						{!! Form::close() !!}
+							<div class=" col-md-9 col-lg-9 ">
+								<table class="table table-user-information">
+									<tbody>
+									<tr>
+										<td class="general_info">First Name:</td>
+										<td>{{ $info->first_name }}</td>
+									</tr>
+									<tr>
+										<td class="general_info">Last Name:</td>
+										<td>{{ $info->last_name }}</td>
+									</tr>
+									<tr>
+										<td class="general_info">Date of Birth:</td>
+										<td>{{ $info->date_of_birth }}</td>
+									</tr>
+									<tr>
+										<td class="general_info">Gender:</td>
+										<td>{{ $info->gender }}</td>
+									</tr>
+									<tr>
+										<td class="general_info">Address:</td>
+										<td>{{ $info->address }}</td>
+									</tr>
+									<tr>
+									<td class="general_info">Contact No:</td>
+									<td>{{ $info->contact_no }}</td>
+									</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
 					</div>
+					<div class="panel-footer">
+						<a href="{{ route('jobseekerGeneral_Info.edit',$info->id) }}" data-toggle="tooltip" data-placement="top" title="Edit General Information" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></a>
+						<span class="pull-right">
+							<a href="{{ route('jobseekerGeneral_Info.delete',$info->id) }}" data-toggle="tooltip"  data-placement="top" title="Remove General Information" type="button" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-remove"></i></a>
+						</span>
+					</div>
+
 				</div>
 			</div>
 		</div>
 	</div>
-
 
 @stop
 
