@@ -16,10 +16,15 @@
 			<p>Let the employee find you</p>
 			<hr>
 
-			{!! Form::open(['route' => 'jobseekerGeneral_Info.store', 'data-parsley-validate' => '']) !!}
+			{!! Form::open(['route' => 'jobseekerGeneral_Info.store', 'data-parsley-validate' => '', 'files' => true]) !!}
 
-			{{ Form::label('avatar', 'Profile Picture:') }}
-			{{ Form::file('avatar', ['class' => 'form-control']) }}
+			{{--<div>--}}
+				{{--<label for="avatar">Upload Profile Picture</label> <br>--}}
+				{{--<input type="file" name="avatar" id="avatar" value="Upload Profile Picture" class="form-control">--}}
+			{{--</div>--}}
+
+			{{ Form::label('avatar', 'Upload Profile Picture:') }}
+			{{ Form::file('avatar', null, ['class' => 'form-control']) }}
 
 			{{ Form::label('first_name', 'First Name:') }}
 			{{ Form::text('first_name', null, array('class' => 'form-control', 'required' => '', 'maxlength' => '255')) }}
@@ -52,6 +57,8 @@
 			{{ Form::textarea('address', null, array('class' => 'form-control', 'required' => '', 'maxlength' =>'1000')) }}
 
 			{{ Form::submit('Update', array('class' => 'btn btn-success btn-lg', 'style' => 'margin-top: 20px;')) }}
+
+			{{ Form::token() }}
 
 			{!! Form::close() !!}
 
