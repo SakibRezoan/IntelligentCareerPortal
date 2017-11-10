@@ -13,7 +13,7 @@ class PagesController extends Controller{
 
     $data = array(
       'fullname' => 'Sakib Rezoan',
-      'email'    => 'sakib.rezoan@sekai-lab-bd.com'
+      'email'    => 'bsse0611@iit.duac.bd'
     );
     return view('pages.about')->withData($data);
   }
