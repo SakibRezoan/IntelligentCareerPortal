@@ -8,7 +8,7 @@
                 <div class="panel-heading">COMPANY Login</div>
 
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('admin.login.submit') }}">
+                    <form class="form-horizontal" method="POST" action="{{ route('company.login.submit') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
