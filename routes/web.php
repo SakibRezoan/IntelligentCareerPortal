@@ -17,13 +17,6 @@ Route::get('contact','PagesController@getContact');
 
 Route::get('about', 'PagesController@getAbout');
 
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/admin', 'AdminController@index')->name('admin');
-Route::get('/company', 'CompanyController@index')->name('company');
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -37,8 +30,8 @@ Route::prefix('admin')->group(function(){
 });
 
 Route::prefix('company')->group(function(){
-    Route::get('/register', 'Auth\CompanyRegisterController@showRegistrationForm')->name('company.registration');
-    Route::post('/register', 'Auth\CompanyRegisterController@register')->name('company.register.submit');
+   // Route::get('/register', 'Auth\CompanyRegisterController@showRegistrationForm')->name('company.registration');
+    //Route::post('/register', 'Auth\CompanyRegisterController@register')->name('company.register.submit');
     Route::get('/login', 'Auth\CompanyLoginController@showLoginForm')->name('company.login');
     Route::post('/login', 'Auth\CompanyLoginController@login')->name('company.login.submit');
     Route::get('/', 'CompanyController@index')->name('company.dashboard');
