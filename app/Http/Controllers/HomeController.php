@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\JobseekerGeneralInfo;
 class HomeController extends Controller
 {
     /**
@@ -23,6 +23,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $id = \Auth::user()->id;
+        $jobseeker_general_info = JobseekerGeneralInfo::where('user_id', $id)->first();
+        if($jobseeker_general_info){
+            return view('home',['info' => $jobseeker_general_info]);
+        }
+        return view('jobseekerGeneral_Info.create');
     }
 }
