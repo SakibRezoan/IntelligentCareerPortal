@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/','PagesController@getIndex');
+Route::get('/','PagesController@getIndex')->name('landing-page');
 
 Route::get('contact','PagesController@getContact');
 
