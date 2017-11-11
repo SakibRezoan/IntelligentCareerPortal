@@ -71,7 +71,7 @@ class JobseekerGeneralInfoController extends Controller
 
         Session::flash('success', 'General information updated successfully !');
 
-        return redirect()->route('jobseekerGeneral_Info.show', $jobseeker_general_info->id);
+        return redirect()->route('home');
     }
 
     /**
@@ -80,11 +80,11 @@ class JobseekerGeneralInfoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        $jobseeker_general_info = JobseekerGeneralInfo::where('id', $id)->first();
-        return view('jobseekerGeneral_Info.show',['info' => $jobseeker_general_info]);
-    }
+//    public function show($id)
+//    {
+//        $jobseeker_general_info = JobseekerGeneralInfo::where('id', $id)->first();
+//        return view('jobseekerGeneral_Info.show',['info' => $jobseeker_general_info]);
+//    }
 
     /**
      * Show the form for editing the specified resource.
@@ -119,11 +119,11 @@ class JobseekerGeneralInfoController extends Controller
         ]);
         $jobseeker_general_info = JobseekerGeneralInfo::find($id);
 
-        $path = $request->file('avatar')->store('public/images');
+        //$path = $request->file('avatar')->store('public/images');
 //        $jobseeker_general_info->user_id = $request->user()->user_id;
 //        $jobseeker_general_info->avatar = $request->avatar;
 
-        $jobseeker_general_info->avatar = substr($path,7);
+     //   $jobseeker_general_info->avatar = substr($path,7);
         $jobseeker_general_info->first_name = $request->input('first_name');
         $jobseeker_general_info->last_name = $request->input('last_name');
         $jobseeker_general_info->date_of_birth = $request->input('date_of_birth');
@@ -136,7 +136,7 @@ class JobseekerGeneralInfoController extends Controller
         $jobseeker_general_info->save();
 
         Session::flash('success', 'General information was successfully updated!');
-        return redirect()->route('jobseekerGeneral_Info.show', $jobseeker_general_info->id);
+        return redirect()->route('home');
     }
 
     /**
@@ -152,6 +152,6 @@ class JobseekerGeneralInfoController extends Controller
         $jobseeker_general_info->delete();
 
         Session::flash('success', 'General Inforamtion was successfully deleted.');
-        return redirect()->route('jobseekerGeneral_Info.create');
+        return redirect()->route('home');
     }
 }
