@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Register as Company</div>
+                <div class="panel-heading">Sign Up As Company</div>
 
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{ route('company.register.submit') }}">
