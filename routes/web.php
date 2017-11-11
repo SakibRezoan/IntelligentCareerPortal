@@ -30,8 +30,8 @@ Route::prefix('admin')->group(function(){
 });
 
 Route::prefix('company')->group(function(){
-   // Route::get('/register', 'Auth\CompanyRegisterController@showRegistrationForm')->name('company.registration');
-    //Route::post('/register', 'Auth\CompanyRegisterController@register')->name('company.register.submit');
+    Route::get('/register', 'CompanyAuth\RegisterController@showRegistrationForm')->name('company.registration');
+    Route::post('/register', 'CompanyAuth\RegisterController@register')->name('company.register.submit');
     Route::get('/login', 'Auth\CompanyLoginController@showLoginForm')->name('company.login');
     Route::post('/login', 'Auth\CompanyLoginController@login')->name('company.login.submit');
     Route::get('/', 'CompanyController@index')->name('company.dashboard');
