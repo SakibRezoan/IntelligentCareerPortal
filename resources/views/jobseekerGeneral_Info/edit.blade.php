@@ -39,7 +39,7 @@
 			<div class="well">
 				<div class="row">
 					<div class="col-sm-6">
-						{!! Html::linkRoute('jobseekerGeneral_Info.show','Cancle', array($info->id), array('class'=>'btn btn-danger btn-block')) !!}
+						<a href="{{ route('home') }}" class="btn btn-danger btn-block">Cancle</a>
 					</div>
 					<div class="col-sm-6">
 						{{ Form::submit('Save Changes',['class'=>'btn btn-success btn-block']) }}
