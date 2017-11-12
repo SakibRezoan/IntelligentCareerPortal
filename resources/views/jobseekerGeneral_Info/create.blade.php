@@ -12,20 +12,17 @@
 
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
-			<h1>Complete your profile</h1>
-			<p>Let the employee find you</p>
+			<div align="center">
+				<h4><b><u>Complete your profile</u></b></h4>
+				<p>Let the employee find you</p>
+			</div>
 			<hr>
 
 			{!! Form::open(['route' => 'jobseekerGeneral_Info.store', 'data-parsley-validate' => '', 'files' => true]) !!}
 
-			{{--<div>--}}
-				{{--<label for="avatar">Upload Profile Picture</label> <br>--}}
-				{{--<input type="file" name="avatar" id="avatar" value="Upload Profile Picture" class="form-control">--}}
-			{{--</div>--}}
-
 			{{ Form::label('avatar', 'Upload Profile Picture:') }}
-			{{ Form::file('avatar', null, ['class' => 'form-control']) }}
-
+			{{ Form::file('avatar', null, ['class' => 'form-control', 'required'=>'']) }}
+			<br>
 			{{ Form::label('first_name', 'First Name:') }}
 			{{ Form::text('first_name', null, array('class' => 'form-control', 'required' => '', 'maxlength' => '255')) }}
 
@@ -33,28 +30,26 @@
 			{{ Form::text('last_name', null, array('class' => 'form-control', 'required' => '', 'maxlength' => '255')) }}
 
 			{{ Form::label('date_of_birth', 'Date of Birth:') }}
-			{{ Form::date('date_of_birth', \Carbon\Carbon::now(), array('class' => 'form-control', 'required' => '', 'maxlength' => '255')) }}
+			{{ Form::date('date_of_birth',\Carbon\Carbon::now(), array('class' => 'form-control', 'required' => '')) }}
 
 			{{ Form::label('city', 'City:') }}
 			{{ Form::select('city', ['Dhaka' => 'Dhaka', 'Rajshahi' => 'Rajshahi',
                         'Khulna' =>'Khulna', 'Chittagong' => 'Chittagong', 'Barisal' => 'Barisal',
-                        'Rangpur' => 'Rangpur', 'Sylhet' =>'Sylhet' ], null, ['class' => 'form-control']) }}
+                        'Rangpur' => 'Rangpur', 'Sylhet' =>'Sylhet' ], null, ['class' => 'form-control','placeholder'=> 'Select City']) }}
 			{{ Form::label('gender', 'Gender:') }}
 			{{ Form::select('gender', ['male' => 'Male', 'Female' => 'Female',
-                    'others' =>'Others'], null, ['class' => 'form-control']) }}
+                    'others' =>'Others'], null, ['class' => 'form-control', 'placeholder'=> 'Select Gender']) }}
 
 			{{ Form::label('contact_no', 'Contact Number:') }}
-			{{--{{ Form::input('number', 'contact_no', $value = null, $options = array('class' => 'form-control', 'maxlength' => '11')) }}--}}
-			{{--{!! Form::input('contact_no', 'otp', null, ['class' => 'form-control', 'maxlength' => '11']) !!}--}}
 			{{ Form::number('contact_no', null, array('class' => 'form-control', 'required' => '', 'maxlength' => '11')) }}
 
-			{{ Form::checkbox('hidden_status', true, null) }}
+			{{ Form::checkbox('hidden_status', true, 'Hide my contact number') }}
 			{{ Form::label('hidden_status', "Hide my contact number") }}
 
 			<br>
 
 			{{ Form::label('address', "Full Address:") }}
-			{{ Form::textarea('address', null, array('class' => 'form-control', 'required' => '', 'maxlength' =>'1000')) }}
+			{{ Form::textarea('address', null, array('class' => 'form-control', 'required' => '', 'maxlength' =>'1000','wrap'=>'hard')) }}
 
 			{{ Form::submit('Update', array('class' => 'btn btn-success btn-lg', 'style' => 'margin-top: 20px;')) }}
 
