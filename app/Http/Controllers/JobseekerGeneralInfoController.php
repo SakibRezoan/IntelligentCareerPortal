@@ -4,14 +4,16 @@ namespace App\Http\Controllers;
 
 use App\JobseekerGeneralInfo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Auth;
 use Session;
 
 class JobseekerGeneralInfoController extends Controller
 {
-//    public function __construct()
-//    {
-//        $this->middleware('auth');
-//    }
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -52,11 +54,9 @@ class JobseekerGeneralInfoController extends Controller
         ]);
 
         $jobseeker_general_info = new JobseekerGeneralInfo;
+        $jobseeker_general_info->user_id = Auth::user()->id;
 
         $path = $request->file('avatar')->store('public/images');
-//        $jobseeker_general_info->user_id = $request->user()->user_id;
-//        $jobseeker_general_info->avatar = $request->avatar;
-
         $jobseeker_general_info->avatar = substr($path,7);
         $jobseeker_general_info->first_name = $request->first_name;
         $jobseeker_general_info->last_name = $request->last_name;
@@ -73,18 +73,6 @@ class JobseekerGeneralInfoController extends Controller
 
         return redirect()->route('home');
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-//    public function show($id)
-//    {
-//        $jobseeker_general_info = JobseekerGeneralInfo::where('id', $id)->first();
-//        return view('jobseekerGeneral_Info.show',['info' => $jobseeker_general_info]);
-//    }
 
     /**
      * Show the form for editing the specified resource.
@@ -118,12 +106,6 @@ class JobseekerGeneralInfoController extends Controller
             'address' => 'required|string|max:1000',
         ]);
         $jobseeker_general_info = JobseekerGeneralInfo::find($id);
-
-        //$path = $request->file('avatar')->store('public/images');
-//        $jobseeker_general_info->user_id = $request->user()->user_id;
-//        $jobseeker_general_info->avatar = $request->avatar;
-
-     //   $jobseeker_general_info->avatar = substr($path,7);
         $jobseeker_general_info->first_name = $request->input('first_name');
         $jobseeker_general_info->last_name = $request->input('last_name');
         $jobseeker_general_info->date_of_birth = $request->input('date_of_birth');
@@ -148,6 +130,10 @@ class JobseekerGeneralInfoController extends Controller
     public function destroy($id)
     {
         $jobseeker_general_info = JobseekerGeneralInfo::find($id);
+
+        $avatar = $jobseeker_general_info->avatar;
+
+        Storage::delete($avatar);
 
         $jobseeker_general_info->delete();
 
