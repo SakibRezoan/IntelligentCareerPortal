@@ -8,7 +8,12 @@ class JobseekerGeneralInfo extends Model
 {
     protected $table = 'jobseeker_general_info';
 
-//    public function user(){
-//        return $this->belongsTo(User::class);
-//    }
+    protected $fillable = [
+        'user_id', 'avatar', 'first_name', 'last_name', 'date_of_birth',
+        'city', 'gender', 'contact_no', 'hidden_status', 'address',
+    ];
+
+    public function user(){
+        return $this->belongsTo(User::class, 'foreign_key');
+    }
 }

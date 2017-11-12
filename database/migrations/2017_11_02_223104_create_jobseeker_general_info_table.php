@@ -15,11 +15,8 @@ class CreateJobseekerGeneralInfoTable extends Migration
     {
         Schema::create('jobseeker_general_info', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned()->nullable();
-//            $table->foreign('user_id')
-//                ->references('id')->on('user')
-//                ->ondelete('cascade')
-//                ->onUpdate('cascade');
+            $table->unsignedInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->string('avatar');
             $table->string('first_name');
             $table->string('last_name');
