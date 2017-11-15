@@ -8,12 +8,6 @@
             <div class="jumbotron">
               <h1>Welcome to Intelligent Career Portal</h1>
               <p class="lead" align="center">Thank you so much for visiting. Find Your Dream Jobs Here</p>
-              <div class="col-md-3 col-md-offset-1"></div>
-              {!! Form::open(['method'=>'GET','url'=>'search','class'=>'navbar-form navbar-left'])  !!}
-                <div class="input-group custom-search-form">
-                <input type="text" class="form-control" name="search" placeholder="Search Jobs">
-              {!! Form::close() !!}
-            </div>
           </div>
         </div> <!-- end header .row-->
         <div class="row">
