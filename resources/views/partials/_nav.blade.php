@@ -23,6 +23,13 @@
                                            data-toggle="modal" data-target="#signInModal"href="">Sign In</a></li>
         </ul>
 
+        <form class="navbar-form navbar-left" role="search">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search Jobs">
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+
 
         <ul class="nav navbar-nav navbar-right">
           <!-- Authentication Links -->
