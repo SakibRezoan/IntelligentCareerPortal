@@ -6,16 +6,16 @@
 
   <body>
 
-    @include('partials._nav')
+      @yield('nav')
 
-    <div class="container">
-      @include('partials._messages')
+      <div class="container">
+        @include('partials._messages')
 
-      @yield('content')
+        @yield('content')
 
-      @include('partials._footer')
+        @include('partials._footer')
 
-    </div> <!-- end of .container -->
+      </div> <!-- end of .container -->
 
         @include('partials._javascript')
 

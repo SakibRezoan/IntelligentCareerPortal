@@ -34,15 +34,21 @@ Route::prefix('company')->group(function(){
     Route::post('/register', 'CompanyAuth\RegisterController@register')->name('company.register.submit');
     Route::get('/login', 'Auth\CompanyLoginController@showLoginForm')->name('company.login');
     Route::post('/login', 'Auth\CompanyLoginController@login')->name('company.login.submit');
-    Route::get('/', 'CompanyController@index')->name('company.dashboard');
+    Route::get('/home', 'CompanyController@index')->name('company.dashboard');
     Route::get('/logout', 'Auth\CompanyLoginController@logout')->name('company.logout');
+
+
+    Route::get('company/create',['uses' => 'CompanyInfoController@create', 'as' => 'companyInfo.create'] );
+    Route::post('generalinfo/store',['uses' => 'CompanyInfoController@store', 'as' => 'companyInfo.store'] );
+    Route::get('generalinfo/edit/{id}',['uses' => 'CompanyInfoController@edit', 'as' => 'companyInfo.edit'] );
+    Route::put('generalinfo/update/{id}',['uses' => 'CompanyInfoController@update', 'as' => 'companyInfo.update'] );
+    Route::get('generalinfo/delete/{id}',['uses' => 'CompanyInfoController@destroy', 'as' => 'companyInfo.delete'] );
 });
 
 Route::prefix('jobseekerProfile')-> group(function (){
 
     Route::get('generalinfo/create',['uses' => 'JobseekerGeneralInfoController@create', 'as' => 'jobseekerGeneral_Info.create'] );
     Route::post('generalinfo/store',['uses' => 'JobseekerGeneralInfoController@store', 'as' => 'jobseekerGeneral_Info.store'] );
-    //Route::get('generalinfo/show/{id}',['uses' => 'JobseekerGeneralInfoController@show', 'as' => 'jobseekerGeneral_Info.show'] );
     Route::get('generalinfo/edit/{id}',['uses' => 'JobseekerGeneralInfoController@edit', 'as' => 'jobseekerGeneral_Info.edit'] );
     Route::put('generalinfo/update/{id}',['uses' => 'JobseekerGeneralInfoController@update', 'as' => 'jobseekerGeneral_Info.update'] );
     Route::get('generalinfo/delete/{id}',['uses' => 'JobseekerGeneralInfoController@destroy', 'as' => 'jobseekerGeneral_Info.delete'] );

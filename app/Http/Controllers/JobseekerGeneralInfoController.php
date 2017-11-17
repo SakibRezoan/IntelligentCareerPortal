@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\JobseekerGeneralInfo;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
+use Storage;
 use Auth;
 use Session;
 
@@ -43,7 +43,6 @@ class JobseekerGeneralInfoController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'first_name' => 'required|string|max:255',
             'first_name' => 'required|string|max:255',
             'last_name' => 'required|string|max:255',
             'date_of_birth' => 'required|date',
@@ -96,7 +95,6 @@ class JobseekerGeneralInfoController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'first_name' => 'required|string|max:255',
             'first_name' => 'required|string|max:255',
             'last_name' => 'required|string|max:255',
             'date_of_birth' => 'required|date',

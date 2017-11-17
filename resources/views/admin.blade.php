@@ -1,5 +1,7 @@
 @extends('layouts.app')
-
+@section('nav')
+    @include('partials.admin._nav')
+@endsection
 @section('content')
 <div class="container">
     <div class="row">

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\CompanyInfo;
+use Auth;
 
 class CompanyController extends Controller
 {
@@ -23,6 +25,11 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        return view('company');
+        $id = Auth::user()->id;
+        $companyInfo = CompanyInfo::where('company_id', $id)->first();
+        if($companyInfo){
+            return view('company',['info' => $companyInfo]);
+        }
+        return view('company.create');
     }
 }
