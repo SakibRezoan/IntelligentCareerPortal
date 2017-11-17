@@ -1,6 +1,9 @@
 @extends('main')
 
 @section('title','Home page')
+@section('nav')
+  @include('partials._nav')
+@endsection
 
   @section('content')
         <div class="row">

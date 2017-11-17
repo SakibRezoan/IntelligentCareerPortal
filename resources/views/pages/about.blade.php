@@ -1,6 +1,6 @@
 @extends('main')
 
-@section('title','| About Me')
+@section('title','About Intelligent Career Portal')
 
   @section('content')
       <div class="row">

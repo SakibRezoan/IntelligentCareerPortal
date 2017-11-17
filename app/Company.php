@@ -27,4 +27,9 @@ class Company extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function companyInfo()
+    {
+        return $this->hasOne(CompanyInfo::class, 'foreign_key');
+    }
 }

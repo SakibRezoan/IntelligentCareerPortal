@@ -8,6 +8,10 @@
 
 @endsection
 
+@section('nav')
+	@include('partials._nav')
+@endsection
+
 @section('content')
 
 	<div class="row">
@@ -30,7 +34,7 @@
 			{{ Form::text('last_name', null, array('class' => 'form-control', 'required' => '', 'maxlength' => '255')) }}
 
 			{{ Form::label('date_of_birth', 'Date of Birth:') }}
-			{{ Form::date('date_of_birth',\Carbon\Carbon::now(), array('class' => 'form-control', 'required' => '')) }}
+			{{ Form::date('date_of_birth',null, array('class' => 'form-control', 'required' => '')) }}
 
 			{{ Form::label('city', 'City:') }}
 			{{ Form::select('city', ['Dhaka' => 'Dhaka', 'Rajshahi' => 'Rajshahi',
