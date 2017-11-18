@@ -41,26 +41,7 @@
 
 		</div>
 		<div class="col-md-2">
-			{{--<div class="well">--}}
-				{{--<dl class="dl-horizontal">--}}
-					{{--<dt>Created At :</dt>--}}
-					{{--<dd>{{ date('M j, Y h:ia',strtotime($info->created_at)) }}</dd>--}}
-				{{--</dl>--}}
-				{{--<dl class="dl-horizontal">--}}
-					{{--<dt>Last Updated :</dt>--}}
-					{{--<dd>{{ date('M j, Y h:ia',strtotime($info->updated_at)) }}</dd>--}}
-				{{--</dl>--}}
-				{{--<hr>--}}
-				{{--<div class="row">--}}
-					{{--<div class="col-sm-6">--}}
-						{{--{!! Html::linkRoute('jobseekerGeneral_Info.show','Cancle', array($info->id), array('class'=>'btn btn-danger btn-block')) !!}--}}
-					{{--</div>--}}
-					{{--<div class="col-sm-6">--}}
-           			 {{--{{ Form::submit('Save Changes',['class'=>'btn btn-success btn-block']) }}--}}
-					{{--</div>--}}
-				{{--</div>--}}
 
-			{{--</div>--}}
 		</div>
     {!! Form::close()!!}
 	</div>
