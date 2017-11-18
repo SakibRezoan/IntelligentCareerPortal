@@ -17,8 +17,8 @@ class CreateJobRequirementsTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('job_id');
             $table->foreign('job_id')->references('id')->on('jobs')->onDelete('cascade')->onUpdate('cascade');
-            $table->float('required_skill', 2, 1);
-            $table->string('required_degree');
+            $table->string('required_skill');
+            $table->float('required_experience', 2, 1);
             $table->timestamps();
         });
     }

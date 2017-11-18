@@ -9,7 +9,7 @@ class JobRequirements extends Model
     protected $table = 'job_requirements';
 
     protected $fillable = [
-        'job_id', 'required_skill', 'required_experience', 'required_degree',
+        'job_id', 'required_skill', 'required_experience',
     ];
 
     public function job(){
