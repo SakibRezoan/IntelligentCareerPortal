@@ -6,7 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'App\\Admin' => $baseDir . '/app/admin.php',
+    'App\\Admin' => $baseDir . '/app/Admin.php',
     'App\\Company' => $baseDir . '/app/Company.php',
     'App\\CompanyInfo' => $baseDir . '/app/CompanyInfo.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
@@ -23,6 +23,7 @@ return array(
     'App\\Http\\Controllers\\CompanyInfoController' => $baseDir . '/app/Http/Controllers/CompanyInfoController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
+    'App\\Http\\Controllers\\JobController' => $baseDir . '/app/Http/Controllers/JobController.php',
     'App\\Http\\Controllers\\JobseekerGeneralInfoController' => $baseDir . '/app/Http/Controllers/JobseekerGeneralInfoController.php',
     'App\\Http\\Controllers\\PagesController' => $baseDir . '/app/Http/Controllers/PagesController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
@@ -31,6 +32,7 @@ return array(
     'App\\Http\\Middleware\\TrimStrings' => $baseDir . '/app/Http/Middleware/TrimStrings.php',
     'App\\Http\\Middleware\\TrustProxies' => $baseDir . '/app/Http/Middleware/TrustProxies.php',
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
+    'App\\Job' => $baseDir . '/app/Job.php',
     'App\\JobseekerGeneralInfo' => $baseDir . '/app/JobseekerGeneralInfo.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',
