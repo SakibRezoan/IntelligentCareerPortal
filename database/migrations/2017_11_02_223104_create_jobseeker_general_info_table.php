@@ -25,7 +25,7 @@ class CreateJobseekerGeneralInfoTable extends Migration
             $table->string('gender');
             $table->integer('contact_no');
             $table->boolean('hidden_status')->nullable();
-            $table->string('address');
+            $table->longText('address');
             $table->timestamps();
         });
     }
