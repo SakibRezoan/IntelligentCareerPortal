@@ -53,10 +53,16 @@ Route::prefix('company')->group(function(){
 
 Route::prefix('jobseekerProfile')-> group(function (){
 
-    Route::get('generalinfo/create',['uses' => 'JobseekerGeneralInfoController@create', 'as' => 'jobseekerGeneral_Info.create'] );
-    Route::post('generalinfo/store',['uses' => 'JobseekerGeneralInfoController@store', 'as' => 'jobseekerGeneral_Info.store'] );
-    Route::get('generalinfo/edit/{id}',['uses' => 'JobseekerGeneralInfoController@edit', 'as' => 'jobseekerGeneral_Info.edit'] );
-    Route::put('generalinfo/update/{id}',['uses' => 'JobseekerGeneralInfoController@update', 'as' => 'jobseekerGeneral_Info.update'] );
-    Route::get('generalinfo/delete/{id}',['uses' => 'JobseekerGeneralInfoController@destroy', 'as' => 'jobseekerGeneral_Info.delete'] );
+    Route::get('generalinfo/create',['uses' => 'JobSeekerGeneralInfoController@create', 'as' => 'jobseekerGeneral_Info.create'] );
+    Route::post('generalinfo/store',['uses' => 'JobSeekerGeneralInfoController@store', 'as' => 'jobseekerGeneral_Info.store'] );
+    Route::get('generalinfo/edit/{id}',['uses' => 'JobSeekerGeneralInfoController@edit', 'as' => 'jobseekerGeneral_Info.edit'] );
+    Route::put('generalinfo/update/{id}',['uses' => 'JobSeekerGeneralInfoController@update', 'as' => 'jobseekerGeneral_Info.update'] );
+    Route::get('generalinfo/delete/{id}',['uses' => 'JobSeekerGeneralInfoController@destroy', 'as' => 'jobseekerGeneral_Info.delete'] );
+
+    Route::get('education/create',['uses' => 'JobSeekerEducationController@create', 'as' => 'jobseekerEducation.create'] );
+    Route::post('education/store',['uses' => 'JobSeekerEducationController@store', 'as' => 'jobseekerEducation.store'] );
+    Route::get('education/edit/{id}',['uses' => 'JobSeekerEducationController@edit', 'as' => 'jobseekerEducation.edit'] );
+    Route::put('education/update/{id}',['uses' => 'JobSeekerEducationController@update', 'as' => 'jobseekerEducation.update'] );
+    Route::get('education/delete/{id}',['uses' => 'JobSeekerEducationController@destroy', 'as' => 'jobseekerEducation.delete'] );
 
 });

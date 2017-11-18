@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\JobseekerGeneralInfo;
+use App\JobSeekerGeneralInfo;
 use Illuminate\Http\Request;
 use Storage;
 use Auth;
 use Session;
 
-class JobseekerGeneralInfoController extends Controller
+class JobSeekerGeneralInfoController extends Controller
 {
     public function __construct()
     {
@@ -52,7 +52,7 @@ class JobseekerGeneralInfoController extends Controller
             'address' => 'required|string|max:1000',
         ]);
 
-        $jobseeker_general_info = new JobseekerGeneralInfo;
+        $jobseeker_general_info = new JobSeekerGeneralInfo;
         $jobseeker_general_info->user_id = Auth::user()->id;
 
         $path = $request->file('avatar')->store('public/images');
@@ -81,7 +81,7 @@ class JobseekerGeneralInfoController extends Controller
      */
     public function edit($id)
     {
-        $jobseeker_general_info = JobseekerGeneralInfo::where('id', $id)->first();
+        $jobseeker_general_info = JobSeekerGeneralInfo::where('id', $id)->first();
         return view('jobseekerGeneral_Info.edit',['info' => $jobseeker_general_info]);
     }
 
@@ -103,7 +103,7 @@ class JobseekerGeneralInfoController extends Controller
             'hidden_status' => 'boolean',
             'address' => 'required|string|max:1000',
         ]);
-        $jobseeker_general_info = JobseekerGeneralInfo::find($id);
+        $jobseeker_general_info = JobSeekerGeneralInfo::find($id);
         $jobseeker_general_info->first_name = $request->input('first_name');
         $jobseeker_general_info->last_name = $request->input('last_name');
         $jobseeker_general_info->date_of_birth = $request->input('date_of_birth');
@@ -127,7 +127,7 @@ class JobseekerGeneralInfoController extends Controller
      */
     public function destroy($id)
     {
-        $jobseeker_general_info = JobseekerGeneralInfo::find($id);
+        $jobseeker_general_info = JobSeekerGeneralInfo::find($id);
 
         $avatar = $jobseeker_general_info->avatar;
 
