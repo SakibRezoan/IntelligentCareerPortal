@@ -28,6 +28,7 @@ class CreateJobsTable extends Migration
             $table->boolean('isNegotiable')->nullable();
             $table->integer('vacancy');
             $table->boolean('isAvailable');
+            $table->string('required_degree')->nullable();
             $table->timestamps();
 
         });

@@ -44,11 +44,11 @@ Route::prefix('company')->group(function(){
     Route::put('companyinfo/update/{id}',['uses' => 'CompanyInfoController@update', 'as' => 'companyInfo.update'] );
     Route::get('companyinfo/delete/{id}',['uses' => 'CompanyInfoController@destroy', 'as' => 'companyInfo.delete'] );
 
-    Route::get('job/create',['uses' => 'JobController@create', 'as' => 'companyInfo.create'] );
-    Route::post('job/store',['uses' => 'JobController@store', 'as' => 'companyInfo.store'] );
-    Route::get('job/edit/{id}',['uses' => 'JobController@edit', 'as' => 'companyInfo.edit'] );
-    Route::put('job/update/{id}',['uses' => 'JobController@update', 'as' => 'companyInfo.update'] );
-    Route::get('job/delete/{id}',['uses' => 'JobController@destroy', 'as' => 'companyInfo.delete'] );
+    Route::get('job/create',['uses' => 'JobController@create', 'as' => 'job.create'] );
+    Route::post('job/store',['uses' => 'JobController@store', 'as' => 'job.store'] );
+    Route::get('job/edit/{id}',['uses' => 'JobController@edit', 'as' => 'job.edit'] );
+    Route::put('job/update/{id}',['uses' => 'JobController@update', 'as' => 'job.update'] );
+    Route::get('job/delete/{id}',['uses' => 'JobController@destroy', 'as' => 'job.delete'] );
 });
 
 Route::prefix('jobseekerProfile')-> group(function (){
