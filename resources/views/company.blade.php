@@ -19,7 +19,7 @@
                     <i class="fa fa-times"></i>
                     </span>
                 </span>
-                    <a href="#" class="list-group-item">
+                    <a href="{{ route('job.create') }}" class="list-group-item">
                         <i class="fa fa-comment-o"></i> Post Job
                     </a>
                     <a href="#" class="list-group-item">
@@ -33,7 +33,7 @@
                     </a>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-8 col-md-7 toppad" >
+            <div class="col-xs-12 col-sm-9 col-md-8 toppad" >
                 <div class="panel panel-info">
                     <div class="panel-heading">
                         <h3 class="panel-title">Company Infrmation</h3>
