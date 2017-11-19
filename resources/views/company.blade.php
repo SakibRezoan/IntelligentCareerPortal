@@ -12,6 +12,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </div>
+                <br>
                 <div class="list-group">
                 <span href="#" class="list-group-item active">
                     Dashboard
@@ -41,7 +42,7 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-md-3 col-lg-3" align="center">
-                                <img alt="Company Logo" src="storage/{{ $info->logo }}"
+                                <img alt="Company Logo" src="http://127.0.0.1:8000/storage/{{ $info->logo }}"
                                      class="img-circle img-responsive">
                                 <button type="button" class="btn btn-default btn-sm">Update</button>
                             </div>
