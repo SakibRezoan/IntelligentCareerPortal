@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('main')
 @section('title', 'Company Dashboard')
 @section('nav')
     @include('partials.company._nav')
