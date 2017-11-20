@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('main')
 @section('nav')
     @include('partials.admin._nav')
 @endsection
