@@ -74,7 +74,16 @@ class JobController extends Controller
 
         $job->save();
 
-        //$job_requirements = new JobRequirements;
+        $skills = $request->skill;
+        $experiences = $request->experience;
+
+        for($i=0;$i < count($skills); $i++){
+            $job_requirements = new JobRequirements;
+            $job_requirements->job_id = $job->id;
+            $job_requirements->required_skill = $skills[$i];
+            $job_requirements->required_experience = $experiences[$i];
+            $job_requirements->save();
+        }
 
         Session::flash('success', 'New Job Posted successfully !');
 
