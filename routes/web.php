@@ -46,6 +46,8 @@ Route::prefix('company')->group(function(){
     Route::put('companyinfo/update/{id}',['uses' => 'CompanyInfoController@update', 'as' => 'companyInfo.update'] );
     Route::get('companyinfo/delete/{id}',['uses' => 'CompanyInfoController@destroy', 'as' => 'companyInfo.delete'] );
 
+    Route::get('jobs/view',['uses' => 'JobController@view', 'as' => 'jobs.view'] );
+    Route::get('jobs/show/{id}',['uses' => 'JobController@show', 'as' => 'job.show'] );
     Route::get('job/create',['uses' => 'JobController@create', 'as' => 'job.create'] );
     Route::post('job/store',['uses' => 'JobController@store', 'as' => 'job.store'] );
     Route::get('job/edit/{id}',['uses' => 'JobController@edit', 'as' => 'job.edit'] );

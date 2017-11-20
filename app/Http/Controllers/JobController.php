@@ -92,13 +92,21 @@ class JobController extends Controller
 
     /**
      * Display the specified resource.
+     */
+    public function view()
+    {
+        return view('company.viewJobs');
+    }
+
+    /**
+     * Display the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        //
+        return view('job.show');
     }
 
     /**

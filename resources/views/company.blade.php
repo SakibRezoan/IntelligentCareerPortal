@@ -23,6 +23,9 @@
                     <a href="{{ route('job.create') }}" class="list-group-item">
                         <i class="fa fa-comment-o"></i> Post Job
                     </a>
+                    <a href="{{ route('jobs.view') }}" class="list-group-item">
+                        <i class="fa fa-comment-o"></i> View Posted Jobs
+                    </a>
                     <a href="#" class="list-group-item">
                         <i class="fa fa-search"></i> Search Candidates
                     </a>
