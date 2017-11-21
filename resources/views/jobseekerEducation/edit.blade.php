@@ -1,6 +1,6 @@
 @extends('main')
 
-@section('title', 'Add Education Details')
+@section('title', 'Update Education Details')
 
 @section('stylesheets')
 
@@ -17,12 +17,11 @@
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
 			<div align="center">
-				<h4><b><u>Add Education Details</u></b></h4>
+				<h4><b><u>Update Education Details</u></b></h4>
 			</div>
 			<hr>
 
-			{!! Form::open(['route' => 'jobseekerEducation.store', 'data-parsley-validate' => '', 'files' => true]) !!}
-
+			{!! Form::model($jobseeker_education,['route' =>['jobseekerEducation.update',$jobseeker_education->id],'method'=>'PUT', 'files' => true]) !!}
 			{{ Form::label('degree', 'Degree:') }}
 			{{ Form::text('degree', null, array('class' => 'form-control', 'required' => '', 'maxlength' => '255')) }}
 

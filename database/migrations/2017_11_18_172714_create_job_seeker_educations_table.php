@@ -20,7 +20,7 @@ class CreateJobSeekerEducationsTable extends Migration
             $table->string('degree');
             $table->string('group')->nullable();
             $table->string('institute');
-            //$table->float('gpa');
+            $table->float('cgpa', 3, 2);
             $table->integer('year_of_passing')->nullable();
             $table->boolean('isStudying')->nullable();
             $table->string('scanned_document');

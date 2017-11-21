@@ -24,7 +24,7 @@
                 <a href="#" class="list-group-item">
                     <i class="fa fa-comment-o"></i> General Information
                 </a>
-                <a href="{{route('jobseekerEducation.create')}}" class="list-group-item">
+                <a href="{{route('jobseekerEducation.list')}}" class="list-group-item">
                     <i class="fa fa-search"></i> Education
                 </a>
                 <a href="#" class="list-group-item">

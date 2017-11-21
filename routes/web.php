@@ -63,6 +63,7 @@ Route::prefix('jobseekerProfile')-> group(function (){
     Route::put('generalinfo/update/{id}',['uses' => 'JobSeekerGeneralInfoController@update', 'as' => 'jobseekerGeneral_Info.update'] );
     Route::get('generalinfo/delete/{id}',['uses' => 'JobSeekerGeneralInfoController@destroy', 'as' => 'jobseekerGeneral_Info.delete'] );
 
+    Route::get('education/list',['uses' => 'JobSeekerEducationController@list', 'as' => 'jobseekerEducation.list'] );
     Route::get('education/create',['uses' => 'JobSeekerEducationController@create', 'as' => 'jobseekerEducation.create'] );
     Route::post('education/store',['uses' => 'JobSeekerEducationController@store', 'as' => 'jobseekerEducation.store'] );
     Route::get('education/edit/{id}',['uses' => 'JobSeekerEducationController@edit', 'as' => 'jobseekerEducation.edit'] );
