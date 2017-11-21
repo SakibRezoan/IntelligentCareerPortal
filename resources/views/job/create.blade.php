@@ -74,7 +74,7 @@
                     <div class="col-md-5">
                         <div class="md-form">
                             <input type="number" step="0.1" id="experience" name="experience[]" class="form-control" required>
-                            <label for="experience">Required Experience</label>
+                            <label for="experience">Required Experience(years)</label>
                         </div>
                     </div>
                     <div class="col-md-2">
@@ -113,7 +113,7 @@
                 'class="form-control"><label for="skill">Technical Skill' +
                 '</label></div></div><div class="col-md-5"><div class="md-form">' +
                 '<input type="number" step="0.1" id="experience" name="experience[]" class="form-control">' +
-                '<label for="experience">Required Experience</label></div></div><div class="col-md-2">' +
+                '<label for="experience">Required Experience(years)</label></div></div><div class="col-md-2">' +
                 '<div class="md-form"><p class="btn btn-danger waves-effect waves-light btn-remove" id="'+i+'">' +
                 '<i class="fa fa-minus" aria-hidden="true"></i></p></div></div></div>';
             $('#dynamic_distribution').append(new_skill_experience);
