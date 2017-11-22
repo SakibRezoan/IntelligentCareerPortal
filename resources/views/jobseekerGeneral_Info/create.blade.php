@@ -24,8 +24,13 @@
 
 			{!! Form::open(['route' => 'jobseekerGeneral_Info.store', 'data-parsley-validate' => '', 'files' => true]) !!}
 
+            <img id="avatar" alt="Your Image" width="100" height="100" />
+            <br>
 			{{ Form::label('avatar', 'Upload Profile Picture:') }}
-			{{ Form::file('avatar', null, ['class' => 'form-control', 'required'=>'']) }}
+			{{--{{ Form::file('avatar', null, ['class' => 'form-control', 'required'=>'']) }}--}}
+			<input type="file" name="avatar" required
+                   parsley-filemaxsize="Avatar|20"
+				   onchange="document.getElementById('avatar').src = window.URL.createObjectURL(this.files[0])">
 			<br>
 			{{ Form::label('first_name', 'First Name:') }}
 			{{ Form::text('first_name', null, array('class' => 'form-control', 'required' => '', 'maxlength' => '255')) }}

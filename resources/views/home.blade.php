@@ -49,7 +49,7 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-md-3 col-lg-3" align="center">
-                            <img alt="Profile Picture" src="storage/{{ $info->avatar }}"
+                            <img alt="Profile Picture" src="{{ asset('http://127.0.0.1:8000/storage/images/'.$info->avatar) }}"
                                  class="img-circle img-responsive">
                             <button type="button" class="btn btn-default btn-sm">Update</button>
                         </div>
