@@ -121,6 +121,16 @@ class JobSeekerGeneralInfoController extends Controller
         $jobseeker_general_info->hidden_status = $request->input('hidden_status');
         $jobseeker_general_info->address = $request->input('address');
 
+        if ($request->file('avatar')) {
+
+            Storage::putFile('public/images', $request->file('avatar'));
+            $request->file('avatar')->store('public/images');
+            $avatar = $jobseeker_general_info->avatar;
+            unlink(storage_path('app/public/images/'.$avatar));
+            $file_name = $request->file('avatar')->hashName();
+            $jobseeker_general_info->avatar = $file_name;
+        }
+
         $jobseeker_general_info->save();
 
         Session::flash('success', 'General information was successfully updated!');

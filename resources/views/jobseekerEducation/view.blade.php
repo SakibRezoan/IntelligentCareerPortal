@@ -79,7 +79,7 @@
                                     @endif
                                 </td>
                                 <td class="text-center">
-                                    <a target="_blank" href="http://127.0.0.1:8000/storage/{{ $jobseeker_education->scanned_document }}">
+                                    <a target="_blank" href="http://127.0.0.1:8000/storage/images/{{ $jobseeker_education->scanned_document }}">
                                     Scanned Document</a>
                                 </td>
                                 <td class="text-center">

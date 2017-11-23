@@ -27,7 +27,6 @@
             <img id="avatar" alt="Your Image" width="100" height="100" />
             <br>
 			{{ Form::label('avatar', 'Upload Profile Picture:') }}
-            {{--{{ Form::file('avatar', null, ['class' => 'form-control', 'required'=>'']) }}--}}
 			<input type="file" name="avatar" required
 				   onchange="document.getElementById('avatar').src = window.URL.createObjectURL(this.files[0])">
 			<br>

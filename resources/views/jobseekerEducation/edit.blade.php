@@ -41,7 +41,7 @@
 			{{ Form::label('isStudying', "Currently Studying") }}
 			<br>
 			{{ Form::label('scanned_document', 'Upload Scanned Document:') }}
-			{{ Form::file('scanned_document', null, ['class' => 'form-control', 'required'=>'']) }}
+			{{ Form::file('scanned_document', null, ['class' => 'form-control',]) }}
 
 			{{ Form::submit('Update', array('class' => 'btn btn-success', 'style' => 'margin-top: 20px;')) }}
 

@@ -6,6 +6,7 @@ use App\JobSeekerEducation;
 use Illuminate\Http\Request;
 use Auth;
 use Session;
+use Storage;
 
 class JobSeekerEducationController extends Controller
 {
@@ -45,13 +46,14 @@ class JobSeekerEducationController extends Controller
             'degree' => 'required|string|max:255',
             'group' => 'string|max:25',
             'institute' => 'required|string|max:255',
-            'year_of_passing' => 'required|integer',
-            'cgpa' => 'required|numeric|min:1|max:5',
+            'year_of_passing' => 'integer',
+            'cgpa' => 'numeric|min:1|max:5',
             'isStudying' => 'boolean',
             'scanned_document' => 'required',
         ]);
 
         $jobseekerEducation = new JobSeekerEducation();
+
         $jobseekerEducation->user_id = Auth::user()->id;
         $jobseekerEducation->degree = $request->degree;
         $jobseekerEducation->group = $request->group;
@@ -59,8 +61,17 @@ class JobSeekerEducationController extends Controller
         $jobseekerEducation->year_of_passing = $request->year_of_passing;
         $jobseekerEducation->cgpa = $request->cgpa;
         $jobseekerEducation->isStudying = $request->isStudying;
-        $path = $request->file('scanned_document')->store('public/images');
-        $jobseekerEducation->scanned_document = substr($path,7);
+
+        if ($request->file('scanned_document')) {
+
+            Storage::putFile('public/images', $request->file('scanned_document'));
+
+            $request->file('scanned_document')->store('public/images');
+            $file_name = $request->file('scanned_document')->hashName();
+            $jobseekerEducation->scanned_document = $file_name;
+        }
+//        $path = $request->file('scanned_document')->store('public/images');
+//        $jobseekerEducation->scanned_document = substr($path,7);
 
         $jobseekerEducation->save();
 
@@ -114,7 +125,41 @@ class JobSeekerEducationController extends Controller
      */
     public function update(Request $request, $id)
     {
-       echo "Hello";
+        $this->validate($request, [
+            'degree' => 'required|string|max:255',
+            'group' => 'string|max:25',
+            'institute' => 'required|string|max:255',
+            'year_of_passing' => 'integer',
+            'cgpa' => 'numeric|min:1|max:5',
+            'isStudying' => 'boolean',
+        ]);
+
+        $jobseekerEducation = JobSeekerEducation::find($id);
+
+        $jobseekerEducation->degree = $request->input('degree');
+        $jobseekerEducation->group = $request->input('group');
+        $jobseekerEducation->institute = $request->input('institute');
+        $jobseekerEducation->year_of_passing = $request->input('year_of_passing');
+        $jobseekerEducation->cgpa = $request->input('cgpa');
+        $jobseekerEducation->isStudying = $request->input('isStudying');
+
+        if ($request->file('scanned_document')) {
+
+            Storage::putFile('public/images', $request->file('scanned_document'));
+            $request->file('scanned_document')->store('public/images');
+            $scanned_document = $jobseekerEducation->scanned_document;
+            unlink(storage_path('app/public/images/'.$scanned_document));
+
+            $file_name = $request->file('scanned_document')->hashName();
+
+            $jobseekerEducation->scanned_document = $file_name;
+        }
+
+        $jobseekerEducation->save();
+
+        Session::flash('success', 'Education Details Stored Successfully !');
+
+        return redirect()->route('jobseekerEducation.list');
     }
 
     /**
@@ -125,6 +170,16 @@ class JobSeekerEducationController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $jobseekerEducation = JobSeekerEducation::find($id);
+
+        $scanned_document = $jobseekerEducation->scanned_document;
+
+        unlink(storage_path('app/public/images/'.$scanned_document));
+
+        $jobseekerEducation->delete();
+
+        Session::flash('success', 'Education Details was successfully deleted.');
+
+        return redirect()->route('jobseekerEducation.list');
     }
 }
