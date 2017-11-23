@@ -12,6 +12,13 @@
     {!! Form::model($info,['route' =>['jobseekerGeneral_Info.update',$info->id],'method'=>'PUT', 'files' => true]) !!}
 		<div class="col-md-2"></div>
 		<div class="col-md-8">
+
+			<img id="avatar" alt="Your Image" width="100" height="100" />
+			<br>
+			{{ Form::label('avatar', 'Upload Profile Picture:') }}
+			<input type="file" name="avatar"
+				   onchange="document.getElementById('avatar').src = window.URL.createObjectURL(this.files[0])">
+			<br>
 			{{ Form::label('first_name', 'First Name:') }}
 			{{ Form::text('first_name', null, array('class' => 'form-control', 'required' => '', 'maxlength' => '255')) }}
 
