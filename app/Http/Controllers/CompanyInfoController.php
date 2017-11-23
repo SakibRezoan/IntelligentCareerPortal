@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\CompanyInfo;
 use Illuminate\Http\Request;
-use Storage;
 use Auth;
 use Session;
 
@@ -109,7 +108,7 @@ class CompanyInfoController extends Controller
         $companyInfo = CompanyInfo::find($id);
 
         $logo = $companyInfo->logo;
-        Storage::delete($logo);
+        unlink(storage_path('app/public/images/'.$logo));
 
         $companyInfo->delete();
 

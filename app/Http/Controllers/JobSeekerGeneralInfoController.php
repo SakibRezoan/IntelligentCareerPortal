@@ -55,8 +55,15 @@ class JobSeekerGeneralInfoController extends Controller
         $jobseeker_general_info = new JobSeekerGeneralInfo;
         $jobseeker_general_info->user_id = Auth::user()->id;
 
-        $path = $request->file('avatar')->store('public/images');
-        $jobseeker_general_info->avatar = substr($path,7);
+        if ($request->file('avatar')) {
+
+            Storage::putFile('public/images', $request->file('avatar'));
+
+            $request->file('avatar')->store('public/images');
+            $file_name = $request->file('avatar')->hashName();
+            $jobseeker_general_info->avatar = $file_name;
+        }
+
         $jobseeker_general_info->first_name = $request->first_name;
         $jobseeker_general_info->last_name = $request->last_name;
         $jobseeker_general_info->date_of_birth = $request->date_of_birth;
@@ -103,6 +110,7 @@ class JobSeekerGeneralInfoController extends Controller
             'hidden_status' => 'boolean',
             'address' => 'required|string|max:1000',
         ]);
+
         $jobseeker_general_info = JobSeekerGeneralInfo::find($id);
         $jobseeker_general_info->first_name = $request->input('first_name');
         $jobseeker_general_info->last_name = $request->input('last_name');
@@ -131,11 +139,10 @@ class JobSeekerGeneralInfoController extends Controller
 
         $avatar = $jobseeker_general_info->avatar;
 
-        Storage::delete($avatar);
+        unlink(storage_path('app/public/images/'.$avatar));
 
         $jobseeker_general_info->delete();
 
         Session::flash('success', 'General Inforamtion was successfully deleted.');
-        return redirect()->route('home');
-    }
+        return redirect()->route('home');    }
 }
