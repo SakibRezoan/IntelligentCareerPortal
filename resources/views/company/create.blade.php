@@ -23,8 +23,11 @@
 
 			{!! Form::open(['route' => 'companyInfo.store', 'data-parsley-validate' => '', 'files' => true]) !!}
 
+			<img id="logo" alt="Company Logo" width="100" height="100" />
+			<br>
 			{{ Form::label('logo', 'Upload Company Logo:') }}
-			{{ Form::file('logo', null, ['class' => 'form-control', 'required'=>'']) }}
+			<input type="file" name="logo" required
+				   onchange="document.getElementById('logo').src = window.URL.createObjectURL(this.files[0])">
 			<br>
 			{{ Form::label('company_name', 'Company Name:') }}
 			{{ Form::text('company_name', null, array('class' => 'form-control', 'required' => '', 'maxlength' => '255')) }}
@@ -44,7 +47,7 @@
 			{{ Form::label('address', "Full Address:") }}
 			{{ Form::textarea('address', null, array('class' => 'form-control', 'required' => '', 'maxlength' =>'1000','wrap'=>'hard')) }}
 
-			{{ Form::submit('Update', array('class' => 'btn btn-success btn-lg', 'style' => 'margin-top: 20px;')) }}
+			{{ Form::submit('Update', array('class' => 'btn btn-success btn-md', 'style' => 'margin-top: 20px;')) }}
 
 			{{ Form::token() }}
 

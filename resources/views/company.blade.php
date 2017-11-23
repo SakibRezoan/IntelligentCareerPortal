@@ -45,9 +45,8 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-md-3 col-lg-3" align="center">
-                                <img alt="Company Logo" src="http://127.0.0.1:8000/storage/{{ $info->logo }}"
-                                     class="img-circle img-responsive">
-                                <button type="button" class="btn btn-default btn-sm">Update</button>
+                                <img alt="Company Logo" src="{{ asset('http://127.0.0.1:8000/storage/images/'.$info->logo) }}"
+                                     class="img-square img-responsive">
                             </div>
 
                             <div class=" col-md-9 col-lg-9 ">

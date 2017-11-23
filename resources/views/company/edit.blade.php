@@ -7,9 +7,16 @@
 @section('content')
 
 	<div class="row">
-    {!! Form::model($info,['route' =>['companyInfo.update',$info->id],'method'=>'PUT']) !!}
+    {!! Form::model($info,['route' =>['companyInfo.update',$info->id],'method'=>'PUT', 'files'=> true]) !!}
 		<div class="col-md-2"></div>
 		<div class="col-md-8">
+
+			<img id="logo" alt="Company Logo" width="100" height="100" />
+			<br>
+			{{ Form::label('logo', 'Upload Company Logo:') }}
+			<input type="file" name="logo"
+				   onchange="document.getElementById('logo').src = window.URL.createObjectURL(this.files[0])">
+			<br>
 			{{ Form::label('company_name', 'Company Name:') }}
 			{{ Form::text('company_name', null, array('class' => 'form-control', 'required' => '', 'maxlength' => '255')) }}
 
@@ -27,17 +34,7 @@
 			{{ Form::label('address', "Full Address:") }}
 			{{ Form::textarea('address', null, array('class' => 'form-control', 'required' => '', 'maxlength' =>'1000')) }}
 
-			<div class="well">
-				<div class="row">
-					<div class="col-sm-6">
-						<a href="{{ route('home') }}" class="btn btn-danger btn-block">Cancle</a>
-					</div>
-					<div class="col-sm-6">
-						{{ Form::submit('Save Changes',['class'=>'btn btn-success btn-block']) }}
-					</div>
-				</div>
-
-			</div>
+            {{ Form::submit('Save Changes', array('class' => 'btn btn-success btn-md', 'style' => 'margin-top: 20px;')) }}
 
 		</div>
 		<div class="col-md-2">
@@ -45,6 +42,5 @@
 		</div>
     {!! Form::close()!!}
 	</div>
-
 
 @endsection

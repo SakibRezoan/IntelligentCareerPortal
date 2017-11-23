@@ -58,7 +58,7 @@
 			{{ Form::label('address', "Full Address:") }}
 			{{ Form::textarea('address', null, array('class' => 'form-control', 'required' => '', 'maxlength' =>'1000','wrap'=>'hard')) }}
 
-			{{ Form::submit('Update', array('class' => 'btn btn-success', 'style' => 'margin-top: 20px;')) }}
+			{{ Form::submit('Update', array('class' => 'btn btn-success btn-md', 'style' => 'margin-top: 20px;')) }}
 
 			{{ Form::token() }}
 
