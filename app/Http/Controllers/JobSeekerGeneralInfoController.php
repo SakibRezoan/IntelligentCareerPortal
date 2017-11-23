@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\JobSeekerGeneralInfo;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
+use Storage;
 use Auth;
 use Session;
 
@@ -55,11 +55,15 @@ class JobSeekerGeneralInfoController extends Controller
         $jobseeker_general_info = new JobSeekerGeneralInfo;
         $jobseeker_general_info->user_id = Auth::user()->id;
 
-        if ($request->hasFile('avatar')) {
+        if ($request->file('avatar')) {
+
+            Storage::putFile('public/images', $request->file('avatar'));
+
             $request->file('avatar')->store('public/images');
             $file_name = $request->file('avatar')->hashName();
             $jobseeker_general_info->avatar = $file_name;
         }
+
         $jobseeker_general_info->first_name = $request->first_name;
         $jobseeker_general_info->last_name = $request->last_name;
         $jobseeker_general_info->date_of_birth = $request->date_of_birth;
@@ -140,6 +144,5 @@ class JobSeekerGeneralInfoController extends Controller
         $jobseeker_general_info->delete();
 
         Session::flash('success', 'General Inforamtion was successfully deleted.');
-        return redirect()->route('home');
-    }
+        return redirect()->route('home');    }
 }
