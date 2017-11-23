@@ -51,7 +51,6 @@
                         <div class="col-md-3 col-lg-3" align="center">
                             <img alt="Profile Picture" src="{{ asset('http://127.0.0.1:8000/storage/images/'.$info->avatar) }}"
                                  class="img-circle img-responsive">
-                            <button type="button" class="btn btn-default btn-sm">Update</button>
                         </div>
 
                         <div class=" col-md-9 col-lg-9 ">

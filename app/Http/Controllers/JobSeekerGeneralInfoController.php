@@ -50,6 +50,7 @@ class JobSeekerGeneralInfoController extends Controller
             'gender' => 'required|string',
             'hidden_status' => 'boolean',
             'address' => 'required|string|max:1000',
+            'avatar' =>'required',
         ]);
 
         $jobseeker_general_info = new JobSeekerGeneralInfo;
@@ -126,7 +127,9 @@ class JobSeekerGeneralInfoController extends Controller
             Storage::putFile('public/images', $request->file('avatar'));
             $request->file('avatar')->store('public/images');
             $avatar = $jobseeker_general_info->avatar;
-            unlink(storage_path('app/public/images/'.$avatar));
+            if($avatar){
+                unlink(storage_path('app/public/images/'.$avatar));
+            }
             $file_name = $request->file('avatar')->hashName();
             $jobseeker_general_info->avatar = $file_name;
         }
@@ -149,7 +152,9 @@ class JobSeekerGeneralInfoController extends Controller
 
         $avatar = $jobseeker_general_info->avatar;
 
-        unlink(storage_path('app/public/images/'.$avatar));
+        if($avatar){
+            unlink(storage_path('app/public/images/'.$avatar));
+        }
 
         $jobseeker_general_info->delete();
 

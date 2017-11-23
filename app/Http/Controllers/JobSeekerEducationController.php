@@ -67,11 +67,11 @@ class JobSeekerEducationController extends Controller
             Storage::putFile('public/images', $request->file('scanned_document'));
 
             $request->file('scanned_document')->store('public/images');
+
             $file_name = $request->file('scanned_document')->hashName();
+
             $jobseekerEducation->scanned_document = $file_name;
         }
-//        $path = $request->file('scanned_document')->store('public/images');
-//        $jobseekerEducation->scanned_document = substr($path,7);
 
         $jobseekerEducation->save();
 
@@ -147,8 +147,12 @@ class JobSeekerEducationController extends Controller
 
             Storage::putFile('public/images', $request->file('scanned_document'));
             $request->file('scanned_document')->store('public/images');
+
             $scanned_document = $jobseekerEducation->scanned_document;
-            unlink(storage_path('app/public/images/'.$scanned_document));
+            if ($scanned_document){
+
+                unlink(storage_path('app/public/images/'.$scanned_document));
+            }
 
             $file_name = $request->file('scanned_document')->hashName();
 
@@ -174,7 +178,9 @@ class JobSeekerEducationController extends Controller
 
         $scanned_document = $jobseekerEducation->scanned_document;
 
-        unlink(storage_path('app/public/images/'.$scanned_document));
+        if ($scanned_document){
+            unlink(storage_path('app/public/images/'.$scanned_document));
+        }
 
         $jobseekerEducation->delete();
 

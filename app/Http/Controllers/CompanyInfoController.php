@@ -6,6 +6,7 @@ use App\CompanyInfo;
 use Illuminate\Http\Request;
 use Auth;
 use Session;
+use Storage;
 
 class CompanyInfoController extends Controller
 {
@@ -37,13 +38,21 @@ class CompanyInfoController extends Controller
             'date_of_establishment' => 'date',
             'address' => 'required|string|max:1000',
             'url' => 'required|string|max:255',
+            'logo' => 'required',
         ]);
 
         $companyInfo = new CompanyInfo;
         $companyInfo->company_id = Auth::user()->id;
 
-        $path = $request->file('logo')->store('public/images');
-        $companyInfo->logo = substr($path,7);
+        if ($request->file('logo')) {
+
+            Storage::putFile('public/images', $request->file('logo'));
+
+            $request->file('logo')->store('public/images');
+            $file_name = $request->file('logo')->hashName();
+            $companyInfo->logo = $file_name;
+        }
+
         $companyInfo->company_name = $request->company_name;
         $companyInfo->date_of_establishment = $request->date_of_establishment;
         $companyInfo->address = $request->address;
@@ -91,6 +100,18 @@ class CompanyInfoController extends Controller
         $companyInfo->contact_no = $request->input('contact_no');
         $companyInfo->url = $request->input('url');
 
+        if ($request->file('logo')) {
+
+            Storage::putFile('public/images', $request->file('logo'));
+            $request->file('logo')->store('public/images');
+            $logo = $companyInfo->logo;
+            if ($logo){
+                unlink(storage_path('app/public/images/'.$logo));
+            }
+            $file_name = $request->file('logo')->hashName();
+            $companyInfo->logo = $file_name;
+        }
+
         $companyInfo->save();
 
         Session::flash('success', 'Company information was successfully updated!');
@@ -108,7 +129,9 @@ class CompanyInfoController extends Controller
         $companyInfo = CompanyInfo::find($id);
 
         $logo = $companyInfo->logo;
-        unlink(storage_path('app/public/images/'.$logo));
+        if($logo){
+            unlink(storage_path('app/public/images/'.$logo));
+        }
 
         $companyInfo->delete();
 
