@@ -9,26 +9,26 @@
     </div>
     <br>
     <div class="list-group">
-        <a href="{{route('home')}}" class="list-group-item {{ Request::is('home') ? "active" : ""}}">
+        <a href="{{route('home')}}" class="list-group-item list-group-item-warning {{ Request::is('home') ? "active" : ""}}">
             <i class="glyphicon glyphicon-user"></i> General Information
         </a>
-        <a href="{{route('jobseekerEducation.list')}}" class="list-group-item {{ Request::is('jobseekerProfile/education/*') ? "active" : ""}}">
+        <a href="{{route('jobseekerEducation.list')}}" class="list-group-item list-group-item-warning {{ Request::is('jobseekerProfile/education/*') ? "active" : ""}}">
             <i class="glyphicon glyphicon-education"></i> Education
         </a>
-        <a href="#" class="list-group-item">
+        <a href="#" class="list-group-item list-group-item-warning">
             <i class="glyphicon glyphicon-certificate"></i> Certification
         </a>
-        <a href="#" class="list-group-item">
+        <a href="#" class="list-group-item list-group-item-warning">
             <i class="glyphicon glyphicon-star-empty"></i> Work Experience
         </a>
-        <a href="#" class="list-group-item">
+        <a href="#" class="list-group-item list-group-item-warning">
             <i class="glyphicon glyphicon-thumbs-up"></i>
             Teams
         </a>
-        <a href="#" class="list-group-item">
+        <a href="#" class="list-group-item list-group-item-warning">
             <i class="glyphicon glyphicon-heart"></i> Job Preference
         </a>
-        <a href="#" class="list-group-item">
+        <a href="#" class="list-group-item list-group-item-warning">
             <i class="fa fa-folder-open-o"></i> Recommended Jobs <span class="badge">14</span>
         </a>
     </div>

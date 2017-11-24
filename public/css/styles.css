@@ -1,3 +1,7 @@
+body{
+    background: #f2f2f2;
+}
+
 .btn-h1-spacing {
 	margin-top: 18px;
 }
@@ -64,14 +68,8 @@ marquee:hover {
     animation-play-state: paused
 }
 
-#jobseekerSidebar{
-    background-color:black;
-    margin-top: 22px;
-    margin-bottom: 200px;
-}
-
 #myFooter{
-    padding-top:32px;
+    margin-top:100px;
 }
 
 #myFooter .container{
@@ -175,4 +173,8 @@ body{
 #myFooter{
     flex: 0 0 auto;
     -webkit-flex: 0 0 auto;
+}
+.list-group-item-warning{
+    background:white;
+    color: black !important;
 }

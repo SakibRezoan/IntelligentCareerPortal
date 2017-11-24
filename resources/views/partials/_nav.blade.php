@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-static-top">
+<nav class="navbar navbar-inverse navbar-static-top">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
@@ -19,7 +19,7 @@
           <li class="{{ Request::is('contact') ? "active" : ""}}"><a href="/contact">Contact</a></li>
           <li style="margin-left: 30px"><a class="btn btn-default btn-sm" style="padding: 2px; margin-top:14px"
                                            data-toggle="modal" data-target="#signUpModal" href="">Create Account</a></li>
-          <li style="margin-left: 30px"><a class="btn btn-success btn-sm" style="padding: 2px; margin-top:14px"
+          <li style="margin-left: 30px"><a class="btn btn-success btn-sm" style="padding: 2px;color: white; margin-top:14px"
                                            data-toggle="modal" data-target="#signInModal"href="">Sign In</a></li>
         </ul>
 
