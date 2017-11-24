@@ -7,8 +7,8 @@
         @yield('nav')
         <div class="container">
             @yield('content')
-            @include('partials._footer')
-          </div>
+        </div>
+        @include('partials._footer')
         @include('partials._javascript')
         @yield('scripts')
     </body>

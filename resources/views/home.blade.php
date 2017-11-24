@@ -43,7 +43,7 @@
                                 </tr>
                                 <tr>
                                     <td class="general_info">Address:</td>
-                                    <td>{{ $info->address }}</td>
+                                    <td style="text-align: justify;">{{ $info->address }}</td>
                                 </tr>
                                 <tr>
                                     <td class="general_info">Contact No:</td>
@@ -54,19 +54,23 @@
                         </div>
                     </div>
                 </div>
-                <div class="panel-footer">
-                    <a href="{{ route('jobseekerGeneral_Info.edit',$info->id) }}"
-                       data-toggle="tooltip" data-placement="top" title="Edit General Information"
-                       type="button" class="btn btn-sm btn-warning">Edit
+                <div class="panel-footer" align="right">
+                    <a align="left" href="{{ route('jobseekerGeneral_Info.edit',$info->id) }}"
+                       type="button" class="btn btn-md btn-warning "><i class="glyphicon glyphicon-edit" aria-hidden="true"></i>Edit
                     </a>
-                    <span class="pull-right">
-                        <a href="{{ route('jobseekerGeneral_Info.delete',$info->id) }}"
-                           data-toggle="tooltip"  data-placement="top" title="Remove General Information"
-                           type="button" class="btn btn-sm btn-danger">Delete
-                        </a>
-                    </span>
+                    {{--<a href="{{ route('jobseekerGeneral_Info.delete',$info->id) }}"--}}
+                       {{--data-toggle="tooltip"  data-placement="top" title="Remove General Information"--}}
+                       {{--type="button" class="btn btn-sm btn-danger" id="delete">Delete--}}
+                    {{--</a>--}}
+                    {!! Form::open(['route' => ['jobseekerGeneral_Info.delete', $info->id],'method'=>'GET','style' => 'display:inline']) !!}
+                    {!! Form::button('<i class="glyphicon glyphicon-trash" aria-hidden="true"></i> Delete', array(
+                            'type' => 'submit',
+                            'class' => 'btn btn-danger btn-md',
+                            'title' => 'Delete',
+                            'onclick'=>'return confirm("Confirm delete?")'
+                    )) !!}
+                    {!! Form::close() !!}
                 </div>
-
             </div>
         </div>
     </div>
