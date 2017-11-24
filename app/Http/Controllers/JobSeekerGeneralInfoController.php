@@ -6,7 +6,6 @@ use App\JobSeekerGeneralInfo;
 use Illuminate\Http\Request;
 use Storage;
 use Auth;
-use Session;
 
 class JobSeekerGeneralInfoController extends Controller
 {
@@ -76,9 +75,12 @@ class JobSeekerGeneralInfoController extends Controller
 
         $jobseeker_general_info->save();
 
-        Session::flash('success', 'General information updated successfully !');
+        $notification = array(
+            'message' => 'General information added successfully !',
+            'alert-type' => 'success'
+        );
 
-        return redirect()->route('home');
+        return redirect()->route('home')->with($notification);
     }
 
     /**
@@ -135,9 +137,11 @@ class JobSeekerGeneralInfoController extends Controller
         }
 
         $jobseeker_general_info->save();
-
-        Session::flash('success', 'General information was successfully updated!');
-        return redirect()->route('home');
+        $notification = array(
+            'message' => 'General information updated successfully !',
+            'alert-type' => 'info'
+        );
+        return redirect()->route('home')->with($notification);
     }
 
     /**
@@ -158,6 +162,10 @@ class JobSeekerGeneralInfoController extends Controller
 
         $jobseeker_general_info->delete();
 
-        Session::flash('success', 'General Inforamtion was successfully deleted.');
-        return redirect()->route('home');    }
+        $notification = array(
+            'message' => 'General information was deleted !',
+            'alert-type' => 'warning'
+        );
+        return redirect()->route('home')->with($notification);
+    }
 }

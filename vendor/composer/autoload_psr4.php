@@ -52,5 +52,6 @@ return array(
     'Collective\\Html\\' => array($vendorDir . '/laravelcollective/html/src'),
     'Carbon\\' => array($vendorDir . '/nesbot/carbon/src/Carbon'),
     'Barryvdh\\LaravelIdeHelper\\' => array($vendorDir . '/barryvdh/laravel-ide-helper/src'),
+    'Artdarek\\Toastr\\' => array($vendorDir . '/artdarek/toastr/src'),
     'App\\' => array($baseDir . '/app'),
 );

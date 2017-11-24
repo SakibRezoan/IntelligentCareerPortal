@@ -6,52 +6,18 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-sm-4 col-md-3 sidebar">
-                <div class="mini-submenu">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </div>
-                <br>
-                <div class="list-group">
-                <span href="#" class="list-group-item active">
-                    Dashboard
-                    <span class="pull-right" id="slide-submenu">
-                    <i class="fa fa-times"></i>
-                    </span>
-                </span>
-                    <a href="#" class="list-group-item">
-                        <i class="fa fa-comment-o"></i> Education List
-                    </a>
-                    <a href="{{route('jobseekerEducation.list')}}" class="list-group-item">
-                        <i class="fa fa-search"></i> Education
-                    </a>
-                    <a href="#" class="list-group-item">
-                        <i class="fa fa-user"></i> Work Experience
-                    </a>
-                    <a href="#" class="list-group-item">
-                        <i class="fa fa-user"></i> Job Preference
-                    </a>
-                    <a href="#" class="list-group-item">
-                        <i class="fa fa-user"></i> Teams
-                    </a>
-                    <a href="#" class="list-group-item">
-                        <i class="fa fa-folder-open-o"></i> Recommended Jobs <span class="badge">14</span>
-                    </a>
-                </div>
-            </div>
+            @include('partials.jobseekerSidebar')
             <div class="col-xs-12 col-sm-9 col-md-9 toppad" >
                 <div align="center">
                     <a class="btn btn-lg btn-block btn-success" href="{{route('jobseekerEducation.create')}}">
                         Add New Education
                     </a>
-                    <br>
                 </div>
                 <div class="panel panel-info">
                     <div class="panel-heading">
                         <h3 class="panel-title" align="center">Education List</h3>
                     </div>
-                    <div class="panel-body">
+                    {{--<div class="panel-body">--}}
                         <table class="table table-striped table-bordered bootstrap-datatable datatable responsive">
                             <thead>
                             <tr>
@@ -96,7 +62,7 @@
                             @endforeach
                             </tbody>
                         </table>
-                    </div>
+                    {{--</div>--}}
                 </div>
             </div>
         </div>
