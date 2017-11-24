@@ -1,76 +1,77 @@
 @extends('main')
-
 @section('title', 'Update General Information')
-
 @section('stylesheets')
 
-	{!! Html::style('css/parsley.css') !!}
+    {!! Html::style('css/parsley.css') !!}
 
 @endsection
 
 @section('nav')
-	@include('partials._nav')
+    @include('partials._nav')
 @endsection
 
 @section('content')
+    <div class="container">
+        <div class="row">
+            @include('partials.jobseekerSidebar')
+            <div class="col-xs-12 col-sm-9 col-md-8 toppad">
+                <div class="row">
+                    <div class="col-md-9 col-md-offset-1">
+                        {!! Form::open(['route' => 'jobseekerGeneral_Info.store', 'data-parsley-validate' => '', 'files' => true]) !!}
 
-	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
-			<div align="center">
-				<h4><b><u>Complete your profile</u></b></h4>
-				<p>Let the employee find you</p>
-			</div>
-			<hr>
+                        <div style="float: left;">
+                            {{ Form::label('avatar', 'Upload Profile Picture:') }}
+                            <input type="file" name="avatar" required
+                                   onchange="document.getElementById('avatar').src = window.URL.createObjectURL(this.files[0])">
+                        </div>
+                        <div style="float: right;">
+                            <img id="avatar" alt="Your Image" width="100" height="80" />
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        {{ Form::label('first_name', 'First Name:') }}
+                        {{ Form::text('first_name', null, array('class' => 'form-control','maxlength' => '255','data-parsley-required'=>'true')) }}
 
-			{!! Form::open(['route' => 'jobseekerGeneral_Info.store', 'data-parsley-validate' => '', 'files' => true]) !!}
+                        {{ Form::label('last_name', 'Last Name:') }}
+                        {{ Form::text('last_name', null, array('class' => 'form-control', 'required' => '', 'maxlength' => '255')) }}
 
-            <img id="avatar" alt="Your Image" width="100" height="100" />
-            <br>
-			{{ Form::label('avatar', 'Upload Profile Picture:') }}
-			<input type="file" name="avatar" required
-				   onchange="document.getElementById('avatar').src = window.URL.createObjectURL(this.files[0])">
-			<br>
-			{{ Form::label('first_name', 'First Name:') }}
-			{{ Form::text('first_name', null, array('class' => 'form-control','maxlength' => '255','data-parsley-required'=>'true')) }}
+                        {{ Form::label('date_of_birth', 'Date of Birth:') }}
+                        {{ Form::date('date_of_birth',null, array('class' => 'form-control', 'required' => '')) }}
 
-			{{ Form::label('last_name', 'Last Name:') }}
-			{{ Form::text('last_name', null, array('class' => 'form-control', 'required' => '', 'maxlength' => '255')) }}
+                        {{ Form::label('city', 'City:') }}
+                        {{ Form::select('city', ['Dhaka' => 'Dhaka', 'Rajshahi' => 'Rajshahi',
+                                    'Khulna' =>'Khulna', 'Chittagong' => 'Chittagong', 'Barisal' => 'Barisal',
+                                    'Rangpur' => 'Rangpur', 'Sylhet' =>'Sylhet' ], null, ['class' => 'form-control','placeholder'=> 'Select City']) }}
+                        {{ Form::label('gender', 'Gender:') }}
+                        {{ Form::select('gender', ['male' => 'Male', 'Female' => 'Female',
+                                'others' =>'Others'], null, ['class' => 'form-control', 'placeholder'=> 'Select Gender']) }}
 
-			{{ Form::label('date_of_birth', 'Date of Birth:') }}
-			{{ Form::date('date_of_birth',null, array('class' => 'form-control', 'required' => '')) }}
+                        {{ Form::label('contact_no', 'Contact Number:') }}
+                        {{ Form::number('contact_no', null, array('class' => 'form-control', 'required' => '', 'maxlength' => '11')) }}
 
-			{{ Form::label('city', 'City:') }}
-			{{ Form::select('city', ['Dhaka' => 'Dhaka', 'Rajshahi' => 'Rajshahi',
-                        'Khulna' =>'Khulna', 'Chittagong' => 'Chittagong', 'Barisal' => 'Barisal',
-                        'Rangpur' => 'Rangpur', 'Sylhet' =>'Sylhet' ], null, ['class' => 'form-control','placeholder'=> 'Select City']) }}
-			{{ Form::label('gender', 'Gender:') }}
-			{{ Form::select('gender', ['male' => 'Male', 'Female' => 'Female',
-                    'others' =>'Others'], null, ['class' => 'form-control', 'placeholder'=> 'Select Gender']) }}
+                        {{ Form::checkbox('hidden_status', true, 'Hide my contact number') }}
+                        {{ Form::label('hidden_status', "Hide my contact number") }}
 
-			{{ Form::label('contact_no', 'Contact Number:') }}
-			{{ Form::number('contact_no', null, array('class' => 'form-control', 'required' => '', 'maxlength' => '11')) }}
+                        <br>
 
-			{{ Form::checkbox('hidden_status', true, 'Hide my contact number') }}
-			{{ Form::label('hidden_status', "Hide my contact number") }}
+                        {{ Form::label('address', "Full Address:") }}
+                        {{ Form::textarea('address', null, array('class' => 'form-control', 'required' => '', 'maxlength' =>'1000','wrap'=>'hard')) }}
 
-			<br>
+                        {{ Form::submit('Update', array('class' => 'btn btn-success btn-md', 'style' => 'margin-top: 20px;')) }}
 
-			{{ Form::label('address', "Full Address:") }}
-			{{ Form::textarea('address', null, array('class' => 'form-control', 'required' => '', 'maxlength' =>'1000','wrap'=>'hard')) }}
+                        {{ Form::token() }}
 
-			{{ Form::submit('Update', array('class' => 'btn btn-success btn-md', 'style' => 'margin-top: 20px;')) }}
+                        {!! Form::close() !!}
 
-			{{ Form::token() }}
+                        <br>
 
-			{!! Form::close() !!}
-
-			<br>
-
-		</div>
-	</div>
-
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
-
 
 @section('scripts')
 

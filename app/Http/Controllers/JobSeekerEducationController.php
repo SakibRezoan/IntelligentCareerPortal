@@ -75,9 +75,12 @@ class JobSeekerEducationController extends Controller
 
         $jobseekerEducation->save();
 
-        Session::flash('success', 'Education Details Stored Successfully !');
+        $notification = array(
+            'message' => 'Education Details Stored Successfully  !',
+            'alert-type' => 'success'
+        );
 
-        return redirect()->route('jobseekerEducation.list');
+        return redirect()->route('jobseekerEducation.list')->with($notification);
     }
 
     /**
@@ -161,9 +164,12 @@ class JobSeekerEducationController extends Controller
 
         $jobseekerEducation->save();
 
-        Session::flash('success', 'Education Details Stored Successfully !');
+        $notification = array(
+            'message' => 'Education Details Updated Successfully  !',
+            'alert-type' => 'info'
+        );
 
-        return redirect()->route('jobseekerEducation.list');
+        return redirect()->route('jobseekerEducation.list')->with($notification);
     }
 
     /**
@@ -184,8 +190,11 @@ class JobSeekerEducationController extends Controller
 
         $jobseekerEducation->delete();
 
-        Session::flash('success', 'Education Details was successfully deleted.');
+        $notification = array(
+            'message' => 'Education Details Deleted.!',
+            'alert-type' => 'warning'
+        );
 
-        return redirect()->route('jobseekerEducation.list');
+        return redirect()->route('jobseekerEducation.list')->with($notification);
     }
 }
