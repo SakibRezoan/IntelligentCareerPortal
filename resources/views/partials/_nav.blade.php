@@ -20,7 +20,7 @@
           <li style="margin-left: 30px"><a class="btn btn-default btn-sm" style="padding: 2px; margin-top:14px"
                                            data-toggle="modal" data-target="#signUpModal" href="">Create Account</a></li>
           <li style="margin-left: 30px"><a class="btn btn-success btn-sm" style="padding: 2px;color: white; margin-top:14px"
-                                           data-toggle="modal" data-target="#signInModal"href="">Sign In</a></li>
+                                           data-toggle="modal" data-target="#signInModal" href="">Sign In</a></li>
         </ul>
 
         <form class="navbar-form navbar-left" role="search">
