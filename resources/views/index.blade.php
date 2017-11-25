@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Soft-Tect Free Landing Page</title>
+        <title>Intelligent Career Portal</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -48,8 +48,8 @@
                         </div>
                         <div class="col-md-6">
                             <div class="social-contact">
-                                <a href="#"><i class="fa fa-phone"></i>+011 54925849</a>
-                                <a href="#"><i class="fa fa-envelope"></i>contact@softech.com</a>
+                                <a href="#"><i class="fa fa-phone"></i>+8801521209914</a>
+                                <a href="#"><i class="fa fa-envelope"></i>bsse0611@iit.du.ac.bd</a>
                             </div>
                         </div>
                     </div>
@@ -74,13 +74,14 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="active"><a href="#home">Home</a></li>
+                        <li class="active"><a href="/">Home</a></li>
                         <li><a href="#features">PRODUCT</a></li>
                         <li><a href="#service">Service</a></li>
                         <li><a href="#price">PRICE</a></li>
                         <li><a href="#business">Business</a></li>
                         <li><a href="#contact">Contact</a></li>
-                        <li class="login"><a href="#">Sign In</a></li>
+                        <li class="login"><a data-toggle="modal" data-target="#signUpModal" href="#">Create Account</a></li>
+                        <li class="login"><a data-toggle="modal" data-target="#signInModal" href="#">Sign In</a></li>
                     </ul>
 
                 </div><!-- /.navbar-collapse -->
@@ -96,15 +97,13 @@
                             <div class="col-md-10 col-md-offset-1">
                                 <div class="home-content">
 
-                                    <h1>Bring your Big Data to Life With Soft-Tech</h1>
-                                    <p>Blue Lance transforms your company's data into rich visuals for you to collect and organize so you can focus on what matters to you. Stay in the know, spot trends as they happen, and push your business further.</p>
-
+                                    <h1>Bring your Dream to Life With<br><h2>Intelligent Career Portal</h2></h1>
                                     <div class="row">
                                         <div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12">
                                             <div class="home-contact">
                                                 <div class="input-group">
-                                                    <input type="text" class="form-control" placeholder="Enter your email address">
-                                                    <input type="submit" class="form-control" value="Use It Free">
+                                                    <input type="text" class="form-control" placeholder="Search Jobs">
+                                                    <input type="submit" class="form-control" value="Search">
 
                                                 </div><!-- /input-group -->
 
@@ -668,7 +667,7 @@
 
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <div class="copyright">
-                                <p>Made with <i class="fa fa-heart"></i> by <a target="_blank" href="http://bootstrapthemes.co"> Bootstrap Themes </a>2016. All rights reserved.</p>
+                                <p>Made with <i class="fa fa-heart"></i> by <a target="_blank" href="#"> Sakib Rezoan </a>2017. All rights reserved.</p>
 
                             </div>
                         </div>
@@ -677,6 +676,61 @@
                 </div>
             </div>
         </footer>
+
+        <!-- Sign In Modal -->
+        <div class="modal fade" id="signInModal" role="dialog">
+            <div class="modal-dialog">
+        
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" align="center">Sign In As</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div align="center">
+                            <a class="btn btn-sm btn-success" href="{{ route('login') }}">Job Seeker</a>
+                            <br><hr>
+                            <a class="btn btn-sm btn-info" href="{{ route('admin.login') }}">Admin</a>
+                            <br><hr>
+                            <a class="btn btn-sm btn-primary" href="{{ route('company.login') }}">Company</a>
+                            <br>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+
+        <!-- Sign Up Modal -->
+        <div class="modal fade" id="signUpModal" role="dialog">
+            <div class="modal-dialog">
+        
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <div align="center">
+                            <h4 class="modal-title">Create Your Account</h4>
+                            <h6>Please choose an option</h6>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div align="center">
+                            <a class="btn btn-success" href="{{ route('register') }}">Job Seeker</a>
+                            <a class="btn btn-primary" href="{{ route('company.registration') }}">Company</a>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
 		
 		
 		<div class="scrollup">
