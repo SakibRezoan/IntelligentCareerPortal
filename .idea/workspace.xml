@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="67dd8ef5-655f-42fd-b81a-1d1a4bdb7395" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/jobseekerGeneral_Info/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/jobseekerGeneral_Info/edit.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/partials/_head.blade.php" afterPath="$PROJECT_DIR$/resources/views/partials/_head.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/partials/_nav.blade.php" afterPath="$PROJECT_DIR$/resources/views/partials/_nav.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/partials/admin/_nav.blade.php" afterPath="$PROJECT_DIR$/resources/views/partials/admin/_nav.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/partials/company/_nav.blade.php" afterPath="$PROJECT_DIR$/resources/views/partials/company/_nav.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/partials/jobseekerSidebar.blade.php" afterPath="$PROJECT_DIR$/resources/views/partials/jobseekerSidebar.blade.php" />
-    </list>
+    <list default="true" id="67dd8ef5-655f-42fd-b81a-1d1a4bdb7395" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -630,12 +622,12 @@
       <workItem from="1511486564955" duration="9666000" />
       <workItem from="1511543327716" duration="18172000" />
       <workItem from="1511628052751" duration="5942000" />
-      <workItem from="1511639713427" duration="2561000" />
+      <workItem from="1511639713427" duration="2744000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="307896000" />
+    <option name="totallyTimeSpent" value="308079000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
