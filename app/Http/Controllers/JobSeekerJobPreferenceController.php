@@ -43,7 +43,7 @@ class JobSeekerJobPreferenceController extends Controller
             'organizations.*'=> 'required|string',
             'locations' => 'required|array|',
             'locations.*'=> 'required|string',
-            'environment.*'=> 'required|string|max:2000',
+            'environment'=> 'required|string|max:2000',
             'minimum_compensation' => 'integer',
             'isNegotiable' => 'boolean',
             'skill_wishlist' => 'array|',
@@ -82,8 +82,7 @@ class JobSeekerJobPreferenceController extends Controller
         $id = \Auth::user()->id;
         $jobseekerJobPreference = JobSeekerJobPreference::where('user_id', $id)->first();
         if($jobseekerJobPreference){
-            //return view('jobseekerEducation.view',['jobseeker_educations' => $jobseeker_educations]);
-            dd($jobseekerJobPreference);
+            return view('jobseekerJobPreference.show',['jobseekerJobPreference' => $jobseekerJobPreference]);
         }
         return view('jobseekerJobPreference.create');
     }
@@ -96,7 +95,8 @@ class JobSeekerJobPreferenceController extends Controller
      */
     public function edit($id)
     {
-        //
+        $jobseekerJobPreference = JobSeekerJobPreference::where('id', $id)->first();
+        return view('jobseekerJobPreference.edit',['jobseekerJobPreference' => $jobseekerJobPreference]);
     }
 
     /**
@@ -108,7 +108,38 @@ class JobSeekerJobPreferenceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'contract_types' => 'required|array|',
+            'contract_types.*'=> 'required|string',
+            'organizations' => 'required|array|',
+            'organizations.*'=> 'required|string',
+            'locations' => 'required|array|',
+            'locations.*'=> 'required|string',
+            'environment'=> 'required|string|max:2000',
+            'minimum_compensation' => 'integer',
+            'isNegotiable' => 'boolean',
+            'skill_wishlist' => 'array|',
+            'skill_wishlist.*'=> 'string|max:255',
+        ]);
+
+        $jobseekerJobPreference = JobSeekerJobPreference::find($id);
+
+        $jobseekerJobPreference->contract_types = $request->input('contract_types');
+        $jobseekerJobPreference->organizations = $request->input('organizations');
+        $jobseekerJobPreference->locations = $request->input('locations');
+        $jobseekerJobPreference->environment = $request->input('environment');
+        $jobseekerJobPreference->minimum_compensation = $request->input('minimum_compensation');
+        $jobseekerJobPreference->isNegotiable = $request->input('isNegotiable');
+        $jobseekerJobPreference->skill_wishlist = $request->input('skill_wishlist');
+
+        $jobseekerJobPreference->save();
+
+        $notification = array(
+            'message' => 'Job Preference Updated Successfully  !',
+            'alert-type' => 'info'
+        );
+
+        return redirect()->route('jobseekerJobPreference.show')->with($notification);
     }
 
     /**
@@ -119,6 +150,15 @@ class JobSeekerJobPreferenceController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $jobseekerJobPreference = JobSeekerJobPreference::find($id);
+
+        $jobseekerJobPreference->delete();
+
+        $notification = array(
+            'message' => 'Job Preference Deleted.!',
+            'alert-type' => 'warning'
+        );
+
+        return redirect()->route('jobseekerJobPreference.show')->with($notification);
     }
 }
