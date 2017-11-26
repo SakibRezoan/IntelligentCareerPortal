@@ -20,7 +20,7 @@
         <a href="{{route('jobseekerJobPreference.show')}}" class="list-group-item list-group-item-warning {{ Request::is('jobseekerProfile/jobPreference/*') ? "active" : ""}}">
             <i class="glyphicon glyphicon-heart"></i> Job Preference
         </a>
-        <a href="#" class="list-group-item list-group-item-warning">
+        <a href="{{route('jobseekerTeam.list')}}" class="list-group-item list-group-item-warning {{ Request::is('jobseekerProfile/team/*') ? "active" : ""}}">
             <i class="glyphicon glyphicon-thumbs-up"></i>
             Teams
         </a>

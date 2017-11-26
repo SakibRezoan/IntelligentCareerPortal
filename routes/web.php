@@ -84,5 +84,11 @@ Route::prefix('jobseekerProfile')-> group(function (){
     Route::put('jobPreference/update/{id}',['uses' => 'JobSeekerJobPreferenceController@update', 'as' => 'jobseekerJobPreference.update'] );
     Route::get('jobPreference/delete/{id}',['uses' => 'JobSeekerJobPreferenceController@destroy', 'as' => 'jobseekerJobPreference.delete'] );
 
+    Route::get('team/list',['uses' => 'JobSeekerTeamController@list', 'as' => 'jobseekerTeam.list'] );
+    Route::get('team/create',['uses' => 'JobSeekerTeamController@create', 'as' => 'jobseekerTeam.create'] );
+    Route::post('team/store',['uses' => 'JobSeekerTeamController@store', 'as' => 'jobseekerTeam.store'] );
+    Route::get('team/edit/{id}',['uses' => 'JobSeekerTeamController@edit', 'as' => 'jobseekerTeam.edit'] );
+    Route::put('team/update/{id}',['uses' => 'JobSeekerTeamController@update', 'as' => 'jobseekerTeam.update'] );
+    Route::get('team/delete/{id}',['uses' => 'JobSeekerTeamController@destroy', 'as' => 'jobseekerTeam.delete'] );
 
 });

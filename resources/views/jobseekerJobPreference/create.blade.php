@@ -68,7 +68,7 @@
 								
 								</div>
 								
-								{{ Form::submit('Update', array('class' => 'btn btn-success btn-md', 'style' => 'margin-top: 20px;')) }}
+								{{ Form::submit('Submit', array('class' => 'btn btn-success btn-md', 'style' => 'margin-top: 20px;')) }}
 								
 								{{ Form::token() }}
 								
