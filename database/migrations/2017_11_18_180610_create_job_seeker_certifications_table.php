@@ -15,6 +15,14 @@ class CreateJobSeekerCertificationsTable extends Migration
     {
         Schema::create('job_seeker_certifications', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->string('title');
+            $table->string('authority');
+            $table->string('license_no');
+            $table->date('date');
+            $table->string('link')->nullable();
+            $table->string('scanned_document');
             $table->timestamps();
         });
     }
