@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\JobSeekerEducation;
 use Illuminate\Http\Request;
 use Auth;
-use Session;
 use Storage;
 
 class JobSeekerEducationController extends Controller

@@ -70,4 +70,12 @@ Route::prefix('jobseekerProfile')-> group(function (){
     Route::put('education/update/{id}',['uses' => 'JobSeekerEducationController@update', 'as' => 'jobseekerEducation.update'] );
     Route::get('education/delete/{id}',['uses' => 'JobSeekerEducationController@destroy', 'as' => 'jobseekerEducation.delete'] );
 
+    Route::get('certificate/list',['uses' => 'JobSeekerCertificationController@list', 'as' => 'jobseekerCertification.list'] );
+    Route::get('certificate/create',['uses' => 'JobSeekerCertificationController@create', 'as' => 'jobseekerCertification.create'] );
+    Route::post('certificate/store',['uses' => 'JobSeekerCertificationController@store', 'as' => 'jobseekerCertification.store'] );
+    Route::get('certificate/edit/{id}',['uses' => 'JobSeekerCertificationController@edit', 'as' => 'jobseekerCertification.edit'] );
+    Route::put('certificate/update/{id}',['uses' => 'JobSeekerCertificationController@update', 'as' => 'jobseekerCertification.update'] );
+    Route::get('certificate/delete/{id}',['uses' => 'JobSeekerCertificationController@destroy', 'as' => 'jobseekerCertification.delete'] );
+
+
 });
