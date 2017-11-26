@@ -42,7 +42,7 @@
 								{{ Form::label('scanned_document', 'Upload Scanned Document:') }}
 								{{ Form::file('scanned_document', null, ['class' => 'form-control', 'required'=>'']) }}
 								
-								{{ Form::submit('Update', array('class' => 'btn btn-success btn-md', 'style' => 'margin-top: 20px;')) }}
+								{{ Form::submit('Submit', array('class' => 'btn btn-success btn-md', 'style' => 'margin-top: 20px;')) }}
 								
 								{{ Form::token() }}
 								

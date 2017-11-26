@@ -15,6 +15,15 @@ class CreateJobSeekerTeamsTable extends Migration
     {
         Schema::create('job_seeker_teams', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->string('company');
+            $table->string('type');
+            $table->string('client')->nullable();
+            $table->string('client_industry')->nullable();
+            $table->longText('description');
+            $table->string('product')->nullable();
+            $table->string('product_url')->nullable();
             $table->timestamps();
         });
     }
