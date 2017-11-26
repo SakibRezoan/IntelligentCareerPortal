@@ -77,5 +77,12 @@ Route::prefix('jobseekerProfile')-> group(function (){
     Route::put('certificate/update/{id}',['uses' => 'JobSeekerCertificationController@update', 'as' => 'jobseekerCertification.update'] );
     Route::get('certificate/delete/{id}',['uses' => 'JobSeekerCertificationController@destroy', 'as' => 'jobseekerCertification.delete'] );
 
+    Route::get('jobPreference/show',['uses' => 'JobSeekerJobPreferenceController@show', 'as' => 'jobseekerJobPreference.show'] );
+    Route::get('jobPreference/create',['uses' => 'JobSeekerJobPreferenceController@create', 'as' => 'jobseekerJobPreference.create'] );
+    Route::post('jobPreference/store',['uses' => 'JobSeekerJobPreferenceController@store', 'as' => 'jobseekerJobPreference.store'] );
+    Route::get('jobPreference/edit/{id}',['uses' => 'JobSeekerJobPreferenceController@edit', 'as' => 'jobseekerJobPreference.edit'] );
+    Route::put('jobPreference/update/{id}',['uses' => 'JobSeekerJobPreferenceController@update', 'as' => 'jobseekerJobPreference.update'] );
+    Route::get('jobPreference/delete/{id}',['uses' => 'JobSeekerJobPreferenceController@destroy', 'as' => 'jobseekerJobPreference.delete'] );
+
 
 });

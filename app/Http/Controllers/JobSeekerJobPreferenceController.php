@@ -23,7 +23,7 @@ class JobSeekerJobPreferenceController extends Controller
      */
     public function create()
     {
-        //
+        return view('jobseekerJobPreference.create');
     }
 
     /**
@@ -34,7 +34,7 @@ class JobSeekerJobPreferenceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request->skill_wishlist);
     }
 
     /**
