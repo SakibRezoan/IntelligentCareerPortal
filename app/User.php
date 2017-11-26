@@ -41,4 +41,8 @@ class User extends Authenticatable
     {
         return $this->hasOne(JobSeekerCertification::class, 'foreign_key');
     }
+    public function jobseekerJobPreference()
+    {
+        return $this->hasOne(JobSeekerJobPreference::class, 'foreign_key');
+    }
 }

@@ -43,14 +43,17 @@
 								<br>
 								{{ Form::label('minimum_compensation', 'Minimum Compensation:') }}
 								{{ Form::number('minimum_compensation', null, array('class' => 'form-control', 'min' => '0')) }}
+								
+								{{ Form::checkbox('isNegotiable', true, 'Negotiable') }}
+								{{ Form::label('isNegotiable', "Salary Negotiable") }}
 								<br>
 								{{ Form::label('skill_wishlist', 'Add Skill Wish-List:') }}
 								<div id = "dynamic_distribution">
 									<div class="row">
 										
-										<div class="col-md-5">
+										<div class="col-md-9">
 											<div class="md-form">
-												<input type="text" id="skill_wishlist" name="skill_wishlist[]" placeholder="Preferred Skill" class="form-control" required>
+												<input type="text" id="skill_wishlist" name="skill_wishlist[]" maxlength="50" placeholder="Preferred Skill" class="form-control" required>
 												<label for="skill_wishlist"></label>
 											</div>
 										</div>
@@ -90,8 +93,8 @@
         $('#add_skill_wishlist').click(function(){
             i++;
             var new_skill_wishlist = '<div class="row" id="row'+i+'">' +
-                '<div class="col-md-5"><div class="md-form">' +
-                '<input type="text" id="skill_wishlist" placeholder="Preferred Skill" name="skill_wishlist[]" ' +
+                '<div class="col-md-9"><div class="md-form">' +
+                '<input type="text" id="skill_wishlist" placeholder="Preferred Skill" maxlength="50" name="skill_wishlist[]" ' +
                 'class="form-control"><label for="skill_wishlist">' +
                 '</label></div></div>' +
 				'<div class="col-md-2">' +

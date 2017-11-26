@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\JobSeekerJobPreference;
 use Illuminate\Http\Request;
+use Auth;
 
 class JobSeekerJobPreferenceController extends Controller
 {
@@ -34,7 +36,39 @@ class JobSeekerJobPreferenceController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->skill_wishlist);
+        $this->validate($request, [
+            'contract_types' => 'required|array|',
+            'contract_types.*'=> 'required|string',
+            'organizations' => 'required|array|',
+            'organizations.*'=> 'required|string',
+            'locations' => 'required|array|',
+            'locations.*'=> 'required|string',
+            'environment.*'=> 'required|string|max:2000',
+            'minimum_compensation' => 'integer',
+            'isNegotiable' => 'boolean',
+            'skill_wishlist' => 'array|',
+            'skill_wishlist.*'=> 'string|max:255',
+        ]);
+
+        $jobseekerJobPreference = new JobSeekerJobPreference();
+
+        $jobseekerJobPreference->user_id = Auth::user()->id;
+        $jobseekerJobPreference->contract_types = $request->contract_types;
+        $jobseekerJobPreference->organizations = $request->organizations;
+        $jobseekerJobPreference->locations = $request->locations;
+        $jobseekerJobPreference->environment = $request->environment;
+        $jobseekerJobPreference->minimum_compensation = $request->minimum_compensation;
+        $jobseekerJobPreference->isNegotiable = $request->isNegotiable;
+        $jobseekerJobPreference->skill_wishlist = $request->skill_wishlist;
+
+        $jobseekerJobPreference->save();
+
+        $notification = array(
+            'message' => 'Job Preference Details Stored Successfully  !',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('jobseekerJobPreference.show')->with($notification);
     }
 
     /**
@@ -43,9 +77,15 @@ class JobSeekerJobPreferenceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $id = \Auth::user()->id;
+        $jobseekerJobPreference = JobSeekerJobPreference::where('user_id', $id)->first();
+        if($jobseekerJobPreference){
+            //return view('jobseekerEducation.view',['jobseeker_educations' => $jobseeker_educations]);
+            dd($jobseekerJobPreference);
+        }
+        return view('jobseekerJobPreference.create');
     }
 
     /**
