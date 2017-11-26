@@ -17,15 +17,15 @@
         <a href="{{route('jobseekerCertification.list')}}" class="list-group-item list-group-item-warning {{ Request::is('jobseekerProfile/certificate/*') ? "active" : ""}}">
             <i class="glyphicon glyphicon-certificate"></i> Certification
         </a>
-        <a href="#" class="list-group-item list-group-item-warning">
-            <i class="glyphicon glyphicon-star-empty"></i> Work Experience
+        <a href="{{route('jobseekerJobPreference.create')}}" class="list-group-item list-group-item-warning {{ Request::is('jobseekerProfile/jobPreference/*') ? "active" : ""}}">
+            <i class="glyphicon glyphicon-heart"></i> Job Preference
         </a>
         <a href="#" class="list-group-item list-group-item-warning">
             <i class="glyphicon glyphicon-thumbs-up"></i>
             Teams
         </a>
         <a href="#" class="list-group-item list-group-item-warning">
-            <i class="glyphicon glyphicon-heart"></i> Job Preference
+            <i class="glyphicon glyphicon-star-empty"></i> Work Experience
         </a>
         <a href="#" class="list-group-item list-group-item-warning">
             <i class="fa fa-folder-open-o"></i> Recommended Jobs <span class="badge">14</span>

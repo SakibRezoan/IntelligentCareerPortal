@@ -45,7 +45,7 @@
             {{ Form::label('feature_and_benifits', "Feature and Benifits:") }}
             {{ Form::textarea('feature_and_benifits', null, array('class' => 'form-control', 'required' => '', 'maxlength' =>'2000','wrap'=>'hard')) }}
             <br>
-            {{ Form::label('salary_min', 'Minium Salary:') }}
+            {{ Form::label('salary_min', 'Minimum Salary:') }}
             {{ Form::number('salary_min', null, array('class' => 'form-control', 'min' => '0')) }}
             <br>
             {{ Form::label('salary_max', 'Maximum Salary:') }}
