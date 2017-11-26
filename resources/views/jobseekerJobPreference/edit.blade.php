@@ -1,5 +1,5 @@
 @extends('main')
-@section('title', 'Update Job Preference')
+@section('title', 'Edit Job Preference')
 @section('stylesheets')
 
 	{!! Html::style('css/parsley.css') !!}
@@ -19,8 +19,7 @@
 					<div class="col-md-9 col-md-offset-1">
 						<div class="panel panel-default">
 							<div class="panel-body">
-								{!! Form::open(['route' => 'jobseekerJobPreference.store', 'data-parsley-validate' => '',]) !!}
-								
+								{!! Form::model($jobseekerJobPreference,['route' =>['jobseekerJobPreference.update',$jobseekerJobPreference->id],'method'=>'PUT']) !!}
 								{{ Form::label('contract_types[]', 'Preferred Contract Type:') }}
 								{{ Form::select('contract_types[]', ['Full-time' => 'Full-time', 'Part-time' => 'Part-time',
 												'Fixed-term' =>'Fixed-term', 'Temporary' => 'Temporary', 'Agency' => 'Agency',
@@ -51,7 +50,6 @@
 								{{ Form::label('skill_wishlist', 'Add Skill Wish-List:') }}
 								<div id = "dynamic_distribution">
 									<div class="row">
-										
 										<div class="col-md-9">
 											<div class="md-form">
 												<input type="text" id="skill_wishlist" name="skill_wishlist[]" maxlength="50" placeholder="Preferred Skill" class="form-control" required>
@@ -63,9 +61,21 @@
 												<p class="btn btn-success" id="add_skill_wishlist"><i class="fa fa-plus" aria-hidden="true"></i></p>
 											</div>
 										</div>
-									
+										@foreach($jobseekerJobPreference->skill_wishlist as $skwl)
+											<div class="col-md-9">
+												<div class="md-form">
+													<input type="text" id="skill_wishlist" name="skill_wishlist[]" value="{{$skwl}}" maxlength="50" placeholder="Preferred Skill" class="form-control" required>
+													<label for="skill_wishlist"></label>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="md-form"><p class="btn btn-danger waves-effect waves-light btn-remove" id="'+i+'">
+														<i class="fa fa-minus" aria-hidden="true"></i>
+													</p>
+												</div>
+											</div>
+										@endforeach
 									</div>
-								
 								</div>
 								
 								{{ Form::submit('Update', array('class' => 'btn btn-success btn-md', 'style' => 'margin-top: 20px;')) }}

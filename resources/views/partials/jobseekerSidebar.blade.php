@@ -17,7 +17,7 @@
         <a href="{{route('jobseekerCertification.list')}}" class="list-group-item list-group-item-warning {{ Request::is('jobseekerProfile/certificate/*') ? "active" : ""}}">
             <i class="glyphicon glyphicon-certificate"></i> Certification
         </a>
-        <a href="{{route('jobseekerJobPreference.create')}}" class="list-group-item list-group-item-warning {{ Request::is('jobseekerProfile/jobPreference/*') ? "active" : ""}}">
+        <a href="{{route('jobseekerJobPreference.show')}}" class="list-group-item list-group-item-warning {{ Request::is('jobseekerProfile/jobPreference/*') ? "active" : ""}}">
             <i class="glyphicon glyphicon-heart"></i> Job Preference
         </a>
         <a href="#" class="list-group-item list-group-item-warning">
