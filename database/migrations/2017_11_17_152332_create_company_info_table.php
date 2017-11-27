@@ -19,6 +19,7 @@ class CreateCompanyInfoTable extends Migration
             $table->foreign('company_id')->references('id')->on('companies')->onDelete('cascade')->onUpdate('cascade');
             $table->string('logo');
             $table->string('company_name');
+            $table->string('company_type');
             $table->longText('address');
             $table->integer('contact_no');
             $table->date('date_of_establishment');

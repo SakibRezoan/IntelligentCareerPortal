@@ -29,6 +29,10 @@
                                         <td>{{ $info->company_name }}</td>
                                     </tr>
                                     <tr>
+                                        <td class="general_info">Company Type:</td>
+                                        <td>{{ $info->company_type }}</td>
+                                    </tr>
+                                    <tr>
                                         <td class="general_info">Date of Establishment:</td>
                                         <td>{{ $info->date_of_establishment}}</td>
                                     </tr>
