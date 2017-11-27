@@ -56,7 +56,7 @@
                                 </td>
                                 <td class="text-left" style="text-align: justify">{!! $jobseekerJobPreference->environment !!}</td>
                                 <td class="text-center">
-                                    {{ $jobseekerJobPreference->minimum_compensation."BDT" }}
+                                    {{ $jobseekerJobPreference->minimum_compensation." BDT" }}
                                     @if($jobseekerJobPreference->isNegotiable)
                                         <hr>{{"Negitiable"}}
                                     @else
