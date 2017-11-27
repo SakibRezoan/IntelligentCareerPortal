@@ -47,21 +47,14 @@
 								{{ Form::label('isNegotiable', "Salary Negotiable") }}
 								<br>
 								<br>
-								{{ Form::label('skill_wishlist', 'Add Skill Wish-List:') }}
+								
+								<p class="btn btn-success" id="add_skill_wishlist"><i class="fa fa-plus" aria-hidden="true"></i>
+									Add Skill Wish-List</p>
 								<div id = "dynamic_distribution">
 									<div class="row">
-										<div class="col-md-9">
-											<div class="md-form">
-												<input type="text" id="skill_wishlist" name="skill_wishlist[]" maxlength="50" placeholder="Preferred Skill" class="form-control" required>
-												<label for="skill_wishlist"></label>
-											</div>
-										</div>
-										<div class="col-md-2">
-											<div class="md-form">
-												<p class="btn btn-success" id="add_skill_wishlist"><i class="fa fa-plus" aria-hidden="true"></i></p>
-											</div>
-										</div>
+										<br>
 										@foreach($jobseekerJobPreference->skill_wishlist as $skwl)
+										<div id="row{{$i=0}}">
 											<div class="col-md-9">
 												<div class="md-form">
 													<input type="text" id="skill_wishlist" name="skill_wishlist[]" value="{{$skwl}}" maxlength="50" placeholder="Preferred Skill" class="form-control" required>
@@ -69,11 +62,12 @@
 												</div>
 											</div>
 											<div class="col-md-2">
-												<div class="md-form"><p class="btn btn-danger waves-effect waves-light btn-remove" id="'+i+'">
+												<div class="md-form"><p class="btn btn-danger waves-effect waves-light btn-remove" id="{{$i}}">
 														<i class="fa fa-minus" aria-hidden="true"></i>
 													</p>
 												</div>
 											</div>
+										</div>
 										@endforeach
 									</div>
 								</div>
@@ -102,10 +96,12 @@
 	
 	<script>
         $('#add_skill_wishlist').click(function(){
-            i++;
+            i = '<?php $i++;
+                echo $i;
+                ?>';
             var new_skill_wishlist = '<div class="row" id="row'+i+'">' +
                 '<div class="col-md-9"><div class="md-form">' +
-                '<input type="text" id="skill_wishlist" placeholder="Preferred Skill" maxlength="50" name="skill_wishlist[]" ' +
+                '<input type="text" required id="skill_wishlist" placeholder="Preferred Skill" maxlength="50" name="skill_wishlist[]" ' +
                 'class="form-control"><label for="skill_wishlist">' +
                 '</label></div></div>' +
 				'<div class="col-md-2">' +
