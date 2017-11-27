@@ -43,6 +43,7 @@ class JobSeekerTeamController extends Controller
         $this->validate($request, [
             'company' => 'required|string|max:255',
             'type' => 'required|string|max:25',
+            'designation' => 'required|string|max:255',
             'client' => 'string|max:255',
             'client_industry' => 'string|max:255',
             'description' => 'string|max:2000',
@@ -55,6 +56,7 @@ class JobSeekerTeamController extends Controller
         $jobseekerTeam->user_id = Auth::user()->id;
         $jobseekerTeam->company = $request->company;
         $jobseekerTeam->type = $request->type;
+        $jobseekerTeam->designation = $request->designation;
         $jobseekerTeam->client = $request->client;
         $jobseekerTeam->client_industry = $request->client_industry;
         $jobseekerTeam->description = $request->description;
@@ -119,6 +121,7 @@ class JobSeekerTeamController extends Controller
         $this->validate($request, [
             'company' => 'required|string|max:255',
             'type' => 'required|string|max:25',
+            'designation' => 'required|string|max:255',
             'client' => 'string|max:255',
             'client_industry' => 'string|max:255',
             'description' => 'string|max:2000',
@@ -130,6 +133,7 @@ class JobSeekerTeamController extends Controller
 
         $jobseekerTeam->company = $request->input('company');
         $jobseekerTeam->type = $request->input('type');
+        $jobseekerTeam->designation = $request->input('designation');
         $jobseekerTeam->client = $request->input('client');
         $jobseekerTeam->client_industry = $request->input('client_industry');
         $jobseekerTeam->description = $request->input('description');

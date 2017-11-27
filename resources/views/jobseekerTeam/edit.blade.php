@@ -29,6 +29,9 @@
 								{{ Form::select('type', ['Functional' => 'Functional', 'Cross-Functional' => 'Cross-Functional',
                                         'Leadership' =>'Leadership','Self-Directed' =>'Self-Directed','Virtual' =>'Virtual',], null, ['class' => 'form-control', 'placeholder'=> 'Select Team Type']) }}
 								<br>
+								{{ Form::label('designation', 'Designation in Team:') }}
+								{{ Form::text('designation', null, array('class' => 'form-control', 'maxlength' => '255')) }}
+								<br>
 								{{ Form::label('client', 'Client Name:') }}
 								{{ Form::text('client', null, array('class' => 'form-control', 'maxlength' => '255')) }}
 								<br>

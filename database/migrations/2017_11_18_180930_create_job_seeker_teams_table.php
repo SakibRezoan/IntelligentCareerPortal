@@ -19,6 +19,7 @@ class CreateJobSeekerTeamsTable extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->string('company');
             $table->string('type');
+            $table->string('designation');
             $table->string('client')->nullable();
             $table->string('client_industry')->nullable();
             $table->longText('description');
