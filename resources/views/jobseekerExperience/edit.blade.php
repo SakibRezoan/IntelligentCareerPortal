@@ -30,45 +30,31 @@
 								{{ Form::textarea('location',null, array('class' => 'form-control', 'maxlength' => '1000')) }}
 								<br>
 								<br>
-								{{ Form::label('skill_experience', 'Update Skill & Experience:') }}
+								{{--{{ Form::label('skill_experience', 'Add Skill & Experience:') }}--}}
+								<p class="btn btn-success" id="add_skill_experience">
+									<i class="fa fa-plus" aria-hidden="true"></i>Add Skill & Experience</p>
 								<div id = "dynamic_distribution">
 									<div class="row">
-										
-										<div class="col-md-5">
-											<div class="md-form">
-												<input type="text" id="skill" name="skill[]" class="form-control" required>
-												<label for="skill">Technical Skill</label>
-											</div>
-										</div>
-										<div class="col-md-5">
-											<div class="md-form">
-												<input type="number" step="0.1" id="experience" name="experience[]" class="form-control" required>
-												<label for="experience">Work Experience(years)</label>
-											</div>
-										</div>
-										<div class="col-md-2">
-											<div class="md-form">
-												<p class="btn btn-success" id="add_skill_experience"><i class="fa fa-plus" aria-hidden="true"></i></p>
-											</div>
-										</div>
 										<br>
 										@foreach(array_combine($jobseekerExperience->skill,$jobseekerExperience->experience) as $skill=>$experience)
-											<div class="col-md-5">
-												<div class="md-form">
-													<input type="text" id="skill" name="skill[]" value="{{$skill}}" class="form-control" required>
-													<label for="skill">Technical Skill</label>
+											<div id="row{{$i=0}}">
+												<div class="col-md-5">
+													<div class="md-form">
+														<input type="text" id="skill" name="skill[]" value="{{$skill}}" class="form-control" required>
+														<label for="skill">Technical Skill</label>
+													</div>
 												</div>
-											</div>
-											<div class="col-md-5">
-												<div class="md-form">
-													<input type="number" step="0.1" id="experience" name="experience[]" value="{{$experience}}" class="form-control" required>
-													<label for="experience">Work Experience(years)</label>
+												<div class="col-md-5">
+													<div class="md-form">
+														<input type="number" step="0.1" id="experience" name="experience[]" value="{{$experience}}" class="form-control" required>
+														<label for="experience">Work Experience(years)</label>
+													</div>
 												</div>
-											</div>
-											<div class="col-md-2">
-												<div class="md-form"><p class="btn btn-danger waves-effect waves-light btn-remove" id="'+i+'">
-														<i class="fa fa-minus" aria-hidden="true"></i>
-													</p>
+												<div class="col-md-2">
+													<div class="md-form"><p class="btn btn-danger waves-effect waves-light btn-remove" id="{{$i}}">
+															<i class="fa fa-minus" aria-hidden="true"></i>
+														</p>
+													</div>
 												</div>
 											</div>
 										@endforeach
@@ -96,13 +82,15 @@
 	{!! Html::script('js/parsley.min.js') !!}
 	<script>
         $('#add_skill_experience').click(function(){
-            i++;
+            i = '<?php $i++;
+            		echo $i;
+				?>';
             var new_skill_experience = '<div class="row" id="row'+i+'">' +
                 '<div class="col-md-5"><div class="md-form">' +
-                '<input type="text" id="skill" name="skill[]" ' +
+                '<input type="text" required id="skill" name="skill[]" ' +
                 'class="form-control"><label for="skill">Technical Skill' +
                 '</label></div></div><div class="col-md-5"><div class="md-form">' +
-                '<input type="number" step="0.1" id="experience" name="experience[]" class="form-control">' +
+                '<input type="number" required step="0.1" id="experience" name="experience[]" class="form-control">' +
                 '<label for="experience">Required Experience(years)</label></div></div><div class="col-md-2">' +
                 '<div class="md-form"><p class="btn btn-danger waves-effect waves-light btn-remove" id="'+i+'">' +
                 '<i class="fa fa-minus" aria-hidden="true"></i></p></div></div></div>';
