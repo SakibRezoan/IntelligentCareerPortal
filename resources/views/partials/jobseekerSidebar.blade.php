@@ -1,6 +1,6 @@
 
 <marquee  behavior="alternate"><span>Complete Your Profile To Get Recommended Jobs. Let The Recruiter Find You</span></marquee>
-<div class="col-sm-4 col-md-3 sidebar" id="jobseekerSidebar">
+<div class="col-sm-4 col-md-3 sidebar" class="sidebar">
     <div class="mini-submenu">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>

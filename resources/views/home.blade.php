@@ -54,14 +54,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="panel-footer" align="right">
+                <div class="panel-footer" align="center">
                     <a align="left" href="{{ route('jobseekerGeneral_Info.edit',$info->id) }}"
-                       type="button" class="btn btn-md btn-warning "><i class="glyphicon glyphicon-edit" aria-hidden="true"></i>Edit
+                       type="button" data-title="Edit" class="btn btn-md btn-warning "><i class="glyphicon glyphicon-edit" aria-hidden="true"></i>Update
                     </a>
-                    {{--<a href="{{ route('jobseekerGeneral_Info.delete',$info->id) }}"--}}
-                       {{--data-toggle="tooltip"  data-placement="top" title="Remove General Information"--}}
-                       {{--type="button" class="btn btn-sm btn-danger" id="delete">Delete--}}
-                    {{--</a>--}}
                     {!! Form::open(['route' => ['jobseekerGeneral_Info.delete', $info->id],'method'=>'GET','style' => 'display:inline']) !!}
                     {!! Form::button('<i class="glyphicon glyphicon-trash" aria-hidden="true"></i> Delete', array(
                             'type' => 'submit',

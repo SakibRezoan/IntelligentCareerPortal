@@ -3,42 +3,14 @@
 @section('nav')
     @include('partials.company._nav')
 @endsection
+
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-sm-4 col-md-3 sidebar">
-                <div class="mini-submenu">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </div>
-                <br>
-                <div class="list-group">
-                <span href="#" class="list-group-item active">
-                    Dashboard
-                    <span class="pull-right" id="slide-submenu">
-                    <i class="fa fa-times"></i>
-                    </span>
-                </span>
-                    <a href="{{ route('job.create') }}" class="list-group-item">
-                        <i class="fa fa-comment-o"></i> Post Job
-                    </a>
-                    <a href="{{ route('jobs.view') }}" class="list-group-item">
-                        <i class="fa fa-comment-o"></i> View Posted Jobs
-                    </a>
-                    <a href="#" class="list-group-item">
-                        <i class="fa fa-search"></i> Search Candidates
-                    </a>
-                    <a href="#" class="list-group-item">
-                        <i class="fa fa-folder-open-o"></i> Recommended Candidates <span class="badge">14</span>
-                    </a>
-                    <a href="#" class="list-group-item">
-                        <i class="fa fa-search"></i> Ask for Verification
-                    </a>
-                </div>
-            </div>
+            
+            @include('partials.companySidebar')
             <div class="col-xs-12 col-sm-9 col-md-8 toppad" >
-                <div class="panel panel-info">
+                <div class="panel panel-success">
                     <div class="panel-heading">
                         <h3 class="panel-title">Company Infrmation</h3>
                     </div>
@@ -84,17 +56,18 @@
                             </div>
                         </div>
                     </div>
-                    <div class="panel-footer">
-                        <a href="{{ route('companyInfo.edit',$info->id) }}"
-                           data-toggle="tooltip" data-placement="top" title="Edit Company Information"
-                           type="button" class="btn btn-sm btn-warning">Edit
+                    <div class="panel-footer" align="center">
+                        <a align="left" href="{{ route('companyInfo.edit',$info->id) }}"
+                           type="button" title="Edit" class="btn btn-md btn-warning "><i class="glyphicon glyphicon-edit" aria-hidden="true"></i>Update
                         </a>
-                        <span class="pull-right">
-                        <a href="{{ route('companyInfo.delete',$info->id) }}"
-                           data-toggle="tooltip"  data-placement="top" title="Remove Company Information"
-                           type="button" class="btn btn-sm btn-danger">Delete
-                        </a>
-                    </span>
+                        {!! Form::open(['route' => ['companyInfo.delete', $info->id],'method'=>'GET','style' => 'display:inline']) !!}
+                        {!! Form::button('<i class="glyphicon glyphicon-trash" aria-hidden="true"></i> Delete', array(
+                                'type' => 'submit',
+                                'class' => 'btn btn-danger btn-md',
+                                'title' => 'Delete',
+                                'onclick'=>'return confirm("Confirm delete?")'
+                        )) !!}
+                        {!! Form::close() !!}
                     </div>
                 </div>
             </div>
