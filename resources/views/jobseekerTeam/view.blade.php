@@ -23,6 +23,7 @@
                             <tr>
                                 <th class="text-center">Company Name</th>
                                 <th class="text-center">Team Type</th>
+                                <th class="text-center">Designation</th>
                                 <th class="text-center">Client Name</th>
                                 <th class="text-center">Client Industry</th>
                                 <th class="text-center">Team Description</th>
@@ -34,13 +35,14 @@
                             <tbody>
                             @foreach($jobseekerTeams as $jobseekerTeam)
                             <tr>
-                                <td class="text-left">{{ $jobseekerTeam->company }}</td>
-                                <td class="text-left">{{ $jobseekerTeam->type }}</td>
-                                <td class="text-left">{{ $jobseekerTeam->client }}</td>
-                                <td class="text-center">{{ $jobseekerTeam->client_industry }}</td>
-                                <td class="text-center">{{ $jobseekerTeam->description }}</td>
-                                <td class="text-center">{{ $jobseekerTeam->product }}</td>
-                                <td class="text-center">
+                                <td class="text-left" style="text-align: justify">{{ $jobseekerTeam->company }}</td>
+                                <td class="text-left" style="text-align: justify">{{ $jobseekerTeam->type }}</td>
+                                <td class="text-left" style="text-align: justify">{{ $jobseekerTeam->designation }}</td>
+                                <td class="text-left" style="text-align: justify">{{ $jobseekerTeam->client }}</td>
+                                <td class="text-left" style="text-align: justify">{{ $jobseekerTeam->client_industry }}</td>
+                                <td class="text-left" style="text-align: justify">{{ $jobseekerTeam->description }}</td>
+                                <td class="text-left" style="text-align: justify">{{ $jobseekerTeam->product }}</td>
+                                <td class="text-left" style="text-align: justify">
                                     <a target="_blank"
                                        href="{{ $jobseekerTeam->product_url }}">{{ $jobseekerTeam->product_url }}
                                     </a>
