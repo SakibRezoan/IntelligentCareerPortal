@@ -35,6 +35,7 @@ class CompanyInfoController extends Controller
     {
         $this->validate($request, [
             'company_name' => 'required|string|max:255',
+            'company_type' => 'required|string|max:25',
             'date_of_establishment' => 'date',
             'address' => 'required|string|max:1000',
             'url' => 'required|string|max:255',
@@ -54,6 +55,7 @@ class CompanyInfoController extends Controller
         }
 
         $companyInfo->company_name = $request->company_name;
+        $companyInfo->company_type = $request->company_type;
         $companyInfo->date_of_establishment = $request->date_of_establishment;
         $companyInfo->address = $request->address;
         $companyInfo->contact_no = $request->contact_no;
@@ -88,6 +90,7 @@ class CompanyInfoController extends Controller
     {
         $this->validate($request, [
             'company_name' => 'required|string|max:255',
+            'company_type' => 'required|string|max:25',
             'address' => 'required|string|max:1000',
             'contact_no' => '',
             'date_of_establishment' => 'date',
@@ -95,6 +98,7 @@ class CompanyInfoController extends Controller
         ]);
         $companyInfo = CompanyInfo::find($id);
         $companyInfo->company_name = $request->input('company_name');
+        $companyInfo->company_type = $request->input('company_type');
         $companyInfo->date_of_establishment = $request->input('date_of_establishment');
         $companyInfo->address = $request->input('address');
         $companyInfo->contact_no = $request->input('contact_no');

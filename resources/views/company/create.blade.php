@@ -35,19 +35,22 @@
 								<br>
 								{{ Form::label('company_name', 'Company Name:') }}
 								{{ Form::text('company_name', null, array('class' => 'form-control', 'required' => '', 'maxlength' => '255')) }}
-								
+								<br>
+								{{ Form::label('company_type', 'Company Type:') }}
+								{{ Form::select('company_type', ['Government' => 'Government', 'Semi Government' => 'Semi-Government',
+												'NGO' =>'NGO', 'Private Firm' => 'Private-Firm', 'International Agency' => 'International-Agency',
+												'Other' => 'Other'],
+												 null, ['class' => 'form-control',]) }}
+								<br>
 								{{ Form::label('date_of_establishment', 'Date of Establishment:') }}
 								{{ Form::date('date_of_establishment',null, array('class' => 'form-control', 'required' => '')) }}
-								
+								<br>
 								{{ Form::label('contact_no', 'Contact Number:') }}
 								{{ Form::number('contact_no', null, array('class' => 'form-control', 'required' => '', 'maxlength' => '11')) }}
-								
+								<br>
 								{{ Form::label('url', 'Company URL:') }}
 								{{ Form::text('url', null, array('class' => 'form-control', 'required' => '', 'maxlength' => '255')) }}
-								
-								
 								<br>
-								
 								{{ Form::label('address', "Full Address:") }}
 								{{ Form::textarea('address', null, array('class' => 'form-control', 'required' => '', 'maxlength' =>'1000','wrap'=>'hard')) }}
 								
@@ -56,7 +59,6 @@
 								{{ Form::token() }}
 								
 								{!! Form::close() !!}
-								
 								<br>
 							</div>
 						</div>

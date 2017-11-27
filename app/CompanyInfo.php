@@ -9,7 +9,7 @@ class CompanyInfo extends Model
     protected $table = 'company_info';
 
     protected $fillable = [
-        'company_id', 'logo', 'company_name', 'address', 'date_of_establishment', 'contact_no',
+        'company_id', 'logo', 'company_name', 'address', 'date_of_establishment', 'contact_no', 'company_type',
     ];
 
     public function company(){
