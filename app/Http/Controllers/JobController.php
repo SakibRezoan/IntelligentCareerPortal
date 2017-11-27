@@ -54,7 +54,11 @@ class JobController extends Controller
             'salary_max' => 'integer',
             'isNegotiable' => 'boolean',
             'vacancy' => 'integer',
-            'required_degree' => 'string|max:255'
+            'required_degree' => 'string|max:255',
+            'skill' => 'required|array',
+            'skill.*'=> 'required|string',
+            'experience' => 'required|array',
+            'experience.*'=> 'required|number',
         ]);
 
         $job = new Job;

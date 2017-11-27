@@ -91,4 +91,11 @@ Route::prefix('jobseekerProfile')-> group(function (){
     Route::put('team/update/{id}',['uses' => 'JobSeekerTeamController@update', 'as' => 'jobseekerTeam.update'] );
     Route::get('team/delete/{id}',['uses' => 'JobSeekerTeamController@destroy', 'as' => 'jobseekerTeam.delete'] );
 
+    Route::get('experience/list',['uses' => 'JobSeekerWorkExperienceController@list', 'as' => 'jobseekerExperience.list'] );
+    Route::get('experience/create',['uses' => 'JobSeekerWorkExperienceController@create', 'as' => 'jobseekerExperience.create'] );
+    Route::post('experience/store',['uses' => 'JobSeekerWorkExperienceController@store', 'as' => 'jobseekerExperience.store'] );
+    Route::get('experience/edit/{id}',['uses' => 'JobSeekerWorkExperienceController@edit', 'as' => 'jobseekerExperience.edit'] );
+    Route::put('experience/update/{id}',['uses' => 'JobSeekerWorkExperienceController@update', 'as' => 'jobseekerExperience.update'] );
+    Route::get('experience/delete/{id}',['uses' => 'JobSeekerWorkExperienceController@destroy', 'as' => 'jobseekerExperience.delete'] );
+
 });

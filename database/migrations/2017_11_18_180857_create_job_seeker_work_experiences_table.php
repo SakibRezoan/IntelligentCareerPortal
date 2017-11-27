@@ -15,6 +15,13 @@ class CreateJobSeekerWorkExperiencesTable extends Migration
     {
         Schema::create('job_seeker_work_experiences', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->string('company');
+            $table->string('designation');
+            $table->longText('location');
+            $table->text('skill');
+            $table->text('experience');
             $table->timestamps();
         });
     }

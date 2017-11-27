@@ -24,7 +24,7 @@
             <i class="glyphicon glyphicon-thumbs-up"></i>
             Teams
         </a>
-        <a href="#" class="list-group-item list-group-item-warning">
+        <a href="{{route('jobseekerExperience.list')}}" class="list-group-item list-group-item-warning {{ Request::is('jobseekerProfile/experience/*') ? "active" : ""}}">
             <i class="glyphicon glyphicon-star-empty"></i> Work Experience
         </a>
         <a href="#" class="list-group-item list-group-item-warning">
