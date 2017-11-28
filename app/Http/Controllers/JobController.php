@@ -45,6 +45,7 @@ class JobController extends Controller
     {
         $this->validate($request, [
             'job_title' => 'required|string|max:255',
+            'position' => 'required|string|max:255',
             'description' => 'required|string|max:2000',
             'feature_and_benifits' => 'required|string|max:2000',
             'contract_type' => 'required|string',
@@ -58,12 +59,14 @@ class JobController extends Controller
             'skill' => 'required|array',
             'skill.*'=> 'required|string',
             'experience' => 'required|array',
-            'experience.*'=> 'required|number',
+            'experience.*'=> 'required|numeric',
+            'max_age'=> 'integer',
         ]);
 
         $job = new Job;
         $job->company_id = Auth::user()->id;
         $job->job_title = $request->job_title;
+        $job->position = $request->position;
         $job->description = $request->description;
         $job->feature_and_benifits = $request->feature_and_benifits;
         $job->contract_type = $request->contract_type;
@@ -74,24 +77,19 @@ class JobController extends Controller
         $job->isNegotiable = $request->isNegotiable;
         $job->vacancy = $request->vacancy;
         $job->required_degree = $request->required_degree;
+        $job->skill = $request->skill;
+        $job->experience = $request->experience;
+        $job->max_age = $request->max_age;
         $job->isAvailable = True;
 
         $job->save();
 
-        $skills = $request->skill;
-        $experiences = $request->experience;
+        $notification = array(
+            'message' => 'Job Details Stored Successfully  !',
+            'alert-type' => 'success'
+        );
 
-        for($i=0;$i < count($skills); $i++){
-            $job_requirements = new JobRequirements;
-            $job_requirements->job_id = $job->id;
-            $job_requirements->required_skill = $skills[$i];
-            $job_requirements->required_experience = $experiences[$i];
-            $job_requirements->save();
-        }
-
-        Session::flash('success', 'New Job Posted successfully !');
-
-        return redirect()->route('company.dashboard');
+        return redirect()->route('jobs.view')->with($notification);
     }
 
     /**
@@ -99,7 +97,12 @@ class JobController extends Controller
      */
     public function view()
     {
-        return view('company.viewJobs');
+        $id = \Auth::user()->id;
+        $jobs = Job::where('company_id', $id)->get();
+        if(count($jobs)){
+            return view('company.viewJobs',['jobs' => $jobs]);
+        }
+        return view('job.create');
     }
 
     /**

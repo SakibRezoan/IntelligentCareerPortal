@@ -14,6 +14,7 @@
 	<div class="container">
 		<div class="row">
 			@include('partials.companySidebar')
+			
 			<div class="col-xs-12 col-sm-9 col-md-8 toppad">
 				<div class="row">
 					<div class="col-md-9 col-md-offset-1">
