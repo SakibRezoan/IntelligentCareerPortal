@@ -10,7 +10,7 @@
         <a href="{{route('home')}}" class="list-group-item list-group-item-warning {{ Request::is('company/home') ? "active" : ""}}">
             <i class="glyphicon glyphicon-user"></i> Company Information
         </a>
-        <a href="#" class="list-group-item list-group-item-warning">
+        <a href="{{route('jobs.view')}}" class="list-group-item list-group-item-warning {{ Request::is('company/jobs/*') ? "active" : ""}}">
             <i class="glyphicon glyphicon-education"></i> Jobs
         </a>
         <a href="#" class="list-group-item list-group-item-warning">

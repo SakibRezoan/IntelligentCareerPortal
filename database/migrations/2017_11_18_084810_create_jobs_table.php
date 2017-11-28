@@ -18,6 +18,7 @@ class CreateJobsTable extends Migration
             $table->unsignedInteger('company_id');
             $table->foreign('company_id')->references('id')->on('companies')->onDelete('cascade')->onUpdate('cascade');
             $table->string('job_title');
+            $table->string('position');
             $table->longText('description');
             $table->longText('feature_and_benifits');
             $table->string('contract_type');
@@ -29,6 +30,9 @@ class CreateJobsTable extends Migration
             $table->integer('vacancy');
             $table->boolean('isAvailable');
             $table->string('required_degree')->nullable();
+            $table->text('skill');
+            $table->text('experience');
+            $table->integer('max_age');
             $table->timestamps();
 
         });
