@@ -10,11 +10,11 @@
             
             @include('partials.companySidebar')
             <div class="col-xs-12 col-sm-9 col-md-8 toppad" >
-                <div class="panel panel-success">
-                    <div class="panel-heading">
+                <div class="panel panel-default">
+                    <div class="panel-heading" style="color:white;background-color:black;">
                         <h3 class="panel-title">Company Infrmation</h3>
                     </div>
-                    <div class="panel-body">
+                    {{--<div class="panel-body">--}}
                         <div class="row">
                             <div class="col-md-3 col-lg-3" align="center">
                                 <img alt="Company Logo" src="{{ asset('http://127.0.0.1:8000/storage/images/'.$info->logo) }}"
@@ -59,7 +59,7 @@
                                 </table>
                             </div>
                         </div>
-                    </div>
+                    {{--</div>--}}
                     <div class="panel-footer" align="center">
                         <a align="left" href="{{ route('companyInfo.edit',$info->id) }}"
                            type="button" title="Edit" class="btn btn-md btn-warning "><i class="glyphicon glyphicon-edit" aria-hidden="true"></i>Update

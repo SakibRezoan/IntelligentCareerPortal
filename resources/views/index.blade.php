@@ -721,6 +721,7 @@
                     <div class="modal-body">
                         <div align="center">
                             <a class="btn btn-success" href="{{ route('register') }}">Job Seeker</a>
+                            <br><hr>
                             <a class="btn btn-primary" href="{{ route('company.registration') }}">Company</a>
                         </div>
                     </div>
