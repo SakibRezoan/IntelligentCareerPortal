@@ -28,7 +28,10 @@
             <i class="glyphicon glyphicon-star-empty"></i> Work Experience
         </a>
         <a href="#" class="list-group-item list-group-item-warning">
-            <i class="fa fa-folder-open-o"></i> Recommended Jobs <span class="badge">14</span>
+            <i class="glyphicon glyphicon-search"></i> Advance Search
+        </a>
+        <a href="#" class="list-group-item list-group-item-warning">
+            <i class="glyphicon glyphicon-folder-open"></i> Recommended Jobs <span class="badge">14</span>
         </a>
     </div>
 </div>

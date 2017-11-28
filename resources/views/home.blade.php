@@ -11,8 +11,8 @@
         @include('partials.jobseekerSidebar')
 
         <div class="col-xs-12 col-sm-9 col-md-8 toppad" >
-            <div class="panel panel-success">
-                <div class="panel-heading">
+            <div class="panel panel-default">
+                <div class="panel-heading" style="color:white;background-color:black;">
                     <h3 class="panel-title">General Information</h3>
                 </div>
                 <div class="panel-body">
@@ -43,7 +43,7 @@
                                 </tr>
                                 <tr>
                                     <td class="general_info">Address:</td>
-                                    <td style="text-align: justify;">{{ $info->address }}</td>
+                                    <td style="text-align: justify;">{!! $info->address !!}</td>
                                 </tr>
                                 <tr>
                                     <td class="general_info">Contact No:</td>
