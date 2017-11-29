@@ -9,7 +9,7 @@
             @include('partials.jobseekerSidebar')
             <div class="col-xs-12 col-sm-9 col-md-9 toppad" >
                 <div class="panel panel-default">
-                    <div class="panel-heading" style="color:white;background-color:black;">
+                    <div class="panel-heading">
                         <h3 class="panel-title" align="center">Job Preference</h3>
                     </div>
                     <table class="table table-striped table-bordered bootstrap-datatable datatable responsive">

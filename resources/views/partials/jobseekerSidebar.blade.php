@@ -1,5 +1,5 @@
 
-<marquee  behavior="alternate"><span>Complete Your Profile To Get Recommended Jobs. Let The Recruiter Find You</span></marquee>
+<p class="advice" align="center">Complete Your Profile To Get Recommended Jobs. Let The Recruiter Find You</p>
 <div class="col-sm-4 col-md-3 sidebar" class="sidebar">
     <div class="mini-submenu">
         <span class="icon-bar"></span>
@@ -32,6 +32,12 @@
         </a>
         <a href="#" class="list-group-item list-group-item-warning">
             <i class="glyphicon glyphicon-folder-open"></i> Recommended Jobs <span class="badge">14</span>
+        </a>
+        <a href="#" class="list-group-item list-group-item-warning">
+            <i class="glyphicon glyphicon-arrow-left"></i> Invited Jobs <span class="badge">14</span>
+        </a>
+        <a href="#" class="list-group-item list-group-item-warning">
+            <i class="glyphicon glyphicon-arrow-right"></i> Applied Jobs <span class="badge">14</span>
         </a>
     </div>
 </div>

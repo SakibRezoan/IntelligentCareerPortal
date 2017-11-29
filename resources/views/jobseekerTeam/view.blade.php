@@ -8,8 +8,8 @@
         <div class="row">
             @include('partials.jobseekerSidebar')
             <div class="col-xs-12 col-sm-9 col-md-9 toppad" >
-                <div align="left" style="margin-bottom: 10px">
-                    <a class="btn btn-lg btn-success" href="{{route('jobseekerTeam.create')}}">
+                <div align="left">
+                    <a class="btn btn-lg btn-success create-new" href="{{route('jobseekerTeam.create')}}">
                         Add New Team
                     </a>
                 </div>

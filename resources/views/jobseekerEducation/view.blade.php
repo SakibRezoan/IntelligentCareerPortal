@@ -8,13 +8,13 @@
         <div class="row">
             @include('partials.jobseekerSidebar')
             <div class="col-xs-12 col-sm-9 col-md-9 toppad" >
-                <div align="left" style="margin-bottom: 10px">
-                    <a class="btn btn-lg btn-success" href="{{route('jobseekerEducation.create')}}">
+                <div align="left">
+                    <a class="btn btn-lg btn-success create-new" href="{{route('jobseekerEducation.create')}}">
                         Add New Education
                     </a>
                 </div>
                 <div class="panel panel-default">
-                    <div class="panel-heading" style="color:white;background-color:black;">
+                    <div class="panel-heading">
                         <h3 class="panel-title" align="center">Education List</h3>
                     </div>
                     {{--<div class="panel-body">--}}

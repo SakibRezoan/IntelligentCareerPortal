@@ -67,7 +67,10 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#"><img src="images/logo.png" alt="Logo" /></a>
+                    <p class="navbar-brand" style="font-size: 1.5em">
+                        <span style=" color: green">Intelligent</span>
+                        <span style=" color: #c0a16b">Career</span>
+                        <span style=" color: chartreuse">Portal</span></p>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -97,7 +100,7 @@
                             <div class="col-md-10 col-md-offset-1">
                                 <div class="home-content">
 
-                                    <h1>Bring your Dream to Life With<br><h2>Intelligent Career Portal</h2></h1>
+                                    <p style="font-size: 1.5em">Bring your Dream to Life With</p><h1>Intelligent Career Portal</h1>
                                     <div class="row">
                                         <div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12">
                                             <div class="home-contact">
@@ -685,15 +688,15 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title" align="center">Sign In As</h4>
+                        <h3 class="modal-title" align="center">Sign In As</h3>
                     </div>
                     <div class="modal-body">
                         <div align="center">
                             <a class="btn btn-sm btn-success" href="{{ route('login') }}">Job Seeker</a>
                             <br><hr>
-                            <a class="btn btn-sm btn-info" href="{{ route('admin.login') }}">Admin</a>
+                            <a class="btn btn-sm btn-warning" href="{{ route('admin.login') }}">Admin</a>
                             <br><hr>
-                            <a class="btn btn-sm btn-primary" href="{{ route('company.login') }}">Company</a>
+                            <a class="btn btn-sm btn-info" href="{{ route('company.login') }}">Company</a>
                             <br>
                         </div>
                     </div>
@@ -714,15 +717,15 @@
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <div align="center">
-                            <h4 class="modal-title">Create Your Account</h4>
-                            <h6>Please choose an option</h6>
+                            <h3 class="modal-title">Create Your Account</h3>
+                            <h5>Please choose an option</h5>
                         </div>
                     </div>
                     <div class="modal-body">
                         <div align="center">
-                            <a class="btn btn-success" href="{{ route('register') }}">Job Seeker</a>
+                            <a class="btn btn-sm btn-success" href="{{ route('register') }}">Job Seeker</a>
                             <br><hr>
-                            <a class="btn btn-primary" href="{{ route('company.registration') }}">Company</a>
+                            <a class="btn btn-sm btn-info" href="{{ route('company.registration') }}">Company</a>
                         </div>
                     </div>
                     <div class="modal-footer">
