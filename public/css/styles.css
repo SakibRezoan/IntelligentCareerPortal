@@ -186,3 +186,24 @@ body{
 #companyLogo {
     margin: 1em;
 }
+.auth-body{
+
+    background-image: linear-gradient(#495d43, #5b8460);
+}
+
+#box{
+    border: 1px solid rgb(200, 200, 200);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 5px 2px;
+    background: rgba(0, 200, 176, 0.2);
+    border-radius: 4px;
+    top:50px;
+}
+
+.auth-header{
+    text-align:center;
+    color:#fff;
+}
+.auth-h2{
+    text-align:center;
+    color:#fff;
+}
