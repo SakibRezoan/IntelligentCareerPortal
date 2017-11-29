@@ -61,7 +61,8 @@
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
                                 <input placeholder="Enter Password" id="password" type="password" class="form-control" name="password" required>
-                                @if ($errors->has('password'))
+                                <span toggle="#password"class="input-group-addon toggle-password"><i class="glyphicon glyphicon-eye-open"></i></span>
+                            @if ($errors->has('password'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
@@ -74,6 +75,7 @@
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
                                 <input placeholder="Confirm Password" id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                                <span toggle="#password-confirm"class="input-group-addon toggle-password"><i class="glyphicon glyphicon-eye-open"></i></span>
                             </div>
                         </div>
                     </div>
@@ -94,4 +96,15 @@
     </div>
 </div>
 </body>
+<script>
+    $(".toggle-password").click(function() {
+
+        var input = $($(this).attr("toggle"));
+        if (input.attr("type") == "password") {
+            input.attr("type", "text");
+        } else {
+            input.attr("type", "password");
+        }
+    });
+</script>
 </html>
