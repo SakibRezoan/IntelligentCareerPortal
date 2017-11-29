@@ -29,7 +29,7 @@
                     {{ csrf_field() }}
     
                     <div class="form-group {{ $errors->has('name') ? ' has-error' : '' }}">
-                        <div class="col-md-12">
+                        <div class="col-offset-1 col-md-10 col-md-offset-1">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
                                 <input id="name" placeholder="Enter Company Name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
@@ -43,7 +43,7 @@
                     </div>
                     
                     <div class="form-group {{ $errors->has('email') ? ' has-error' : '' }}">
-                        <div class="col-md-12">
+                        <div class="col-offset-1 col-md-10 col-md-offset-1">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
                                 <input id="email" placeholder="Enter Email Address" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
@@ -57,7 +57,7 @@
                     </div>
                     
                     <div class="form-group {{ $errors->has('password') ? ' has-error' : '' }}">
-                        <div class="col-md-12">
+                        <div class="col-offset-1 col-md-10 col-md-offset-1">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
                                 <input placeholder="Enter Password" id="password" type="password" class="form-control" name="password" required>
@@ -70,7 +70,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="col-md-12">
+                        <div class="col-offset-1 col-md-10 col-md-offset-1">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
                                 <input placeholder="Confirm Password" id="password-confirm" type="password" class="form-control" name="password_confirmation" required>

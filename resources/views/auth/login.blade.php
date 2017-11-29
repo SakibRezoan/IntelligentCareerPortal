@@ -28,7 +28,7 @@
                 <fieldset>
                     {{ csrf_field() }}
                     <div class="form-group {{ $errors->has('email') ? ' has-error' : '' }}">
-                        <div class="col-md-12">
+                        <div class="col-offset-1 col-md-10 col-md-offset-1">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
                                 <input id="email" placeholder="Enter Email Address" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
@@ -42,7 +42,7 @@
                     </div>
                     
                     <div class="form-group {{ $errors->has('password') ? ' has-error' : '' }}">
-                        <div class="col-md-12">
+                        <div class="col-offset-1 col-md-10 col-md-offset-1">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
                                 <input placeholder="Enter Password" id="password" type="password" class="form-control" name="password" required>
@@ -61,9 +61,13 @@
                                 <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
                                 <button type="submit" class="btn btn-success btn-group">Login </button>
                             </div>
+                            <div class="form-group">
+                                <a class="btn btn-link" href="{{ route('password.request') }}">
+                                    <span style="color: aliceblue;font-size: 14px">Forgot Password?</span></a>
+                                <a class="btn btn-link" href="{{ route('register') }}">
+                                    <span style="color: aliceblue;font-size: 14px">Create an account</span></a>
+                            </div>
                         </div>
-                        <a class="btn btn-link" href="{{ route('password.request') }}" data-toggle="modal">
-                            <h4 style="color: aliceblue;">Forgot Password?</h4></a>
                     </div>
                 
                 </fieldset>
