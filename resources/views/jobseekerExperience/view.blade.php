@@ -9,12 +9,12 @@
             @include('partials.jobseekerSidebar')
             <div class="col-xs-12 col-sm-9 col-md-9 toppad" >
                 <div align="left" style="margin-bottom: 10px">
-                    <a class="btn btn-lg btn-success" href="{{route('jobseekerExperience.create')}}">
+                    <a class="btn btn-lg btn-success create-new" href="{{route('jobseekerExperience.create')}}">
                         Add New Experience
                     </a>
                 </div>
                 <div class="panel panel-default">
-                    <div class="panel-heading" style="color:white;background-color:black;">
+                    <div class="panel-heading">
                         <h3 class="panel-title" align="center">Work Experience List</h3>
                     </div>
                     {{--<div class="panel-body">--}}

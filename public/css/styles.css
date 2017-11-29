@@ -49,14 +49,9 @@ body{
 	white-space: nowrap;
 }
 
-marquee {
-    font: 17px 'Segoe UI', Tahoma, Helvetica, Sans-Serif;
-	-webkit-text-fill-color: green;
-}
-
-
-marquee:hover {
-    animation-play-state: paused
+.advice {
+    font: 20px 'Segoe UI', Tahoma, Helvetica, Sans-Serif;
+	-webkit-text-fill-color:#4d0000;
 }
 
 #myFooter{
@@ -168,4 +163,26 @@ body{
 .list-group-item-warning{
     background:white;
     color: black !important;
+}
+.action-btn{
+    height: 2em;
+    width: 5em;
+    padding: 2px;
+}
+.create-new{
+    height: 2.3em;
+    margin-bottom: .3em;
+    width: 15em;
+    padding: 5px;
+
+}
+.panel-heading{
+    background-color:black
+}
+#jobseekerAvatar{
+    height:12em;
+    width:12em
+}
+#companyLogo {
+    margin: 1em;
 }

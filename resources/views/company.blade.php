@@ -17,7 +17,7 @@
                     {{--<div class="panel-body">--}}
                         <div class="row">
                             <div class="col-md-3 col-lg-3" align="center">
-                                <img alt="Company Logo" src="{{ asset('http://127.0.0.1:8000/storage/images/'.$info->logo) }}"
+                                <img id="companyLogo" alt="Company Logo" src="{{ asset('http://127.0.0.1:8000/storage/images/'.$info->logo) }}"
                                      class="img-square img-responsive">
                             </div>
 

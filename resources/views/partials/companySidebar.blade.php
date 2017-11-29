@@ -1,4 +1,4 @@
-<marquee  behavior="alternate"><span>Post A Job And View Recommended Candidates.</span></marquee>
+<p class="advice" align="center">Post A Job And View Recommended Candidates</p>
 <div class="col-sm-4 col-md-3 sidebar" class="sidebar">
     <div class="mini-submenu">
         <span class="icon-bar"></span>
