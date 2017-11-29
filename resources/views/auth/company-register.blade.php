@@ -9,11 +9,10 @@
     <title>@yield('title')</title>
     
     <!-- Bootstrap -->
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-    <script src="//code.jquery.com/jquery.js"></script>
-    
     {{ Html::style('css/styles.css') }}
 
 </head>
@@ -61,6 +60,7 @@
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
                                 <input placeholder="Enter Password" id="password" type="password" class="form-control" name="password" required>
+                                <span toggle="#password"class="input-group-addon toggle-password"><i class="glyphicon glyphicon-eye-open"></i></span>
                                 @if ($errors->has('password'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('password') }}</strong>
@@ -73,7 +73,9 @@
                         <div class="col-offset-1 col-md-10 col-md-offset-1">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                <input placeholder="Confirm Password" id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                                <input placeholder="Confirm Password" id="password-confirm"
+                                       type="password" class="form-control" name="password_confirmation" required>
+                                <span toggle="#password-confirm"class="input-group-addon toggle-password"><i class="glyphicon glyphicon-eye-open"></i></span>
                             </div>
                         </div>
                     </div>
@@ -94,4 +96,15 @@
     </div>
 </div>
 </body>
+<script>
+    $(".toggle-password").click(function() {
+
+        var input = $($(this).attr("toggle"));
+        if (input.attr("type") == "password") {
+            input.attr("type", "text");
+        } else {
+            input.attr("type", "password");
+        }
+    });
+</script>
 </html>
