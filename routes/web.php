@@ -12,6 +12,7 @@
 */
 
 Route::get('/','PagesController@getIndex')->name('landing-page');
+Route::get('/feature','PagesController@getFeature')->name('read.feature');
 
 Route::get('contact','PagesController@getContact');
 

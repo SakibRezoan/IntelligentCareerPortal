@@ -207,3 +207,24 @@ body{
     text-align:center;
     color:#fff;
 }
+#ICP_footer_section{
+    margin-top: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background: #e6e4e4;
+}
+#ICP_footer_section ul{
+    padding: 0;
+    list-style-type: none;
+}
+#ICP_footer_section h5{
+    font-size: 16px;
+    font-family: 'robotoregular';
+    font-weight: 500;
+}
+#ICP_footer{
+     height: 300px;
+     padding-top: 20px;
+     padding-bottom: 20px;
+     background: #ffffff;
+ }
