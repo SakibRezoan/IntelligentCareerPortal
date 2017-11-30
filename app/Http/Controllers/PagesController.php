@@ -17,4 +17,8 @@ class PagesController extends Controller{
     );
     return view('pages.about')->withData($data);
   }
+    public function getFeature(){
+
+        return view('pages.feature');
+    }
 }

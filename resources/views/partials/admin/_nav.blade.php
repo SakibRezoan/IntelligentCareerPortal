@@ -14,9 +14,11 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="padding-left: 300px">
         <ul class="nav navbar-nav">
-          <li class="{{ Request::is('/') ? "active" : ""}}"><a href="/">Home <span class="sr-only">(current)</span></a></li>
-          <li class="{{ Request::is('about') ? "active" : ""}}"><a href="/about">About</a></li>
-          <li class="{{ Request::is('contact') ? "active" : ""}}"><a href="/contact">Contact</a></li>
+          <li class="{{ Request::is('/') ? "active" : ""}}"><a href="/">HOME <span class="sr-only">(current)</span></a></li>
+          <li><a href="/#features">PRODUCT</a></li>
+          <li><a href="/#service">SERVICE</a></li>
+          <li><a href="/#price">PRICE</a></li>
+          <li><a href="/#contact">CONTACT</a></li>
         </ul>
 
         <form class="navbar-form navbar-left" role="search">
