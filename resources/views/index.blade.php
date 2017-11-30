@@ -138,7 +138,7 @@
                         <div class="col-sm-6 margin-top-60">
                             <div class="single_features_right ">
                                 <h2>Intelligent Career Portal</h2>
-                                <p><b><i>Intelligent Career Portal</i></b> aims to facilitate the applicant to apply for the job online. It also
+                                <p><b>Intelligent Career Portal</b> aims to facilitate the applicant to apply for the job online. It also
                                     facilitates the managerial department of an organization for an optimized and systematic employee
                                     recruitment process.</p>
                                 <ul>
@@ -537,8 +537,10 @@
                     <div class="footer-wrapper">
 
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                            <div class="footer-brand">
-                                <img src="images/logo.png" alt="logo" />
+                            <div class="footer-brand" style="font-size: 1.5em">
+                                <span style=" color: green">Intelligent</span>
+                                <span style=" color: #c0a16b">Career</span>
+                                <span style=" color: chartreuse">Portal</span>
                             </div>
                         </div>
 
