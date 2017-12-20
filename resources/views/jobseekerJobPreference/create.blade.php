@@ -34,9 +34,9 @@
 												 null, ['multiple' => true, 'class' => 'form-control',]) }}
 								<br>
 								{{ Form::label('locations[]', 'Preferred Job Locations:') }}
-								{{ Form::select('locations[]', ['Dhaka' => 'Dhaka', 'Rajshahi' => 'Rajshahi',
+								{{ Form::select('job_location', ['Dhaka North' => 'Dhaka North','Dhaka South' => 'Dhaka South','Gazipur' => 'Gazipur', 'Narayanganj'=>'Narayanganj', 'Rajshahi' => 'Rajshahi',
                                             'Khulna' =>'Khulna', 'Chittagong' => 'Chittagong', 'Barisal' => 'Barisal',
-                                            'Rangpur' => 'Rangpur', 'Sylhet' =>'Sylhet' ], null, ['multiple'=>true,'class' => 'form-control',]) }}
+                                            'Rangpur' => 'Rangpur', 'Comilla'=>'Comilla', 'Sylhet' =>'Sylhet' ], null, ['multiple'=>true,'class' => 'form-control','placeholder'=> 'Select Preferred Job Location']) }}
 								<br>
 								{{ Form::label('environment', "Preferred Work Environment:") }}
 								{{ Form::textarea('environment', null, array('class' => 'form-control', 'required' => '', 'maxlength' =>'1000','wrap'=>'hard')) }}

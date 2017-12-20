@@ -135,7 +135,8 @@ class JobController extends Controller
      */
     public function edit($id)
     {
-        //
+        $job = Job::where('id', $id)->first();
+        return view('job.edit',['job' => $job]);
     }
 
     /**
@@ -147,7 +148,53 @@ class JobController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'job_title' => 'required|string|max:255',
+            'position' => 'required|string|max:255',
+            'description' => 'required|string|max:2000',
+            'feature_and_benifits' => 'required|string|max:2000',
+            'contract_type' => 'required|string',
+            'apply_due_date' => 'required|date',
+            'job_location' => 'required|string',
+            'salary_min' => 'integer',
+            'salary_max' => 'integer',
+            'isNegotiable' => 'boolean',
+            'vacancy' => 'integer',
+            'required_degree' => 'string|max:255',
+            'skill' => 'required|array',
+            'skill.*'=> 'required|string',
+            'experience' => 'required|array',
+            'experience.*'=> 'required|numeric',
+            'max_age'=> 'integer',
+        ]);
+
+        $job = Job::find($id);
+        $job->job_title = $request->input('job_title');
+        $job->position = $request->input('position');
+        $job->description = $request->input('description');
+        $job->feature_and_benifits = $request->input('feature_and_benifits');
+        $job->contract_type = $request->input('contract_type');
+        $job->apply_due_date = $request->input('apply_due_date');
+        $job->job_location = $request->input('job_location');
+        $job->salary_min = $request->input('salary_min');
+        $job->salary_max = $request->input('salary_max');
+        $job->isNegotiable = $request->input('isNegotiable');
+        $job->vacancy = $request->input('vacancy');
+        $job->required_degree = $request->input('required_degree');
+        $job->skill = $request->input('skill');
+        $job->experience = $request->input('experience');
+        $job->max_age = $request->input('max_age');
+        $job->isAvailable = True;
+
+        $job->save();
+
+        $notification = array(
+            'message' => 'Job Details Updated Successfully  !',
+            'alert-type' => 'info'
+        );
+
+        return redirect()->route('jobs.view')->with($notification);
+
     }
 
     /**
@@ -158,6 +205,26 @@ class JobController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $job = Job::find($id);
+        $job->delete();
+
+        $notification = array(
+            'message' => 'Job Deleted Successfully!',
+            'alert-type' => 'warning'
+        );
+        return redirect()->route('jobs.view')->with($notification);
+    }
+
+    public function close($id)
+    {
+        $job = Job::find($id);
+        $job->isAvailable = 0;
+        $job->save();
+
+        $notification = array(
+            'message' => 'Job Closed Successfully!',
+            'alert-type' => 'warning'
+        );
+        return redirect()->route('jobs.view')->with($notification);
     }
 }

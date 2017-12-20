@@ -62,6 +62,8 @@ Route::prefix('company')->group(function(){
     Route::get('job/edit/{id}',['uses' => 'JobController@edit', 'as' => 'job.edit'] );
     Route::put('job/update/{id}',['uses' => 'JobController@update', 'as' => 'job.update'] );
     Route::get('job/delete/{id}',['uses' => 'JobController@destroy', 'as' => 'job.delete'] );
+    Route::get('job/close/{id}',['uses' => 'JobController@close', 'as' => 'job.close'] );
+
 
     Route::get('/requestForVerification',['uses' => 'CompanyController@requestForVerificationCreate', 'as' => 'company.requestForVerification'] );
     Route::post('/requestForVerification',['uses' => 'CompanyController@requestForVerificationStore', 'as' => 'company.requestForVerification.submit'] );
