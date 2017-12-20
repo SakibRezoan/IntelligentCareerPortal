@@ -24,7 +24,7 @@
         <form class="navbar-form navbar-left" action="{{route('admin.searchUserList')}}" method="POST" role="search">
           {{ csrf_field() }}
           <div class="form-group">
-            <input type="text" name = "keyword" class="form-control" placeholder="Search User">
+            <input type="text" name = "keyword" class="form-control" required placeholder="Search User">
           </div>
           <button type="submit" class="btn btn-default">Search</button>
         </form>

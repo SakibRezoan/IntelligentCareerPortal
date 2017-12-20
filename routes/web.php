@@ -68,6 +68,14 @@ Route::prefix('company')->group(function(){
     Route::get('/requestForVerification',['uses' => 'CompanyController@requestForVerificationCreate', 'as' => 'company.requestForVerification'] );
     Route::post('/requestForVerification',['uses' => 'CompanyController@requestForVerificationStore', 'as' => 'company.requestForVerification.submit'] );
 
+    Route::post('/searchCandidateList', 'CompanyController@searchCandidateList')->name('company.searchCandidateList');
+
+    Route::get('/saveCandidate/{id}', 'CompanyController@saveCandidate')->name('candidate.save');
+
+    Route::get('/inviteCandidate/{id}', 'CompanyController@saveJob')->name('candidate.invite');
+
+
+
 });
 
 Route::prefix('jobseekerProfile')-> group(function (){
@@ -113,4 +121,10 @@ Route::prefix('jobseekerProfile')-> group(function (){
     Route::put('experience/update/{id}',['uses' => 'JobSeekerWorkExperienceController@update', 'as' => 'jobseekerExperience.update'] );
     Route::get('experience/delete/{id}',['uses' => 'JobSeekerWorkExperienceController@destroy', 'as' => 'jobseekerExperience.delete'] );
 
+    Route::get('/saveJob/{id}', 'HomeController@saveJob')->name('job.save');
+
+    Route::get('/applyJob/{id}', 'HomeController@applyJob')->name('job.apply');
+
 });
+    Route::post('/searchJobList', 'HomeController@searchJobList')->name('jobseeker.searchJobList');
+
