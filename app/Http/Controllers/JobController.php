@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Company;
 use App\JobRequirements;
 use Illuminate\Http\Request;
 use App\Job;
@@ -32,7 +33,18 @@ class JobController extends Controller
      */
     public function create()
     {
-        return view('job.create');
+        $company = Company::where('id',Auth::user()->id)->first();
+
+        if($company->isVerified){
+            return view('job.create');
+        }
+        $notification = array(
+            'message' => 'Verify your company to post job !',
+            'alert-type' => 'warning'
+        );
+
+        return redirect()->route('company.dashboard')->with($notification);
+
     }
 
     /**
