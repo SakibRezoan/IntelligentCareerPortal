@@ -20,14 +20,14 @@
           <li><a href="/#price">PRICE</a></li>
           <li><a href="/#contact">CONTACT</a></li>
         </ul>
-
-        <form class="navbar-form navbar-left" role="search">
+  
+        <form class="navbar-form navbar-left" action="{{route('jobseeker.searchJobList')}}" method="POST" role="search">
+          {{ csrf_field() }}
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search Jobs">
+            <input type="text" name = "keyword" class="form-control" required placeholder="Search Jobs">
           </div>
           <button type="submit" class="btn btn-default">Search</button>
         </form>
-
 
         <ul class="nav navbar-nav navbar-right">
           <!-- Authentication Links -->

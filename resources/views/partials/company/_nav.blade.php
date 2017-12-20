@@ -20,10 +20,11 @@
           <li><a href="/#price">PRICE</a></li>
           <li><a href="/#contact">CONTACT</a></li>
         </ul>
-
-        <form class="navbar-form navbar-left" role="search">
+  
+        <form class="navbar-form navbar-left" action="{{route('company.searchCandidateList')}}" method="POST" role="search">
+          {{ csrf_field() }}
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search Candidates">
+            <input type="text" name = "keyword" class="form-control" required placeholder="Search Candidate">
           </div>
           <button type="submit" class="btn btn-default">Search</button>
         </form>
