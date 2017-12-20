@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\CompanyInfo;
 use Illuminate\Http\Request;
 use Auth;
-use Session;
 use Storage;
 
 class CompanyInfoController extends Controller
@@ -62,9 +61,12 @@ class CompanyInfoController extends Controller
         $companyInfo->url = $request->url;
         $companyInfo->save();
 
-        Session::flash('success', 'Company information updated successfully !');
+        $notification = array(
+            'message' => 'Company information updated successfully !',
+            'alert-type' => 'success'
+        );
 
-        return redirect()->route('company.dashboard');
+        return redirect()->route('company.dashboard')->with($notification);
     }
 
     /**
@@ -118,8 +120,12 @@ class CompanyInfoController extends Controller
 
         $companyInfo->save();
 
-        Session::flash('success', 'Company information was successfully updated!');
-        return redirect()->route('company.dashboard');
+        $notification = array(
+            'message' => 'Company information updated successfully !',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('company.dashboard')->with($notification);
     }
 
     /**
@@ -139,8 +145,11 @@ class CompanyInfoController extends Controller
 
         $companyInfo->delete();
 
-        Session::flash('success', 'Company Inforamtion was successfully deleted.');
+        $notification = array(
+            'message' => 'Company information updated successfully !',
+            'alert-type' => 'success'
+        );
 
-        return redirect()->route('company.dashboard');
+        return redirect()->route('company.dashboard')->with($notification);
     }
 }

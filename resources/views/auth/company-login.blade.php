@@ -59,7 +59,7 @@
                         <div class="col-md-8 col-lg-offset-2">
                             <div class="form-group">
                                 <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
-                                <button type="submit" class="btn btn-success btn-group">Login </button>
+                                <button type="submit" class="btn btn-success btn-group btn-lg">Login </button>
                             </div>
                             <div class="form-group">
                                 <a class="btn btn-link" href="{{ route('password.request') }}">

@@ -13,10 +13,7 @@
         <a href="{{route('jobs.view')}}" class="list-group-item list-group-item-warning {{ Request::is('company/jobs/*') ? "active" : ""}}">
             <i class="glyphicon glyphicon-list-alt"></i> Jobs
         </a>
-        <a href="#" class="list-group-item list-group-item-warning">
-            <i class="glyphicon glyphicon-search"></i> Advance Candidate Search
-        </a>
-        <a href="#" class="list-group-item list-group-item-warning">
+        <a href="{{route('company.requestForVerification')}}" class="list-group-item list-group-item-warning">
             <i class="glyphicon glyphicon-hand-right"></i> Request for Verification
         </a>
         <a href="#" class="list-group-item list-group-item-warning">

@@ -112,8 +112,45 @@ class AdminActionController extends Controller
 
     public function requestedCompanyList()
     {
-//        $users = User::all();
-//        return view('admin.showUserList',['users' => $users]);
+        $companies = Company::where('isVerified',0)->get();
+
+        if(count($companies) > 0){
+
+            return view('admin.showCompanyList',['companies' => $companies]);
+        }
+        $notification = array(
+            'message' => 'No company is remaining to verify !!!',
+            'alert-type' => 'info'
+        );
+        return redirect()->route('admin.dashboard')->with($notification);
+    }
+
+    public function verifyCompany($id){
+
+        $company = Company::where('id',$id)->first();
+        $company->isVerified = 1;
+        $company->save();
+        $notification = array(
+            'message' => 'Company is verified succesfully !',
+            'alert-type' => 'success'
+        );
+        return redirect()->route('admin.requestedCompanyList')->with($notification);
+    }
+
+    public function cancelVerification($id)
+    {
+        $company = Company::where('id',$id)->first();
+        dd($company);
+
+//        if(count($companies) > 0){
+//
+//            return view('admin.showCompanyList',['companies' => $companies]);
+//        }
+//        $notification = array(
+//            'message' => 'Sorry !! No company is registered to this system',
+//            'alert-type' => 'warning'
+//        );
+//        return redirect()->route('admin.dashboard')->with($notification);
     }
 
 

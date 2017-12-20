@@ -35,7 +35,10 @@ Route::prefix('admin')->group(function(){
     Route::get('/unbanCompany/{id}', 'AdminActionController@unbanCompany')->name('admin.unbanCompany');
     Route::get('/banUserList','AdminActionController@banUserList')->name('admin.banUserList');
 
-    Route::get('/requestedCompanyList', 'Auth\AdminActionController@requestedCompanyList')->name('admin.requestedCompanyList');
+    Route::get('/requestedCompanyList', 'AdminActionController@requestedCompanyList')->name('admin.requestedCompanyList');
+    Route::get('/verifyCompany/{id}', 'AdminActionController@verifyCompany')->name('admin.verifyCompany');
+    Route::get('/cancelVerification/{id}', 'AdminActionController@cancelVerification')->name('admin.cancelVerification');
+
 });
 
 Route::prefix('company')->group(function(){
@@ -45,7 +48,6 @@ Route::prefix('company')->group(function(){
     Route::post('/login', 'Auth\CompanyLoginController@login')->name('company.login.submit');
     Route::get('/home', 'CompanyController@index')->name('company.dashboard');
     Route::get('/logout', 'Auth\CompanyLoginController@logout')->name('company.logout');
-
 
     Route::get('companyinfo/create',['uses' => 'CompanyInfoController@create', 'as' => 'companyInfo.create'] );
     Route::post('companyinfo/store',['uses' => 'CompanyInfoController@store', 'as' => 'companyInfo.store'] );
@@ -60,6 +62,10 @@ Route::prefix('company')->group(function(){
     Route::get('job/edit/{id}',['uses' => 'JobController@edit', 'as' => 'job.edit'] );
     Route::put('job/update/{id}',['uses' => 'JobController@update', 'as' => 'job.update'] );
     Route::get('job/delete/{id}',['uses' => 'JobController@destroy', 'as' => 'job.delete'] );
+
+    Route::get('/requestForVerification',['uses' => 'CompanyController@requestForVerificationCreate', 'as' => 'company.requestForVerification'] );
+    Route::post('/requestForVerification',['uses' => 'CompanyController@requestForVerificationStore', 'as' => 'company.requestForVerification.submit'] );
+
 });
 
 Route::prefix('jobseekerProfile')-> group(function (){

@@ -83,7 +83,7 @@
                     <div class="form-group">
                         <div class="col-md-6 col-lg-offset-3">
                             <div class="form-group">
-                                <button type="submit" class="btn btn-success btn-group btn-block">Register</button>
+                                <button type="submit" class="btn btn-success btn-group btn-block btn-lg">Register</button>
                                 <a class="btn btn-link text-center" href="{{ route('login') }}" data-toggle="modal">
                                     <h4 style="color: aliceblue;"> Member Already?Login </h4></a>
                             </div>

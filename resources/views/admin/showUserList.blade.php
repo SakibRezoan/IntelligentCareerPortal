@@ -23,7 +23,7 @@
                                 <th class="text-center">Date registered</th>
                                 <th class="text-center">Role</th>
                                 <th class="text-center">Status</th>
-                                <th class="text-center">Actions</th>
+                                <th class="text-center">Action</th>
                             </tr>
                             </thead>
                             <tbody>
