@@ -33,17 +33,7 @@ class JobController extends Controller
      */
     public function create()
     {
-        $company = Company::where('id',Auth::user()->id)->first();
-
-        if($company->isVerified){
-            return view('job.create');
-        }
-        $notification = array(
-            'message' => 'Verify your company to post job !',
-            'alert-type' => 'warning'
-        );
-
-        return redirect()->route('company.dashboard')->with($notification);
+        return view('job.create');
 
     }
 
@@ -109,7 +99,16 @@ class JobController extends Controller
      */
     public function view()
     {
-        $id = \Auth::user()->id;
+        $id = Auth::user()->id;
+        $company = Company::where('id',$id)->first();
+
+        if(! $company->isVerified){
+            $notification = array(
+                'message' => 'Verify your company to access jobs !',
+                'alert-type' => 'warning'
+            );
+            return redirect()->route('company.dashboard')->with($notification);
+        }
         $jobs = Job::where('company_id', $id)->get();
         if(count($jobs)){
             return view('company.viewJobs',['jobs' => $jobs]);
