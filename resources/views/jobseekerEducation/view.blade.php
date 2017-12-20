@@ -14,7 +14,7 @@
                     </a>
                 </div>
                 <div class="panel panel-default">
-                    <div class="panel-heading">
+                    <div class="panel-heading" style="color:white;background-color:black;">
                         <h3 class="panel-title" align="center">Education List</h3>
                     </div>
                     {{--<div class="panel-body">--}}
