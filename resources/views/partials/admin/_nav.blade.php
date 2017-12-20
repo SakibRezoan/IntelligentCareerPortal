@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-static-top">
+<nav class="navbar navbar-inverse navbar-static-top">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
@@ -21,9 +21,10 @@
           <li><a href="/#contact">CONTACT</a></li>
         </ul>
 
-        <form class="navbar-form navbar-left" role="search">
+        <form class="navbar-form navbar-left" action="{{route('admin.searchUserList')}}" method="POST" role="search">
+          {{ csrf_field() }}
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search User">
+            <input type="text" name = "keyword" class="form-control" placeholder="Search User">
           </div>
           <button type="submit" class="btn btn-default">Search</button>
         </form>

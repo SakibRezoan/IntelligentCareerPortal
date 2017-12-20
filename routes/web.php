@@ -28,8 +28,14 @@ Route::prefix('admin')->group(function(){
     Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
     Route::get('/', 'AdminController@index')->name('admin.dashboard');
     Route::get('/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
+    Route::post('/searchUserList', 'AdminActionController@searchUserList')->name('admin.searchUserList');
+    Route::get('/banUser/{id}', 'AdminActionController@banUser')->name('admin.banUser');
+    Route::get('/unbanUser/{id}', 'AdminActionController@unbanUser')->name('admin.unbanUser');
+    Route::get('/banCompany/{id}', 'AdminActionController@banCompany')->name('admin.banCompany');
+    Route::get('/unbanCompany/{id}', 'AdminActionController@unbanCompany')->name('admin.unbanCompany');
+    Route::get('/banUserList','AdminActionController@banUserList')->name('admin.banUserList');
 
-    Route::get('/view/users','AdminActionController@showUserList')->name('admin.showUserList');
+    Route::get('/requestedCompanyList', 'Auth\AdminActionController@requestedCompanyList')->name('admin.requestedCompanyList');
 });
 
 Route::prefix('company')->group(function(){
