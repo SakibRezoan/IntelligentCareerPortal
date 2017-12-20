@@ -30,7 +30,7 @@
 								{{ Form::textarea('location',null, array('class' => 'form-control', 'maxlength' => '1000')) }}
 								<br>
 								<br>
-								{{--{{ Form::label('skill_experience', 'Add Skill & Experience:') }}--}}
+								
 								<p class="btn btn-success" id="add_skill_experience">
 									<i class="fa fa-plus" aria-hidden="true"></i>Add Skill & Experience</p>
 								<div id = "dynamic_distribution">
@@ -91,7 +91,7 @@
                 'class="form-control"><label for="skill">Technical Skill' +
                 '</label></div></div><div class="col-md-5"><div class="md-form">' +
                 '<input type="number" required step="0.1" id="experience" name="experience[]" class="form-control">' +
-                '<label for="experience">Required Experience(years)</label></div></div><div class="col-md-2">' +
+                '<label for="experience">Work Experience(years)</label></div></div><div class="col-md-2">' +
                 '<div class="md-form"><p class="btn btn-danger waves-effect waves-light btn-remove" id="'+i+'">' +
                 '<i class="fa fa-minus" aria-hidden="true"></i></p></div></div></div>';
             $('#dynamic_distribution').append(new_skill_experience);

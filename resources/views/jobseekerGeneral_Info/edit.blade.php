@@ -32,21 +32,22 @@
                                 <br>
                                 {{ Form::label('first_name', 'First Name:') }}
                                 {{ Form::text('first_name', null, array('class' => 'form-control','maxlength' => '255','data-parsley-required'=>'true')) }}
-    
+                                <br>
                                 {{ Form::label('last_name', 'Last Name:') }}
                                 {{ Form::text('last_name', null, array('class' => 'form-control', 'required' => '', 'maxlength' => '255')) }}
-    
+                                <br>
                                 {{ Form::label('date_of_birth', 'Date of Birth:') }}
                                 {{ Form::date('date_of_birth',null, array('class' => 'form-control', 'required' => '')) }}
-    
+                                <br>
                                 {{ Form::label('city', 'City:') }}
-                                {{ Form::select('city', ['Dhaka' => 'Dhaka', 'Rajshahi' => 'Rajshahi',
+                                {{ Form::select('job_location', ['Dhaka North' => 'Dhaka North','Dhaka South' => 'Dhaka South','Gazipur' => 'Gazipur', 'Narayanganj'=>'Narayanganj', 'Rajshahi' => 'Rajshahi',
                                             'Khulna' =>'Khulna', 'Chittagong' => 'Chittagong', 'Barisal' => 'Barisal',
-                                            'Rangpur' => 'Rangpur', 'Sylhet' =>'Sylhet' ], null, ['class' => 'form-control','placeholder'=> 'Select City']) }}
+                                            'Rangpur' => 'Rangpur', 'Comilla'=>'Comilla', 'Sylhet' =>'Sylhet' ], null, ['class' => 'form-control','placeholder'=> 'Select City']) }}
+                                <br>
                                 {{ Form::label('gender', 'Gender:') }}
                                 {{ Form::select('gender', ['male' => 'Male', 'Female' => 'Female',
                                         'others' =>'Others'], null, ['class' => 'form-control', 'placeholder'=> 'Select Gender']) }}
-    
+                                <br>
                                 {{ Form::label('contact_no', 'Contact Number:') }}
                                 {{ Form::number('contact_no', null, array('class' => 'form-control', 'required' => '', 'maxlength' => '11')) }}
     

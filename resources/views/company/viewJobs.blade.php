@@ -46,10 +46,19 @@
                                         @if($job->isAvailable)
                                             <span class="label-success label label-default">Available</span>
                                             <br><br>
-                                            <a class="btn btn-sm btn-warning text-center action-btn" href="#">
-                                                <i class="glyphicon glyphicon-lock icon-white"></i>
-                                                Close
-                                            </a>
+        
+                                            {!! Form::open(['route' => ['job.close', $job->id],'method'=>'GET']) !!}
+                                            {!! Form::button('<i class="glyphicon glyphicon-lock" aria-hidden="true">Close</i>', array(
+                                                    'type' => 'submit',
+                                                    'class' => 'btn btn-warning btn-sm action-btn',
+                                                    'title' => 'Close',
+                                                    'onclick'=>'return confirm("Confirm close?")'
+                                            )) !!}
+                                        
+                                            {{--<a class="btn btn-sm btn-warning text-center action-btn" href="#">--}}
+                                                {{--<i class="glyphicon glyphicon-lock icon-white"></i>--}}
+                                                {{--Close--}}
+                                            {{--</a>--}}
                                         @else
                                             <span class="label-default label label-warning">Closed</span>
                                         @endif

@@ -20,8 +20,7 @@
                         
                         <div class="panel panel-default">
                             <div class="panel-body">
-                                {!! Form::open(['route' => 'job.store', 'data-parsley-validate' => '']) !!}
-    
+                                {!! Form::model($job,['route' =>['job.update',$job->id],'method'=>'PUT']) !!}
                                 {{ Form::label('job_title', 'Job Title:') }}
                                 {{ Form::text('job_title', null, array('class' => 'form-control', 'required' => '', 'maxlength' => '255')) }}
                                 <br>
@@ -67,35 +66,67 @@
                                 {{ Form::text('required_degree', null, array('class' => 'form-control', 'maxlength' => '255')) }}
                                 <br>
     
+                                <p class="btn btn-success" id="add_skill_experience">
+                                    <i class="fa fa-plus" aria-hidden="true"></i>Add Skill & Experience</p>
                                 <div id = "dynamic_distribution">
                                     <div class="row">
-            
-                                        <div class="col-md-5">
-                                            <div class="md-form">
-                                                <input type="text" id="skill" name="skill[]" class="form-control" required>
-                                                <label for="skill">Needed Skill</label>
+                                        <br>
+                                        @foreach(array_combine($job->skill,$job->experience) as $skill=>$experience)
+                                            <div id="row{{$i=0}}">
+                                                <div class="col-md-5">
+                                                    <div class="md-form">
+                                                        <input type="text" id="skill" name="skill[]" value="{{$skill}}" class="form-control" required>
+                                                        <label for="skill">Needed Skill</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-5">
+                                                    <div class="md-form">
+                                                        <input type="number" step="0.1" id="experience" name="experience[]" value="{{$experience}}" class="form-control" required>
+                                                        <label for="experience">Needed Experience(years)</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <div class="md-form"><p class="btn btn-danger waves-effect waves-light btn-remove" id="{{$i}}">
+                                                            <i class="fa fa-minus" aria-hidden="true"></i>
+                                                        </p>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-md-5">
-                                            <div class="md-form">
-                                                <input type="number" step="0.1" id="experience" name="experience[]" class="form-control" required>
-                                                <label for="experience">Needed Experience(years)</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-2">
-                                            <div class="md-form">
-                                                <p class="btn btn-success" id="add_skill_experience"><i class="fa fa-plus" aria-hidden="true"></i></p>
-                                            </div>
-                                        </div>
+                                        @endforeach
         
                                     </div>
     
                                 </div>
-    
+                                
+                                {{--<div id = "dynamic_distribution">--}}
+                                    {{--<div class="row">--}}
+                                        {{----}}
+                                        {{--<div class="col-md-5">--}}
+                                            {{--<div class="md-form">--}}
+                                                {{--<input type="text" id="skill" name="skill[]" class="form-control" required>--}}
+                                                {{--<label for="skill">Needed Skill</label>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                        {{--<div class="col-md-5">--}}
+                                            {{--<div class="md-form">--}}
+                                                {{--<input type="number" step="0.1" id="experience" name="experience[]" class="form-control" required>--}}
+                                                {{--<label for="experience">Needed Experience(years)</label>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                        {{--<div class="col-md-2">--}}
+                                            {{--<div class="md-form">--}}
+                                                {{--<p class="btn btn-success" id="add_skill_experience"><i class="fa fa-plus" aria-hidden="true"></i></p>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                    {{----}}
+                                    {{--</div>--}}
+                                {{----}}
+                                {{--</div>--}}
+                                
                                 {{ Form::submit('Submit', array('class' => 'btn btn-success btn-md', 'style' => 'margin-top: 20px;')) }}
-    
+                                
                                 {{ Form::token() }}
-    
+                                
                                 {!! Form::close() !!}
                             </div>
                         </div>
@@ -108,18 +139,21 @@
 @endsection
 
 @section('scripts')
-
+    
     {!! Html::script('js/parsley.min.js') !!}
+
     <script>
         $('#add_skill_experience').click(function(){
-            i++;
+            i = '<?php $i++;
+                echo $i;
+                ?>';
             var new_skill_experience = '<div class="row" id="row'+i+'">' +
                 '<div class="col-md-5"><div class="md-form">' +
-                '<input type="text" id="skill" name="skill[]" ' +
-                'class="form-control"><label for="skill">Technical Skill' +
+                '<input type="text" required id="skill" name="skill[]" ' +
+                'class="form-control"><label for="skill">Needed Skill' +
                 '</label></div></div><div class="col-md-5"><div class="md-form">' +
-                '<input type="number" step="0.1" id="experience" name="experience[]" class="form-control">' +
-                '<label for="experience">Required Experience(years)</label></div></div><div class="col-md-2">' +
+                '<input type="number" required step="0.1" id="experience" name="experience[]" class="form-control">' +
+                '<label for="experience">Needed Experience(years)</label></div></div><div class="col-md-2">' +
                 '<div class="md-form"><p class="btn btn-danger waves-effect waves-light btn-remove" id="'+i+'">' +
                 '<i class="fa fa-minus" aria-hidden="true"></i></p></div></div></div>';
             $('#dynamic_distribution').append(new_skill_experience);
@@ -129,5 +163,24 @@
             $('#row'+button_id).remove();
         });
     </script>
+    {{--<script>--}}
+        {{--$('#add_skill_experience').click(function(){--}}
+            {{--i++;--}}
+            {{--var new_skill_experience = '<div class="row" id="row'+i+'">' +--}}
+                {{--'<div class="col-md-5"><div class="md-form">' +--}}
+                {{--'<input type="text" id="skill" name="skill[]" ' +--}}
+                {{--'class="form-control"><label for="skill">Technical Skill' +--}}
+                {{--'</label></div></div><div class="col-md-5"><div class="md-form">' +--}}
+                {{--'<input type="number" step="0.1" id="experience" name="experience[]" class="form-control">' +--}}
+                {{--'<label for="experience">Required Experience(years)</label></div></div><div class="col-md-2">' +--}}
+                {{--'<div class="md-form"><p class="btn btn-danger waves-effect waves-light btn-remove" id="'+i+'">' +--}}
+                {{--'<i class="fa fa-minus" aria-hidden="true"></i></p></div></div></div>';--}}
+            {{--$('#dynamic_distribution').append(new_skill_experience);--}}
+        {{--});--}}
+        {{--$(document).on('click','.btn-remove', function(){--}}
+            {{--var button_id = $(this).attr("id");--}}
+            {{--$('#row'+button_id).remove();--}}
+        {{--});--}}
+    {{--</script>--}}
 
 @endsection
