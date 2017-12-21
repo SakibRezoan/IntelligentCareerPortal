@@ -125,6 +125,12 @@ Route::prefix('jobseekerProfile')-> group(function (){
 
     Route::get('/applyJob/{id}', 'HomeController@applyJob')->name('job.apply');
 
+    Route::get('priorityValue/update',['uses' => 'HomeController@priorityValueCreate', 'as' => 'jobseeker.priorityValue'] );
+    Route::post('priorityValue/update',['uses' => 'HomeController@priorityValueStore', 'as' => 'jobseeker.priorityValue.store'] );
+    Route::put('priorityValue/update/{id}',['uses' => 'HomeController@priorityValueUpdate', 'as' => 'jobseeker.priorityValue.update'] );
+    Route::get('recommendedJobs',['uses' => 'HomeController@jobRecommendation', 'as' => 'jobRecommendation'] );
+    Route::get('viewRecommendedJobs',['uses' => 'HomeController@recommendedJobsshow', 'as' => 'recommendedJobs.show'] );
+
 });
     Route::post('/searchJobList', 'HomeController@searchJobList')->name('jobseeker.searchJobList');
 
