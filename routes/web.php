@@ -70,8 +70,6 @@ Route::prefix('company')->group(function(){
 
     Route::post('/searchCandidateList', 'CompanyController@searchCandidateList')->name('company.searchCandidateList');
 
-    Route::get('/saveCandidate/{id}', 'CompanyController@saveCandidate')->name('candidate.save');
-
     Route::get('/inviteCandidate/{id}', 'CompanyController@saveJob')->name('candidate.invite');
 
     Route::get('/viewCandidateCV/{id}', 'CompanyController@viewCandidateCV')->name('candidate.cv.show');

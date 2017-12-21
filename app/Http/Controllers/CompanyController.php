@@ -199,10 +199,6 @@ class CompanyController extends Controller
         return redirect()->route('company.dashboard')->with($notification);
     }
 
-    public function saveCandidate(){
-
-    }
-
     public function inviteCandidate(){
 
     }
