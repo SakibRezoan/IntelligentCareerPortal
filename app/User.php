@@ -29,33 +29,33 @@ class User extends Authenticatable
 
     public function jobseekerGeneralInfo()
     {
-        return $this->hasOne(JobSeekerGeneralInfo::class, 'foreign_key');
+        return $this->hasMany(JobSeekerGeneralInfo::class);
     }
 
     public function jobseekerEducation()
     {
-        return $this->hasOne(JobSeekerEducation::class, 'foreign_key');
+        return $this->hasMany(JobSeekerEducation::class);
     }
 
     public function jobseekerCertification()
     {
-        return $this->hasOne(JobSeekerCertification::class, 'foreign_key');
+        return $this->hasMany(JobSeekerCertification::class);
     }
     public function jobseekerJobPreference()
     {
-        return $this->hasOne(JobSeekerJobPreference::class, 'foreign_key');
+        return $this->hasMany(JobSeekerJobPreference::class);
     }
     public function jobseekerTeam()
     {
-        return $this->hasOne(JobSeekerTeam::class, 'foreign_key');
+        return $this->hasMany(JobSeekerTeam::class);
     }
     public function jobseekerWorkExperience()
     {
-        return $this->hasOne(JobSeekerWorkExperience::class, 'foreign_key');
+        return $this->hasMane(JobSeekerWorkExperience::class);
     }
 
     public function recommendedJobs()
     {
-        return $this->hasMany(Job::class, 'foreign_key');
+        return $this->hasMany(Job::class);
     }
 }

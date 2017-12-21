@@ -15,6 +15,6 @@ class JobRecommendation extends Model
     }
 
     public function user(){
-        return $this->belongsTo(JobRecommendation::class );
+        return $this->belongsTo(User::class );
     }
 }

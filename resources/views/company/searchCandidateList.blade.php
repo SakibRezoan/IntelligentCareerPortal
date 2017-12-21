@@ -31,24 +31,128 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($candidates as $candidate)
-                                <tr>
-                                    <td class="text-center">{{$candidate['name']}}</td>
-                                    <td class="text-center">{{$candidate['email']}}</td>
-                                    <td class="text-center">{{"CV"}}</td>
-                                    <td class="text-center">
-                                        <a class="btn btn-sm btn-success action-btn" href="{{route('candidate.invite',$candidate['id'])}}">
-                                            <i class="glyphicon glyphicon-arrow-left icon-white"></i>
-                                            Invite
-                                        </a>
-                                        <br><br>
-                                        <a class="btn btn-sm btn-info action-btn" href="{{route('candidate.save',$candidate['id'])}}">
-                                            <i class="glyphicon glyphicon-save icon-white"></i>
-                                            Save
-                                        </a>
-                                    </td>
-                                </tr>
-                            @endforeach
+                                @foreach($users as $user)
+                                    <tr>
+                                        <td class="text-center">{{$user->name}}</td>
+                                        <td class="text-center">{{$user->email}}</td>
+                                        <td class="text-center">
+                                            <a href="{{route('candidate.cv.show',$user->id)}}">View CV</a>
+                                        </td>
+                                        <td class="text-center">
+                                            <a class="btn btn-sm btn-success action-btn" href="{{route('candidate.invite',$user->id)}}">
+                                                <i class="glyphicon glyphicon-arrow-left icon-white"></i>
+                                                Invite
+                                            </a>
+                                            <br><br>
+                                            <a class="btn btn-sm btn-info action-btn" href="{{route('candidate.save',$user->id)}}">
+                                                <i class="glyphicon glyphicon-save icon-white"></i>
+                                                Save
+                                            </a>
+                                        </td>
+                                    </tr>
+                                @endforeach
+
+                                @foreach($candidatesInfo as $user)
+                                    <tr>
+                                        <td class="text-center">{{ $user->user->name }}</td>
+                                        <td class="text-center">{{ $user->user->email }}</td>
+                                        <td class="text-center">
+                                            <a href="{{route('candidate.cv.show',$user->user->id)}}">View CV</a>
+                                        </td>
+                                        <td class="text-center">
+                                            <a class="btn btn-sm btn-success action-btn" href="{{route('candidate.invite',$user->user->id)}}">
+                                                <i class="glyphicon glyphicon-arrow-left icon-white"></i>
+                                                Invite
+                                            </a>
+                                            <br><br>
+                                            <a class="btn btn-sm btn-info action-btn" href="{{route('candidate.save',$user->user->id)}}">
+                                                <i class="glyphicon glyphicon-save icon-white"></i>
+                                                Save
+                                            </a>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                                @foreach($candidatesEducation as $user)
+                                    <tr>
+                                        <td class="text-center">{{ $user->user->name }}</td>
+                                        <td class="text-center">{{ $user->user->email }}</td>
+                                        <<td class="text-center">
+                                            <a href="{{route('candidate.cv.show',$user->user->id)}}">View CV</a>
+                                        </td>
+                                        <td class="text-center">
+                                            <a class="btn btn-sm btn-success action-btn" href="{{route('candidate.invite',$user->user->id)}}">
+                                                <i class="glyphicon glyphicon-arrow-left icon-white"></i>
+                                                Invite
+                                            </a>
+                                            <br><br>
+                                            <a class="btn btn-sm btn-info action-btn" href="{{route('candidate.save',$user->user->id)}}">
+                                                <i class="glyphicon glyphicon-save icon-white"></i>
+                                                Save
+                                            </a>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                                @foreach($candidatesTeam as $user)
+                                    <tr>
+                                        <td class="text-center">{{ $user->user->name }}</td>
+                                        <td class="text-center">{{ $user->user->email }}</td>
+                                        <td class="text-center">
+                                            <a href="{{route('candidate.cv.show',$user->user->id)}}">View CV</a>
+                                        </td>
+                                        <td class="text-center">
+                                            <a class="btn btn-sm btn-success action-btn" href="{{route('candidate.invite',$user->user->id)}}">
+                                                <i class="glyphicon glyphicon-arrow-left icon-white"></i>
+                                                Invite
+                                            </a>
+                                            <br><br>
+                                            <a class="btn btn-sm btn-info action-btn" href="{{route('candidate.save',$user->user->id)}}">
+                                                <i class="glyphicon glyphicon-save icon-white"></i>
+                                                Save
+                                            </a>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                                @foreach($candidatesTeam as $user)
+                                    <tr>
+                                        <td class="text-center">{{ $user->user->name }}</td>
+                                        <td class="text-center">{{ $user->user->email }}</td>
+                                        <td class="text-center">
+                                            <a href="{{route('candidate.cv.show',$user->user->id)}}">View CV</a>
+                                        </td>
+                                        <td class="text-center">
+                                            <a class="btn btn-sm btn-success action-btn" href="{{route('candidate.invite',$user->user->id)}}">
+                                                <i class="glyphicon glyphicon-arrow-left icon-white"></i>
+                                                Invite
+                                            </a>
+                                            <br><br>
+                                            <a class="btn btn-sm btn-info action-btn" href="{{route('candidate.save',$user->user->id)}}">
+                                                <i class="glyphicon glyphicon-save icon-white"></i>
+                                                Save
+                                            </a>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                                @foreach($candidatesJobPreference as $user)
+                                    <tr>
+                                        <td class="text-center">{{ $user->user->name }}</td>
+                                        <td class="text-center">{{ $user->user->email }}</td>
+                                        <td class="text-center">
+                                            <a href="{{route('candidate.cv.show',$user->user->id)}}">View CV</a>
+                                        </td>
+                                        <td class="text-center">
+                                            <a class="btn btn-sm btn-success action-btn" href="{{route('candidate.invite',$user->user->id)}}">
+                                                <i class="glyphicon glyphicon-arrow-left icon-white"></i>
+                                                Invite
+                                            </a>
+                                            <br><br>
+                                            <a class="btn btn-sm btn-info action-btn" href="{{route('candidate.save',$user->user->id)}}">
+                                                <i class="glyphicon glyphicon-save icon-white"></i>
+                                                Save
+                                            </a>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            
                             </tbody>
                         </table>
                     </div>

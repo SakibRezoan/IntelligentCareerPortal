@@ -142,15 +142,15 @@ class AdminActionController extends Controller
         $company = Company::where('id',$id)->first();
         dd($company);
 
-//        if(count($companies) > 0){
-//
-//            return view('admin.showCompanyList',['companies' => $companies]);
-//        }
-//        $notification = array(
-//            'message' => 'Sorry !! No company is registered to this system',
-//            'alert-type' => 'warning'
-//        );
-//        return redirect()->route('admin.dashboard')->with($notification);
+        if(count($company) > 0){
+
+            return view('admin.showCompanyList',['companies' => $companies]);
+        }
+        $notification = array(
+            'message' => 'Sorry !! No company is registered to this system',
+            'alert-type' => 'warning'
+        );
+        return redirect()->route('admin.dashboard')->with($notification);
     }
 
 
