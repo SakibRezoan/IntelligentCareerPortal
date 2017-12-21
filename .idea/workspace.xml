@@ -2,10 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="67dd8ef5-655f-42fd-b81a-1d1a4bdb7395" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/companyPriorityValueCreate.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/companyPriorityValueEdit.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CompanyPriorityValue.php" afterPath="$PROJECT_DIR$/app/CompanyPriorityValue.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/CompanyController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/CompanyController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/company/searchCandidateList.blade.php" afterPath="$PROJECT_DIR$/resources/views/company/searchCandidateList.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/partials/companySidebar.blade.php" afterPath="$PROJECT_DIR$/resources/views/partials/companySidebar.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/web.php" afterPath="$PROJECT_DIR$/routes/web.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,90 +26,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="searchCandidateList.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/company/searchCandidateList.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="120" column="48" lean-forward="false" selection-start-line="120" selection-start-column="48" selection-end-line="120" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/web.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CompanyController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CompanyController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CompanyController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="197" column="10" lean-forward="true" selection-start-line="197" selection-start-column="10" selection-end-line="197" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="recommendedJobs.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/recommendedJobs.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-20">
-              <caret line="31" column="73" lean-forward="false" selection-start-line="31" selection-start-column="73" selection-end-line="31" selection-end-column="73" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="companySidebar.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/partials/companySidebar.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="18" column="18" lean-forward="false" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="create.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/jobseekerJobPreference/create.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1008">
-              <caret line="56" column="85" lean-forward="false" selection-start-line="56" selection-start-column="71" selection-end-line="56" selection-end-column="85" />
+            <state relative-caret-position="310">
+              <caret line="354" column="7" lean-forward="true" selection-start-line="276" selection-start-column="6" selection-end-line="354" selection-end-column="7" />
               <folding>
-                <marker date="1513811466976" expanded="true" signature="688:1055" ph="..." />
-                <marker date="1513811466976" expanded="true" signature="702:1053" ph="..." />
-                <marker date="1513811466976" expanded="true" signature="723:965" ph="..." />
-                <marker date="1513811466976" expanded="true" signature="1158:1471" ph="..." />
-                <marker date="1513811466976" expanded="true" signature="1172:1469" ph="..." />
-                <marker date="1513811466976" expanded="true" signature="1192:1399" ph="..." />
-                <marker date="1513811466976" expanded="true" signature="1566:2070" ph="..." />
-                <marker date="1513811466976" expanded="true" signature="1580:2068" ph="..." />
-                <marker date="1513811466976" expanded="true" signature="1596:1967" ph="..." />
+                <element signature="e#40#72#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="create.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/jobseekerGeneral_Info/create.blade.php">
+      <file leaf-file-name="2017_12_20_181805_create_company_priority_values_table.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2017_12_20_181805_create_company_priority_values_table.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="756">
-              <caret line="42" column="41" lean-forward="true" selection-start-line="42" selection-start-column="41" selection-end-line="42" selection-end-column="41" />
-              <folding>
-                <marker date="1513818528747" expanded="true" signature="2353:2368" ph="..." />
-                <marker date="1513818528747" expanded="true" signature="2353:2815" ph="..." />
-                <marker date="1513818528747" expanded="true" signature="2367:2368" ph="..." />
-                <marker date="1513818528747" expanded="true" signature="2376:2747" ph="..." />
-                <marker date="1513818528747" expanded="true" signature="2960:3155" ph="..." />
-                <marker date="1513818528747" expanded="true" signature="2974:3153" ph="..." />
-                <marker date="1513818528747" expanded="true" signature="2985:3084" ph="..." />
-              </folding>
+            <state relative-caret-position="221">
+              <caret line="23" column="45" lean-forward="false" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HomeController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="172" column="13" lean-forward="false" selection-start-line="172" selection-start-column="13" selection-end-line="172" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -133,12 +83,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/auth/company-login.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/auth/admin-login.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/auth/register.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/partials/companySidebar.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/CompanyInfoController.php" />
         <option value="$PROJECT_DIR$/resources/views/company/requestForVerification.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/showCompanyList.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
@@ -169,7 +113,6 @@
         <option value="$PROJECT_DIR$/resources/views/jobseekerJobPreference/create.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/JobSeekerJobPreferenceController.php" />
         <option value="$PROJECT_DIR$/resources/views/recommendedJobs.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
         <option value="$PROJECT_DIR$/app/User.php" />
         <option value="$PROJECT_DIR$/app/JobRecommendation.php" />
         <option value="$PROJECT_DIR$/app/JobSeekerCertification.php" />
@@ -181,9 +124,16 @@
         <option value="$PROJECT_DIR$/app/JobSeekerWorkExperience.php" />
         <option value="$PROJECT_DIR$/resources/views/jobseekerGeneral_Info/create.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AdminActionController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/CompanyController.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/company/searchCandidateList.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/partials/companySidebar.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/companyPriorityValueCreate.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/companyPriorityValueEdit.blade.php" />
+        <option value="$PROJECT_DIR$/app/CompanyPriorityValue.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/app/CandidateRecommendation.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2017_12_21_022544_create_candidate_recommendations_table.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/CompanyController.php" />
       </list>
     </option>
   </component>
@@ -347,14 +297,6 @@
             <path>
               <item name="IntelligentCareerPortal" type="b2602c69:ProjectViewProjectNode" />
               <item name="IntelligentCareerPortal" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="CompanyAuth" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="IntelligentCareerPortal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="IntelligentCareerPortal" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="bootstrap" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -472,17 +414,17 @@
     <property name="SearchEverywhereHistoryKey" value="confirm&#9;null&#9;null" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/views/company" />
-      <recent name="$PROJECT_DIR$/resources/views/admin" />
-      <recent name="$PROJECT_DIR$/public/images" />
-      <recent name="$PROJECT_DIR$/resources/views/jobseekerExperience" />
-      <recent name="$PROJECT_DIR$/resources/views" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/resources/views" />
       <recent name="C:\xampp\htdocs\IntelligentCareerPortal\app\Http\Controllers" />
       <recent name="C:\xampp\htdocs\IntelligentCareerPortal\public" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views" />
+      <recent name="$PROJECT_DIR$/resources/views/company" />
+      <recent name="$PROJECT_DIR$/resources/views/admin" />
+      <recent name="$PROJECT_DIR$/public/images" />
+      <recent name="$PROJECT_DIR$/resources/views/jobseekerExperience" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -569,12 +511,12 @@
       <workItem from="1513748976434" duration="667000" />
       <workItem from="1513774126410" duration="35420000" />
       <workItem from="1513817706825" duration="3633000" />
-      <workItem from="1513821398099" duration="137000" />
+      <workItem from="1513821398099" duration="2560000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="498283000" />
+    <option name="totallyTimeSpent" value="500706000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -597,7 +539,7 @@
       <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17073171" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.22895359" sideWeight="0.508658" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29237947" sideWeight="0.49724627" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29237947" sideWeight="0.49724627" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -656,62 +598,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" column="33" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/partials/admin/_nav.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="23" column="8" lean-forward="false" selection-start-line="23" selection-start-column="8" selection-end-line="29" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/partials/_nav.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="23" column="72" lean-forward="false" selection-start-line="23" selection-start-column="63" selection-end-line="23" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/CompanyLoginController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="41" column="29" lean-forward="true" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/company/viewJobs.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="26" column="26" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="93" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/partials/company/_nav.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
           <caret line="26" column="107" lean-forward="false" selection-start-line="26" selection-start-column="107" selection-end-line="26" selection-end-column="107" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2017_12_20_181805_create_company_priority_values_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="18" column="74" lean-forward="false" selection-start-line="18" selection-start-column="74" selection-end-line="18" selection-end-column="74" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -720,13 +610,6 @@
         <state relative-caret-position="180">
           <caret line="18" column="112" lean-forward="true" selection-start-line="17" selection-start-column="12" selection-end-line="18" selection-end-column="112" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/partials/jobseekerSidebar.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="29" column="148" lean-forward="false" selection-start-line="29" selection-start-column="148" selection-end-line="29" selection-end-column="148" />
         </state>
       </provider>
     </entry>
@@ -758,13 +641,6 @@
         <state relative-caret-position="217">
           <caret line="135" column="66" lean-forward="true" selection-start-line="135" selection-start-column="66" selection-end-line="135" selection-end-column="66" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/jobseekerPriorityValueEdit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="22" column="106" lean-forward="false" selection-start-line="22" selection-start-column="106" selection-end-line="22" selection-end-column="106" />
         </state>
       </provider>
     </entry>
@@ -851,13 +727,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/jobseekerPriorityValueCreate.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="30" column="53" lean-forward="true" selection-start-line="30" selection-start-column="53" selection-end-line="30" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
@@ -873,30 +742,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2017_12_20_222356_create_job_recommendations_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="23" column="36" lean-forward="false" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/JobSeekerJobPreferenceController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="13" column="5" lean-forward="false" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
           <folding>
-            <element signature="e#40#71#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3777">
-          <caret line="225" column="5" lean-forward="true" selection-start-line="225" selection-start-column="5" selection-end-line="225" selection-end-column="5" />
-          <folding>
-            <element signature="e#39#59#0#PHP" expanded="false" />
+            <element signature="e#40#71#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -905,14 +756,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
           <caret line="15" column="4" lean-forward="true" selection-start-line="15" selection-start-column="4" selection-end-line="17" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/JobRecommendation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="34" lean-forward="false" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
           <folding />
         </state>
       </provider>
@@ -937,14 +780,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
           <caret line="25" column="5" lean-forward="false" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/JobSeekerPriorityValue.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="5" lean-forward="false" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -1032,35 +867,217 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/recommendedJobs.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+        <state relative-caret-position="-20">
+          <caret line="31" column="73" lean-forward="false" selection-start-line="31" selection-start-column="73" selection-end-line="31" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/partials/jobseekerSidebar.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="29" column="44" lean-forward="false" selection-start-line="29" selection-start-column="44" selection-end-line="29" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/partials/companySidebar.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="18" lean-forward="false" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+        <state relative-caret-position="286">
+          <caret line="18" column="123" lean-forward="false" selection-start-line="18" selection-start-column="123" selection-end-line="18" selection-end-column="123" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/company/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="19" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="77" selection-end-column="11" />
+          <folding>
+            <marker date="1511832263553" expanded="true" signature="1317:1611" ph="..." />
+            <marker date="1511832263553" expanded="true" signature="1331:1609" ph="..." />
+            <marker date="1511832263553" expanded="true" signature="1348:1559" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/jobseekerPriorityValueCreate.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="533">
+          <caret line="49" column="53" lean-forward="true" selection-start-line="22" selection-start-column="32" selection-end-line="49" selection-end-column="53" />
+          <folding>
+            <marker date="1513795510148" expanded="true" signature="921:1216" ph="..." />
+            <marker date="1513795510148" expanded="true" signature="935:1214" ph="..." />
+            <marker date="1513795510148" expanded="true" signature="960:1112" ph="..." />
+            <marker date="1513795510148" expanded="true" signature="1390:1688" ph="..." />
+            <marker date="1513795510148" expanded="true" signature="1404:1686" ph="..." />
+            <marker date="1513795510148" expanded="true" signature="1428:1580" ph="..." />
+            <marker date="1513795510148" expanded="true" signature="1852:2145" ph="..." />
+            <marker date="1513795510148" expanded="true" signature="1866:2143" ph="..." />
+            <marker date="1513795510148" expanded="true" signature="1890:2042" ph="..." />
+            <marker date="1513795510148" expanded="true" signature="2297:2578" ph="..." />
+            <marker date="1513795510148" expanded="true" signature="2311:2576" ph="..." />
+            <marker date="1513795510148" expanded="true" signature="2329:2481" ph="..." />
+            <marker date="1513795510148" expanded="true" signature="2747:3045" ph="..." />
+            <marker date="1513795510148" expanded="true" signature="2761:3043" ph="..." />
+            <marker date="1513795510148" expanded="true" signature="2787:2939" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/companyPriorityValueCreate.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="36" column="66" lean-forward="false" selection-start-line="36" selection-start-column="66" selection-end-line="36" selection-end-column="66" />
+          <folding>
+            <marker date="1513822043020" expanded="true" signature="910:1205" ph="..." />
+            <marker date="1513822043020" expanded="true" signature="924:1203" ph="..." />
+            <marker date="1513822043020" expanded="true" signature="949:1101" ph="..." />
+            <marker date="1513822043020" expanded="true" signature="1375:1669" ph="..." />
+            <marker date="1513822043020" expanded="true" signature="1389:1667" ph="..." />
+            <marker date="1513822043020" expanded="true" signature="1409:1561" ph="..." />
+            <marker date="1513822043020" expanded="true" signature="1827:2114" ph="..." />
+            <marker date="1513822043020" expanded="true" signature="1841:2112" ph="..." />
+            <marker date="1513822043020" expanded="true" signature="1859:2011" ph="..." />
+            <marker date="1513822043020" expanded="true" signature="2266:2547" ph="..." />
+            <marker date="1513822043020" expanded="true" signature="2280:2545" ph="..." />
+            <marker date="1513822043020" expanded="true" signature="2298:2450" ph="..." />
+            <marker date="1513822043020" expanded="true" signature="2711:3004" ph="..." />
+            <marker date="1513822043020" expanded="true" signature="2725:3002" ph="..." />
+            <marker date="1513822043020" expanded="true" signature="2746:2898" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/jobseekerPriorityValueEdit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding>
+            <marker date="1513796230678" expanded="true" signature="901:1196" ph="..." />
+            <marker date="1513796230678" expanded="true" signature="915:1194" ph="..." />
+            <marker date="1513796230678" expanded="true" signature="940:1092" ph="..." />
+            <marker date="1513796230678" expanded="true" signature="1398:1696" ph="..." />
+            <marker date="1513796230678" expanded="true" signature="1412:1694" ph="..." />
+            <marker date="1513796230678" expanded="true" signature="1436:1588" ph="..." />
+            <marker date="1513796230678" expanded="true" signature="1860:2153" ph="..." />
+            <marker date="1513796230678" expanded="true" signature="1874:2151" ph="..." />
+            <marker date="1513796230678" expanded="true" signature="1898:2050" ph="..." />
+            <marker date="1513796230678" expanded="true" signature="2305:2586" ph="..." />
+            <marker date="1513796230678" expanded="true" signature="2319:2584" ph="..." />
+            <marker date="1513796230678" expanded="true" signature="2337:2489" ph="..." />
+            <marker date="1513796230678" expanded="true" signature="2755:3053" ph="..." />
+            <marker date="1513796230678" expanded="true" signature="2769:3051" ph="..." />
+            <marker date="1513796230678" expanded="true" signature="2795:2947" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/JobSeekerPriorityValue.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="4" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="10" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/CompanyPriorityValue.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="42" lean-forward="false" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/companyPriorityValueEdit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="23" column="83" lean-forward="false" selection-start-line="23" selection-start-column="83" selection-end-line="23" selection-end-column="83" />
+          <folding>
+            <marker date="1513822151392" expanded="true" signature="918:1213" ph="..." />
+            <marker date="1513822151392" expanded="true" signature="932:1211" ph="..." />
+            <marker date="1513822151392" expanded="true" signature="957:1109" ph="..." />
+            <marker date="1513822151392" expanded="true" signature="1383:1677" ph="..." />
+            <marker date="1513822151392" expanded="true" signature="1397:1675" ph="..." />
+            <marker date="1513822151392" expanded="true" signature="1417:1569" ph="..." />
+            <marker date="1513822151392" expanded="true" signature="1835:2122" ph="..." />
+            <marker date="1513822151392" expanded="true" signature="1849:2120" ph="..." />
+            <marker date="1513822151392" expanded="true" signature="1867:2019" ph="..." />
+            <marker date="1513822151392" expanded="true" signature="2274:2555" ph="..." />
+            <marker date="1513822151392" expanded="true" signature="2288:2553" ph="..." />
+            <marker date="1513822151392" expanded="true" signature="2306:2458" ph="..." />
+            <marker date="1513822151392" expanded="true" signature="2719:3012" ph="..." />
+            <marker date="1513822151392" expanded="true" signature="2733:3010" ph="..." />
+            <marker date="1513822151392" expanded="true" signature="2754:2906" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="502">
+          <caret line="80" column="87" lean-forward="false" selection-start-line="80" selection-start-column="87" selection-end-line="80" selection-end-column="87" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2017_12_21_022544_create_candidate_recommendations_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="23" column="59" lean-forward="false" selection-start-line="23" selection-start-column="59" selection-end-line="23" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2017_12_20_222356_create_job_recommendations_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="11" column="19" lean-forward="true" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/CandidateRecommendation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="5" lean-forward="false" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/JobRecommendation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="4" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="18" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="172" column="13" lean-forward="false" selection-start-line="172" selection-start-column="13" selection-end-line="172" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2017_12_20_181805_create_company_priority_values_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="23" column="45" lean-forward="false" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CompanyController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="197" column="10" lean-forward="true" selection-start-line="197" selection-start-column="10" selection-end-line="197" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/recommendedJobs.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-20">
-          <caret line="31" column="73" lean-forward="false" selection-start-line="31" selection-start-column="73" selection-end-line="31" selection-end-column="73" />
-          <folding />
+        <state relative-caret-position="310">
+          <caret line="354" column="7" lean-forward="true" selection-start-line="276" selection-start-column="6" selection-end-line="354" selection-end-column="7" />
+          <folding>
+            <element signature="e#40#72#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

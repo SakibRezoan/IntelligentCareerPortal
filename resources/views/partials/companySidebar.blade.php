@@ -16,6 +16,9 @@
         <a href="{{route('company.requestForVerification')}}" class="list-group-item list-group-item-warning">
             <i class="glyphicon glyphicon-hand-right"></i> Request for Verification
         </a>
+        <a href="{{route('company.priorityValue')}}" class="list-group-item list-group-item-warning {{ Request::is('company/priorityValue/*') ? "active" : ""}}">
+            <i class="glyphicon glyphicon-arrow-up"></i> Recommendation Priority
+        </a>
         <a href="#" class="list-group-item list-group-item-warning">
             <i class="glyphicon glyphicon-arrow-right"></i> Invited Candidates <span class="badge">14</span>
         </a>

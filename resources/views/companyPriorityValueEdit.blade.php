@@ -21,8 +21,7 @@
                         
                         <div class="panel panel-default">
                             <div class="panel-body">
-                                {!! Form::open(['route' => 'company.priorityValue.store', 'data-parsley-validate' => 'required',]) !!}
-    
+                                {!! Form::model($priorityValue,['route' =>['company.priorityValue.update',$priorityValue->id],'method'=>'PUT']) !!}
                                 {{ Form::label('contract_type_weight', 'Contract Type:') }}
                                 {{ Form::select('contract_type_weight', ['1' => '1', '1' => '2',
                                         '3' =>'3', '4' =>'4', '5' =>'5', '6' =>'6', '7' =>'7', '8' =>'8', '9' =>'9', '10' =>'10'], null, ['class' => 'form-control', 'required' => '','placeholder'=> 'Give weight for Contract Type']) }}

@@ -74,6 +74,11 @@ Route::prefix('company')->group(function(){
 
     Route::get('/viewCandidateCV/{id}', 'CompanyController@viewCandidateCV')->name('candidate.cv.show');
 
+    Route::get('priorityValue/update',['uses' => 'CompanyController@priorityValueCreate', 'as' => 'company.priorityValue'] );
+    Route::post('priorityValue/update',['uses' => 'CompanyController@priorityValueStore', 'as' => 'companhy.priorityValue.store'] );
+    Route::put('priorityValue/update/{id}',['uses' => 'CompanyController@priorityValueUpdate', 'as' => 'companhy.priorityValue.update'] );
+    Route::get('recommendedJobs',['uses' => 'CompanyController@candidateRecommendation', 'as' => 'candidateRecommendation'] );
+    Route::get('viewRecommendedJobs',['uses' => 'CompanyController@recommendedCandidatesshow', 'as' => 'recommendedCandidates.show'] );
 
 });
 
