@@ -23,25 +23,22 @@
 								
 								{{ Form::label('degree', 'Degree:') }}
 								{{ Form::text('degree', null, array('class' => 'form-control', 'required' => '', 'maxlength' => '255')) }}
-								
+								<br>
 								{{ Form::label('group', 'Group:') }}
 								{{ Form::text('group', null, array('class' => 'form-control', 'maxlength' => '25')) }}
-								
+								<br>
 								{{ Form::label('institute', 'Institute:') }}
 								{{ Form::text('institute',null, array('class' => 'form-control', 'required' => '', 'maxlength' => '255')) }}
-								
+								<br>
 								{{ Form::label('year_of_passing', 'Passing Year:') }}
 								{{ Form::number('year_of_passing', null, array('class' => 'form-control', 'required' => '', 'min' => '1960')) }}
-								
+								<br>
 								{{ Form::label('cgpa', 'Gained GPA:') }}
 								{{ Form::number('cgpa', null, array('class' => 'form-control', 'required' => '', 'step'=>'0.01')) }}
-								
-								{{ Form::checkbox('isStudying', true, 'Currently Studying') }}
-								{{ Form::label('isStudying', "Currently Studying") }}
 								<br>
 								{{ Form::label('scanned_document', 'Upload Scanned Document:') }}
 								{{ Form::file('scanned_document', null, ['class' => 'form-control', 'required'=>'']) }}
-								
+								<br>
 								{{ Form::submit('Submit', array('class' => 'btn btn-success btn-md', 'style' => 'margin-top: 20px;')) }}
 								
 								{{ Form::token() }}

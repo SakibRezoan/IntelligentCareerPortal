@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\CandidateRecommendation;
 use App\Company;
 use App\CompanyPriorityValue;
+use App\Job;
 use App\JobSeekerEducation;
 use App\JobSeekerGeneralInfo;
 use App\JobSeekerJobPreference;
@@ -228,7 +229,7 @@ class CompanyController extends Controller
             'position_weight' => 'required|integer',
             'salary_weight' => 'required|integer',
             'degree_weight' => 'required|integer',
-            'skill_experience' => 'required|integer',
+            'skill_experience_weight' => 'required|integer',
         ]);
 
         $priorityValue = new CompanyPriorityValue;
@@ -238,7 +239,7 @@ class CompanyController extends Controller
         $priorityValue->position_weight = $request->position_weight;
         $priorityValue->salary_weight = $request->salary_weight;
         $priorityValue->degree_weight = $request->degree_weight;
-        $priorityValue->skill_experience = $request->skill_experience;
+        $priorityValue->skill_experience_weight = $request->skill_experience_weight;
 
         $priorityValue->save();
 
@@ -256,15 +257,15 @@ class CompanyController extends Controller
             'position_weight' => 'required|integer',
             'salary_weight' => 'required|integer',
             'degree_weight' => 'required|integer',
-            'skill_experience' => 'required|integer',
+            'skill_experience_weight' => 'required|integer',
         ]);
 
         $priorityValue = CompanyPriorityValue::find($id);
         $priorityValue->contract_type_weight = $request->input('contract_type_weight');
-        $priorityValue->organization_weight = $request->input('position_weight');
-        $priorityValue->job_location_weight = $request->input('salary_weight');
-        $priorityValue->salary_weight = $request->input('degree_weight');
-        $priorityValue->skill_wishlist_weight = $request->input('skill_experience');
+        $priorityValue->position_weight = $request->input('position_weight');
+        $priorityValue->salary_weight = $request->input('salary_weight');
+        $priorityValue->degree_weight = $request->input('degree_weight');
+        $priorityValue->skill_experience_weight = $request->input('skill_experience_weight');
         $priorityValue->save();
 
         $notification = array(
@@ -274,85 +275,118 @@ class CompanyController extends Controller
         return redirect()->route('candidateRecommendation')->with($notification);
     }
 
-//    public function candidateRecommendation(){
-//        $rank = 0;
-//        $company_id = Auth::user()->id;
-//        $priorityValue = CompanyPriorityValue::where('company_id',$company_id)->first();
-//        $jobs = Job::where('company_id',$company_id)->get();
-//        $jobPreference = JobSeekerJobPreference::where('status', 1)->first();
-//
-//        $previousRecommendations = CandidateRecommendation::where('job_id',$jobs->id)->get();
-//        if(count($previousRecommendations) > 0){
-//            foreach ($previousRecommendations as $previousRecommendation)
-//                $previousRecommendation->delete();
-//        }
-//
-//        foreach($jobs as $job) {
-//            foreach ($jobPreference->contract_types as $contract_type) {
-//                if ($job->contract_type == $contract_type) {
-//                    $rank = $rank + $priorityValue->contract_type_weight;
-//                    break;
-//                }
-//            }
-//            foreach ($jobPreference->organizations as $organization)
-//            {
-//                if((CompanyInfo::where('id',$job->company_id)->first())->company_type
-//                    == $organization){
-//                    $rank = $rank + $priorityValue->organization_weight;
-//                }
-//            }
-//            foreach ($jobPreference->locations as $location){
-//                if($job->job_location == $location){
-//                    $rank = $rank + $priorityValue->job_location_weight;
-//                    break;
-//                }
-//            }
-//            if($job->isNegotiable){
-//                $rank = $rank + $priorityValue->salary_weight;
-//            }
-//            elseif ($jobPreference->isNegotiable){
-//                $rank = $rank + $priorityValue->salary_weight;
-//            }
-//            elseif ($jobPreference->minimum_compensation >= $job->salary_max){
-//                $rank = $rank + $priorityValue->salary_weight;
-//            }
-//            elseif ($jobPreference->minimum_compensation >= $job->salary_min){
-//                $rank = $rank + $priorityValue->salary_weight;
-//            }
-//
-//            if($job->isNegotiable){
-//                $rank = $rank + $priorityValue->salary_weight;
-//            }
-//
-//            foreach ($jobPreference->skill_wishlist as $skill_wishlist){
-//                foreach ($job->skill as $skill){
-//                    $count = 0;
-//                    if(strtolower($skill_wishlist) == strtolower($skill)){
-//                        $count++;
-//                    }
-//                }
-//
-//            }
-//            $rank = $rank + ($priorityValue->skill_wishlist)*($count/(count($job->skill)));
-//
-//            $rank = $rank/50;
-//            $jobRecommendation = new JobRecommendation;
-//            $jobRecommendation->user_id = $user_id;
-//            $jobRecommendation->job_id = $job->id;
-//            $jobRecommendation->rank = $rank;
-//            $jobRecommendation->save();
-//
-//        }
-//
-//        return redirect()->route('recommendedJobs.show');
-//
-//    }
-//
-//    public function recommendedJobsshow(){
-//        $user_id = Auth::user()->id;
-//        $recommendedJobsIds = JobRecommendation::where('user_id',$user_id)->orderBy('rank', 'DESC')->limit(5)->get();
-//        return view('recommendedJobs',['recommendedJobsIds' => $recommendedJobsIds]);
-//    }
+    public function candidateRecommendation(){
+        $rank = 0;
+        $company_id = Auth::user()->id;
+        $priorityValue = CompanyPriorityValue::where('company_id',$company_id)->first();
+        $jobs = Job::where('company_id',$company_id)->get();
+        if(count($jobs) < 1){
+            $notification = array(
+                'message' => 'Post a job to get recommended candidates',
+                'alert-type' => 'info'
+            );
+            return redirect()->route('jobs.view')->with($notification);
+        }
+        $jobseekers = User::where('status',1)->get();
+
+        if(count($jobseekers) < 1){
+            $notification = array(
+                'message' => 'No candidates available in the system',
+                'alert-type' => 'info'
+            );
+            return redirect()->route('jobs.view')->with($notification);
+        }
+
+        foreach ($jobs as $job){
+            $previousRecommendations = CandidateRecommendation::where('job_id',$job->id)->get();
+            if(count($previousRecommendations) > 0){
+                foreach ($previousRecommendations as $previousRecommendation)
+                    $previousRecommendation->delete();
+            }
+        }
+
+        foreach($jobs as $job) {
+            foreach ($jobseekers as $jobseeker) {
+
+                $jobPreferences = JobSeekerJobPreference::where('user_id', $jobseeker->id)->get();
+
+                foreach ($jobPreferences as $jobPreference) {
+                    if ($job->contract_type == $jobPreference) {
+                        $rank = $rank + $priorityValue->contract_type_weight;
+                        break;
+                    }
+                }
+
+                $workExperiences = JobSeekerWorkExperience::where('user_id', $jobseeker->id)->get();
+
+                foreach ($workExperiences as $workExperience) {
+                    if ($job->position == $workExperience->designation) {
+                        $rank = $rank + $priorityValue->position_weight;
+                    }
+                }
+                if ($job->isNegotiable) {
+                    $rank = $rank + $priorityValue->salary_weight;
+                }
+                elseif ($jobPreference->isNegotiable) {
+                    $rank = $rank + $priorityValue->salary_weight;
+                }
+                elseif ($jobPreference->minimum_compensation >= $job->salary_max) {
+                    $rank = $rank + $priorityValue->salary_weight;
+                }
+                elseif ($jobPreference->minimum_compensation >= $job->salary_min) {
+                    $rank = $rank + $priorityValue->salary_weight;
+                }
+
+                if ($job->isNegotiable) {
+                    $rank = $rank + $priorityValue->salary_weight;
+                }
+
+                $educations = JobSeekerEducation::where('user_id', $jobseeker->id)->get();
+
+                foreach ($educations as $education) {
+                    if ($job->required_degree == $education->degree) {
+                        $rank = $rank + $priorityValue->degree_weight;
+                        break;
+                    }
+                }
+
+                for ($i = 0; $i< count($job->skill); $i++) {
+                    for($j = 0; $j< count($workExperience->skill); $j++) {
+
+                        if($job->skill[$i] == $workExperience->skill[$j] && $job->experience[$i] <= $workExperience->experience[$j] ){
+                            $rank = $rank + $priorityValue->skill_experience_weight;
+                        }
+                        elseif ($job->skill[$i] == $workExperience->skill[$j]){
+                            $rank = $rank + ($priorityValue->skill_experience_weight)/2;
+                        }
+
+                    }
+                }
+
+                $rank = $rank / 100;
+                $candidateRecommendation = new CandidateRecommendation;
+                $candidateRecommendation->user_id = $jobseeker->id;
+                $candidateRecommendation->job_id = $job->id;
+                $candidateRecommendation->rank = $rank;
+                $candidateRecommendation->save();
+            }
+
+        }
+
+        return redirect()->route('recommendedCandidates.show');
+
+    }
+
+    public function recommendedCandidatesshow(){
+        $company_id = Auth::user()->id;
+
+        $jobs = Job::where('company_id',$company_id)->get();
+        foreach ($jobs as $job){
+            $db_query = CandidateRecommendation::where('job_id',$job->id)->orderBy('rank', 'DESC')->limit(4);
+        }
+        $candidates =  $db_query ->get();
+        return view('company.recommendedCandidates',['recommendedCandidates' => $candidates]);
+    }
 
 
 }

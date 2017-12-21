@@ -220,7 +220,7 @@ class HomeController extends Controller
 
     public function recommendedJobsshow(){
         $user_id = Auth::user()->id;
-        $recommendedJobsIds = JobRecommendation::where('user_id',$user_id)->orderBy('rank', 'DESC')->limit(5)->get();
+        $recommendedJobsIds = JobRecommendation::where('user_id',$user_id)->orderBy('rank', 'DESC')->limit(2)->get();
         return view('recommendedJobs',['recommendedJobsIds' => $recommendedJobsIds]);
     }
 }

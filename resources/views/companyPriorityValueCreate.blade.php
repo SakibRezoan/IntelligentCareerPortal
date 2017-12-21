@@ -24,26 +24,25 @@
                                 {!! Form::open(['route' => 'company.priorityValue.store', 'data-parsley-validate' => 'required',]) !!}
     
                                 {{ Form::label('contract_type_weight', 'Contract Type:') }}
-                                {{ Form::select('contract_type_weight', ['1' => '1', '1' => '2',
-                                        '3' =>'3', '4' =>'4', '5' =>'5', '6' =>'6', '7' =>'7', '8' =>'8', '9' =>'9', '10' =>'10'], null, ['class' => 'form-control', 'required' => '','placeholder'=> 'Give weight for Contract Type']) }}
+                                {{ Form::select('contract_type_weight', ['1' => '1', '2' => '2',
+                                        '3' =>'3', '4' =>'4', '5' =>'5', '6' =>'6', '7' =>'7', '8' =>'8', '9' =>'9', '10' =>'10'], null, ['class' => 'form-control', 'required' => '','placeholder'=> 'Give weight for contract type']) }}
                                 <br>
     
-                                {{ Form::label('position_weight', 'Organization Type:') }}
-                                {{ Form::select('position_weight', ['1' => '1', '1' => '2',
-                                        '3' =>'3', '4' =>'4', '5' =>'5', '6' =>'6', '7' =>'7', '8' =>'8', '9' =>'9', '10' =>'10'], null, ['class' => 'form-control', 'required' => '','placeholder'=> 'Give weight for Organization Type']) }}
+                                {{ Form::label('position_weight', 'Position:') }}
+                                {{ Form::select('position_weight', ['1' => '1', '2' => '2',
+                                        '3' =>'3', '4' =>'4', '5' =>'5', '6' =>'6', '7' =>'7', '8' =>'8', '9' =>'9', '10' =>'10'], null, ['class' => 'form-control', 'required' => '','placeholder'=> 'Give weight for job position']) }}
                                 <br>
-                                {{ Form::label('salary_weight', 'Job Location:') }}
-                                {{ Form::select('salary_weight', ['1' => '1', '1' => '2',
-                                        '3' =>'3', '4' =>'4', '5' =>'5', '6' =>'6', '7' =>'7', '8' =>'8', '9' =>'9', '10' =>'10'], null, ['class' => 'form-control', 'required' => '','placeholder'=> 'Give weight for Job Location']) }}
+                                {{ Form::label('salary_weight', 'Salary:') }}
+                                {{ Form::select('salary_weight', ['1' => '1', '2' => '2',
+                                        '3' =>'3', '4' =>'4', '5' =>'5', '6' =>'6', '7' =>'7', '8' =>'8', '9' =>'9', '10' =>'10'], null, ['class' => 'form-control', 'required' => '','placeholder'=> 'Give weight for salary']) }}
                                 <br>
-                                {{ Form::label('degree_weight', 'Salary:') }}
-                                {{ Form::select('degree_weight', ['1' => '1', '1' => '2',
-                                        '3' =>'3', '4' =>'4', '5' =>'5', '6' =>'6', '7' =>'7', '8' =>'8', '9' =>'9', '10' =>'10'], null, ['class' => 'form-control', 'required' => '','placeholder'=> 'Give weight for Salary']) }}
+                                {{ Form::label('degree_weight', 'Degree:') }}
+                                {{ Form::select('degree_weight', ['1' => '1', '2' => '2',
+                                        '3' =>'3', '4' =>'4', '5' =>'5', '6' =>'6', '7' =>'7', '8' =>'8', '9' =>'9', '10' =>'10'], null, ['class' => 'form-control', 'required' => '','placeholder'=> 'Give weight for degree']) }}
                                 <br>
-                                {{ Form::label('skill_experience', 'Skill Wish-List:') }}
-                                {{ Form::select('skill_experience', ['1' => '1', '1' => '2',
-                                        '3' =>'3', '4' =>'4', '5' =>'5', '6' =>'6', '7' =>'7', '8' =>'8', '9' =>'9', '10' =>'10'], null, ['class' => 'form-control', 'required' => '','placeholder'=> 'Give weight for Skill Wish-List']) }}
-                                <br>
+                                {{ Form::label('skill_experience_weight', 'Skill and Experience:') }}
+                                {{ Form::select('skill_experience_weight', ['1' => '1', '2' => '2',
+                                        '3' =>'3', '4' =>'4', '5' =>'5', '6' =>'6', '7' =>'7', '8' =>'8', '9' =>'9', '10' =>'10'], null, ['class' => 'form-control', 'required' => '','placeholder'=> 'Give weight for skill and experience']) }}
                                 {{ Form::submit('Submit', array('class' => 'btn btn-success btn-md', 'style' => 'margin-top: 20px;')) }}
     
                                 {{ Form::token() }}

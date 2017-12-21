@@ -40,7 +40,7 @@
                                 <td class="text-left" style="text-align: justify">{{ $jobseekerTeam->designation }}</td>
                                 <td class="text-left" style="text-align: justify">{{ $jobseekerTeam->client }}</td>
                                 <td class="text-left" style="text-align: justify">{{ $jobseekerTeam->client_industry }}</td>
-                                <td class="text-left" style="text-align: justify">{{ $jobseekerTeam->description }}</td>
+                                <td class="text-left" style="text-align: justify">{!! $jobseekerTeam->description !!}</td>
                                 <td class="text-left" style="text-align: justify">{{ $jobseekerTeam->product }}</td>
                                 <td class="text-left" style="text-align: justify">
                                     <a target="_blank"

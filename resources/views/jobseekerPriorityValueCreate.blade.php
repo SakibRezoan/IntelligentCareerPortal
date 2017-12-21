@@ -23,26 +23,26 @@
                                 {!! Form::open(['route' => 'jobseeker.priorityValue.store', 'data-parsley-validate' => 'required',]) !!}
                                 
                                 {{ Form::label('contract_type_weight', 'Contract Type:') }}
-                                {{ Form::select('contract_type_weight', ['1' => '1', '1' => '2',
+                                {{ Form::select('contract_type_weight', ['1' => '1', '2' => '2',
                                         '3' =>'3', '4' =>'4', '5' =>'5', '6' =>'6', '7' =>'7', '8' =>'8', '9' =>'9', '10' =>'10'], null, ['class' => 'form-control', 'required' => '','placeholder'=> 'Give weight for Contract Type']) }}
                                 <br>
     
                                 {{ Form::label('organization_weight', 'Organization Type:') }}
-                                {{ Form::select('organization_weight', ['1' => '1', '1' => '2',
+                                {{ Form::select('organization_weight', ['1' => '1', '2' => '2',
                                         '3' =>'3', '4' =>'4', '5' =>'5', '6' =>'6', '7' =>'7', '8' =>'8', '9' =>'9', '10' =>'10'], null, ['class' => 'form-control', 'required' => '','placeholder'=> 'Give weight for Organization Type']) }}
                                 <br>
                                 {{ Form::label('job_location_weight', 'Job Location:') }}
-                                {{ Form::select('job_location_weight', ['1' => '1', '1' => '2',
+                                {{ Form::select('job_location_weight', ['1' => '1', '2' => '2',
                                         '3' =>'3', '4' =>'4', '5' =>'5', '6' =>'6', '7' =>'7', '8' =>'8', '9' =>'9', '10' =>'10'], null, ['class' => 'form-control', 'required' => '','placeholder'=> 'Give weight for Job Location']) }}
                                 <br>
                                 {{ Form::label('salary_weight', 'Salary:') }}
-                                {{ Form::select('salary_weight', ['1' => '1', '1' => '2',
+                                {{ Form::select('salary_weight', ['1' => '1', '2' => '2',
                                         '3' =>'3', '4' =>'4', '5' =>'5', '6' =>'6', '7' =>'7', '8' =>'8', '9' =>'9', '10' =>'10'], null, ['class' => 'form-control', 'required' => '','placeholder'=> 'Give weight for Salary']) }}
                                 <br>
                                 {{ Form::label('skill_wishlist_weight', 'Skill Wish-List:') }}
-                                {{ Form::select('skill_wishlist_weight', ['1' => '1', '1' => '2',
+                                {{ Form::select('skill_wishlist_weight', ['1' => '1', '2' => '2',
                                         '3' =>'3', '4' =>'4', '5' =>'5', '6' =>'6', '7' =>'7', '8' =>'8', '9' =>'9', '10' =>'10'], null, ['class' => 'form-control', 'required' => '','placeholder'=> 'Give weight for Skill Wish-List']) }}
-                                <br>
+                               
                                 {{ Form::submit('Submit', array('class' => 'btn btn-success btn-md', 'style' => 'margin-top: 20px;')) }}
                                 
                                 {{ Form::token() }}

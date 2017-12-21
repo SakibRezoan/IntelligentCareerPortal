@@ -75,10 +75,10 @@ Route::prefix('company')->group(function(){
     Route::get('/viewCandidateCV/{id}', 'CompanyController@viewCandidateCV')->name('candidate.cv.show');
 
     Route::get('priorityValue/update',['uses' => 'CompanyController@priorityValueCreate', 'as' => 'company.priorityValue'] );
-    Route::post('priorityValue/update',['uses' => 'CompanyController@priorityValueStore', 'as' => 'companhy.priorityValue.store'] );
-    Route::put('priorityValue/update/{id}',['uses' => 'CompanyController@priorityValueUpdate', 'as' => 'companhy.priorityValue.update'] );
-    Route::get('recommendedJobs',['uses' => 'CompanyController@candidateRecommendation', 'as' => 'candidateRecommendation'] );
-    Route::get('viewRecommendedJobs',['uses' => 'CompanyController@recommendedCandidatesshow', 'as' => 'recommendedCandidates.show'] );
+    Route::post('priorityValue/update',['uses' => 'CompanyController@priorityValueStore', 'as' => 'company.priorityValue.store'] );
+    Route::put('priorityValue/update/{id}',['uses' => 'CompanyController@priorityValueUpdate', 'as' => 'company.priorityValue.update'] );
+    Route::get('recommendation/recommendedCandidates',['uses' => 'CompanyController@candidateRecommendation', 'as' => 'candidateRecommendation'] );
+    Route::get('recommendation/viewRecommendedCandidates',['uses' => 'CompanyController@recommendedCandidatesshow', 'as' => 'recommendedCandidates.show'] );
 
 });
 
@@ -132,8 +132,8 @@ Route::prefix('jobseekerProfile')-> group(function (){
     Route::get('priorityValue/update',['uses' => 'HomeController@priorityValueCreate', 'as' => 'jobseeker.priorityValue'] );
     Route::post('priorityValue/update',['uses' => 'HomeController@priorityValueStore', 'as' => 'jobseeker.priorityValue.store'] );
     Route::put('priorityValue/update/{id}',['uses' => 'HomeController@priorityValueUpdate', 'as' => 'jobseeker.priorityValue.update'] );
-    Route::get('recommendedJobs',['uses' => 'HomeController@jobRecommendation', 'as' => 'jobRecommendation'] );
-    Route::get('viewRecommendedJobs',['uses' => 'HomeController@recommendedJobsshow', 'as' => 'recommendedJobs.show'] );
+    Route::get('recommendation/recommendedJobs',['uses' => 'HomeController@jobRecommendation', 'as' => 'jobRecommendation'] );
+    Route::get('recommendation/viewRecommendedJobs',['uses' => 'HomeController@recommendedJobsshow', 'as' => 'recommendedJobs.show'] );
 
 });
     Route::post('/searchJobList', 'HomeController@searchJobList')->name('jobseeker.searchJobList');
