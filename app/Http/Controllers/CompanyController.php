@@ -96,112 +96,100 @@ class CompanyController extends Controller
 
         }
 
-        $users =  new Collection($db_query ->get()->toArray());
+        $users =  $db_query ->get();
 
-//        $second = true;
-//
-//        foreach ($keywords as $keyword){
-//            if($second){
-//                $db_query = JobSeekerGeneralInfo::where('first_name', 'LIKE', '%'.$keyword.'%')
-//                    ->orWhere('last_name', 'LIKE','%'.$keyword.'%')
-//                    ->orWhere('address', 'LIKE','%'.$keyword.'%');
-//                $second = false;
-//            }else{
-//                $db_query = $db_query->orWhere('first_name', 'LIKE', '%'.$keyword.'%')
-//                    ->orWhere('last_name', 'LIKE','%'.$keyword.'%')
-//                    ->orWhere('address', 'LIKE','%'.$keyword.'%');
-//            }
-//
-//        }
-//
-//        $candidatesInfo =  new Collection($db_query ->get()->toArray());
-//
-//        $third = true;
-//
-//        foreach ($keywords as $keyword){
-//            if($third){
-//                $db_query = JobSeekerEducation::where('degree', 'LIKE', '%'.$keyword.'%')
-//                    ->orWhere('institute', 'LIKE','%'.$keyword.'%')
-//                    ->orWhere('group', 'LIKE','%'.$keyword.'%');
-//                $third = false;
-//            }else{
-//                $db_query = $db_query->orWhere('degree', 'LIKE', '%'.$keyword.'%')
-//                    ->orWhere('institute', 'LIKE','%'.$keyword.'%')
-//                    ->orWhere('group', 'LIKE','%'.$keyword.'%');
-//            }
-//
-//        }
-//
-//        $candidatesEducation =  new Collection($db_query ->get()->toArray());
-//
-//        $fourth = true;
-//        foreach ($keywords as $keyword){
-//            if($fourth){
-//                $db_query = JobSeekerJobPreference::where('skill_wishlist', 'LIKE', '%'.$keyword.'%');
-//                $fourth = false;
-//            }else{
-//                $db_query = $db_query->orWhere('skill_wishlist', 'LIKE', '%'.$keyword.'%');
-//            }
-//
-//        }
-//
-//        $candidatesJobPreference =  new Collection($db_query ->get()->toArray());
-//
-//        $fifth = true;
-//
-//        foreach ($keywords as $keyword){
-//            if($fifth){
-//                $db_query = JobSeekerTeam::where('designation', 'LIKE', '%'.$keyword.'%');
-//                $fifth = false;
-//            }else{
-//                $db_query = $db_query->orWhere('designation', 'LIKE', '%'.$keyword.'%');
-//            }
-//
-//        }
-//
-//        $candidatesTeam =  new Collection($db_query ->get()->toArray());
-//
-//        $sixth = true;
-//        foreach ($keywords as $keyword){
-//            if($sixth){
-//                $db_query = JobSeekerWorkExperience::where('designation', 'LIKE', '%'.$keyword.'%')
-//                    ->orWhere('skill', 'LIKE','%'.$keyword.'%');
-//                $sixth = false;
-//            }else{
-//                $db_query = $db_query->orWhere('name', 'LIKE', '%'.$keyword.'%')
-//                    ->orWhere('email', 'LIKE','%'.$keyword.'%');
-//            }
-//
-//        }
-//
-//        $candidatesExperience =  new Collection($db_query ->get()->toArray());
-//
-//
+        $second = true;
+
+        foreach ($keywords as $keyword){
+            if($second){
+                $db_query = JobSeekerGeneralInfo::where('first_name', 'LIKE', '%'.$keyword.'%')
+                    ->orWhere('last_name', 'LIKE','%'.$keyword.'%')
+                    ->orWhere('address', 'LIKE','%'.$keyword.'%');
+                $second = false;
+            }else{
+                $db_query = $db_query->orWhere('first_name', 'LIKE', '%'.$keyword.'%')
+                    ->orWhere('last_name', 'LIKE','%'.$keyword.'%')
+                    ->orWhere('address', 'LIKE','%'.$keyword.'%');
+            }
+
+        }
+
+        $candidatesInfo =  $db_query ->get();
+
+        $third = true;
+
+        foreach ($keywords as $keyword){
+            if($third){
+                $db_query = JobSeekerEducation::where('degree', 'LIKE', '%'.$keyword.'%')
+                    ->orWhere('institute', 'LIKE','%'.$keyword.'%')
+                    ->orWhere('group', 'LIKE','%'.$keyword.'%');
+                $third = false;
+            }else{
+                $db_query = $db_query->orWhere('degree', 'LIKE', '%'.$keyword.'%')
+                    ->orWhere('institute', 'LIKE','%'.$keyword.'%')
+                    ->orWhere('group', 'LIKE','%'.$keyword.'%');
+            }
+
+        }
+
+        $candidatesEducation =  $db_query ->get();
+
+        $fourth = true;
+        foreach ($keywords as $keyword){
+            if($fourth){
+                $db_query = JobSeekerJobPreference::where('skill_wishlist', 'LIKE', '%'.$keyword.'%');
+                $fourth = false;
+            }else{
+                $db_query = $db_query->orWhere('skill_wishlist', 'LIKE', '%'.$keyword.'%');
+            }
+
+        }
+
+        $candidatesJobPreference =  $db_query ->get();
+
+        $fifth = true;
+
+        foreach ($keywords as $keyword){
+            if($fifth){
+                $db_query = JobSeekerTeam::where('designation', 'LIKE', '%'.$keyword.'%');
+                $fifth = false;
+            }else{
+                $db_query = $db_query->orWhere('designation', 'LIKE', '%'.$keyword.'%');
+            }
+
+        }
+
+        $candidatesTeam =  $db_query ->get();
+
+        $sixth = true;
+        foreach ($keywords as $keyword){
+            if($sixth){
+                $db_query = JobSeekerWorkExperience::where('designation', 'LIKE', '%'.$keyword.'%')
+                    ->orWhere('skill', 'LIKE','%'.$keyword.'%');
+                $sixth = false;
+            }else{
+                $db_query = $db_query->orWhere('name', 'LIKE', '%'.$keyword.'%')
+                    ->orWhere('email', 'LIKE','%'.$keyword.'%');
+            }
+
+        }
+
+        $candidatesExperience =  $db_query ->get();
+
         if(count($users) > 0
-//            || count($candidatesInfo) > 0
-//            || count($candidatesEducation) > 0
-//            || count($candidatesJobPreference) > 0
-//            || count($candidatesTeam) > 0
-//            || count($candidatesExperience) > 0
+            || count($candidatesInfo) > 0
+            || count($candidatesEducation) > 0
+            || count($candidatesJobPreference) > 0
+            || count($candidatesTeam) > 0
+            || count($candidatesExperience) > 0
         ){
-//            $candidates = array();
-//
-//            $candidates[] += $users;
-//            $candidates[] += User::where('id', $candidatesInfo['user_id'])->first();
-//            $candidates[] += User::where('id', $candidatesEducation['user_id'])->first();
-//            $candidates[] += User::where('id', $candidatesJobPreference['user_id'])->first();
-//            $candidates[] += User::where('id', $candidatesExperience['user_id'])->first();
-//            $candidates[] += User::where('id', $candidatesTeam['user_id'])->first();
-//
-//            dd($candidates);
-
             return view('company.searchCandidateList',[
-                        'candidates' => $users,
-//                        'candidatesInfo' => $candidatesInfo,
-//                        '$candidatesEducation' => $candidatesEducation,
-//                        '$candidatesTeam' => $candidatesTeam,
-//                        '$candidatesExperience' => $candidatesExperience,
-//                        '$candidatesJobPreference' => $candidatesJobPreference,
+                        'users' => $users,
+                        'candidatesInfo' => $candidatesInfo,
+                        'candidatesEducation' => $candidatesEducation,
+                        'candidatesTeam' => $candidatesTeam,
+                        'candidatesExperience' => $candidatesExperience,
+                        'candidatesJobPreference' => $candidatesJobPreference,
                     ]);
         }
         $notification = array(
@@ -216,6 +204,10 @@ class CompanyController extends Controller
     }
 
     public function inviteCandidate(){
+
+    }
+
+    public function viewCandidateCV($id){
 
     }
 

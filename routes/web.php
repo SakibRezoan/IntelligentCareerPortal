@@ -74,6 +74,7 @@ Route::prefix('company')->group(function(){
 
     Route::get('/inviteCandidate/{id}', 'CompanyController@saveJob')->name('candidate.invite');
 
+    Route::get('/viewCandidateCV/{id}', 'CompanyController@viewCandidateCV')->name('candidate.cv.show');
 
 
 });

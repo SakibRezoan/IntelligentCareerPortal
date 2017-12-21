@@ -43,7 +43,7 @@
                                 {{ Form::date('date_of_birth',null, array('class' => 'form-control', 'required' => '')) }}
                                 <br>
                                 {{ Form::label('city', 'City:') }}
-                                {{ Form::select('job_location', ['Dhaka North' => 'Dhaka North','Dhaka South' => 'Dhaka South','Gazipur' => 'Gazipur', 'Narayanganj'=>'Narayanganj', 'Rajshahi' => 'Rajshahi',
+                                {{ Form::select('city', ['Dhaka North' => 'Dhaka North','Dhaka South' => 'Dhaka South','Gazipur' => 'Gazipur', 'Narayanganj'=>'Narayanganj', 'Rajshahi' => 'Rajshahi',
                                             'Khulna' =>'Khulna', 'Chittagong' => 'Chittagong', 'Barisal' => 'Barisal',
                                             'Rangpur' => 'Rangpur', 'Comilla'=>'Comilla', 'Sylhet' =>'Sylhet' ], null, ['class' => 'form-control','placeholder'=> 'Select City']) }}
                                 <br>
