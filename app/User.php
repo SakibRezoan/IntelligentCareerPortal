@@ -53,4 +53,9 @@ class User extends Authenticatable
     {
         return $this->hasOne(JobSeekerWorkExperience::class, 'foreign_key');
     }
+
+    public function recommendedJobs()
+    {
+        return $this->hasMany(Job::class, 'foreign_key');
+    }
 }

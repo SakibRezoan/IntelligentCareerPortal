@@ -34,7 +34,7 @@
 												 null, ['multiple' => true, 'class' => 'form-control',]) }}
 								<br>
 								{{ Form::label('locations[]', 'Preferred Job Locations:') }}
-								{{ Form::select('job_location', ['Dhaka North' => 'Dhaka North','Dhaka South' => 'Dhaka South','Gazipur' => 'Gazipur', 'Narayanganj'=>'Narayanganj', 'Rajshahi' => 'Rajshahi',
+								{{ Form::select('locations[]', ['Dhaka North' => 'Dhaka North','Dhaka South' => 'Dhaka South','Gazipur' => 'Gazipur', 'Narayanganj'=>'Narayanganj', 'Rajshahi' => 'Rajshahi',
                                             'Khulna' =>'Khulna', 'Chittagong' => 'Chittagong', 'Barisal' => 'Barisal',
                                             'Rangpur' => 'Rangpur', 'Comilla'=>'Comilla', 'Sylhet' =>'Sylhet' ], null, ['multiple'=>true,'class' => 'form-control','placeholder'=> 'Select Preferred Job Location']) }}
 								<br>
@@ -55,7 +55,7 @@
 										<div class="col-md-9">
 											<div class="md-form">
 												<input type="text" id="skill_wishlist" name="skill_wishlist[]" maxlength="50" placeholder="Preferred Skill" class="form-control" required>
-												<label for="skill_wishlist"></label>
+												<label for="skill_wishlist[]"></label>
 											</div>
 										</div>
 										<div class="col-md-2">
@@ -96,7 +96,7 @@
             var new_skill_wishlist = '<div class="row" id="row'+i+'">' +
                 '<div class="col-md-9"><div class="md-form">' +
                 '<input type="text" id="skill_wishlist" placeholder="Preferred Skill" maxlength="50" name="skill_wishlist[]" ' +
-                'class="form-control"><label for="skill_wishlist">' +
+                'class="form-control"><label for="skill_wishlist[]">' +
                 '</label></div></div>' +
 				'<div class="col-md-2">' +
                 '<div class="md-form"><p class="btn btn-danger waves-effect waves-light btn-remove" id="'+i+'">' +

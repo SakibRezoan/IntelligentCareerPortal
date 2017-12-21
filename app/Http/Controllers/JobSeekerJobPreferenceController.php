@@ -8,6 +8,10 @@ use Auth;
 
 class JobSeekerJobPreferenceController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -37,16 +41,16 @@ class JobSeekerJobPreferenceController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'contract_types' => 'required|array|',
+            'contract_types' => 'required|array',
             'contract_types.*'=> 'required|string',
-            'organizations' => 'required|array|',
+            'organizations' => 'required|array',
             'organizations.*'=> 'required|string',
-            'locations' => 'required|array|',
+            'locations' => 'required|array',
             'locations.*'=> 'required|string',
             'environment'=> 'required|string|max:2000',
             'minimum_compensation' => 'integer',
             'isNegotiable' => 'boolean',
-            'skill_wishlist' => 'array|',
+            'skill_wishlist' => 'array',
             'skill_wishlist.*'=> 'string|max:255',
         ]);
 

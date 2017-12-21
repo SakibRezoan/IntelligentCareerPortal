@@ -27,8 +27,8 @@
         <a href="{{route('jobseekerExperience.list')}}" class="list-group-item list-group-item-warning {{ Request::is('jobseekerProfile/experience/*') ? "active" : ""}}">
             <i class="glyphicon glyphicon-star-empty"></i> Work Experience
         </a>
-        <a href="#" class="list-group-item list-group-item-warning">
-            <i class="glyphicon glyphicon-search"></i> Advance Search
+        <a href="{{route('jobseeker.priorityValue')}}" class="list-group-item list-group-item-warning {{ Request::is('jobseekerProfile/priorityValue/*') ? "active" : ""}}">
+            <i class="glyphicon glyphicon-arrow-up"></i> Recommendation Priority
         </a>
         <a href="#" class="list-group-item list-group-item-warning">
             <i class="glyphicon glyphicon-folder-open"></i> Recommended Jobs <span class="badge">14</span>
