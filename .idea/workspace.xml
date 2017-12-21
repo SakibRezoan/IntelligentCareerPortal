@@ -2,23 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="67dd8ef5-655f-42fd-b81a-1d1a4bdb7395" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/company/recommendedCandidates.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CandidateRecommendation.php" afterPath="$PROJECT_DIR$/app/CandidateRecommendation.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/CompanyController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/CompanyController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2017_12_20_181805_create_company_priority_values_table.php" afterPath="$PROJECT_DIR$/database/migrations/2017_12_20_181805_create_company_priority_values_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/companyPriorityValueCreate.blade.php" afterPath="$PROJECT_DIR$/resources/views/companyPriorityValueCreate.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/companyPriorityValueEdit.blade.php" afterPath="$PROJECT_DIR$/resources/views/companyPriorityValueEdit.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/jobseekerCertification/create.blade.php" afterPath="$PROJECT_DIR$/resources/views/jobseekerCertification/create.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/jobseekerEducation/create.blade.php" afterPath="$PROJECT_DIR$/resources/views/jobseekerEducation/create.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/jobseekerEducation/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/jobseekerEducation/edit.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/jobseekerPriorityValueCreate.blade.php" afterPath="$PROJECT_DIR$/resources/views/jobseekerPriorityValueCreate.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/jobseekerPriorityValueEdit.blade.php" afterPath="$PROJECT_DIR$/resources/views/jobseekerPriorityValueEdit.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/jobseekerTeam/view.blade.php" afterPath="$PROJECT_DIR$/resources/views/jobseekerTeam/view.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/partials/companySidebar.blade.php" afterPath="$PROJECT_DIR$/resources/views/partials/companySidebar.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/partials/jobseekerSidebar.blade.php" afterPath="$PROJECT_DIR$/resources/views/partials/jobseekerSidebar.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/web.php" afterPath="$PROJECT_DIR$/routes/web.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/recommendedJobs.blade.php" afterPath="$PROJECT_DIR$/resources/views/recommendedJobs.blade.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -33,11 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CompanyController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CompanyController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CompanyController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="444">
-              <caret line="384" column="107" lean-forward="false" selection-start-line="384" selection-start-column="107" selection-end-line="384" selection-end-column="107" />
+            <state relative-caret-position="120">
+              <caret line="310" column="30" lean-forward="false" selection-start-line="310" selection-start-column="30" selection-end-line="310" selection-end-column="30" />
               <folding>
                 <element signature="e#40#72#0#PHP" expanded="true" />
               </folding>
@@ -65,11 +51,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="edit.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/jobseekerEducation/edit.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="21" column="32" lean-forward="false" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
+            <state relative-caret-position="270">
+              <caret line="15" column="19" lean-forward="true" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="recommendedJobs.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/recommendedJobs.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="43" column="48" lean-forward="true" selection-start-line="43" selection-start-column="48" selection-end-line="43" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -110,7 +106,7 @@
       <file leaf-file-name="HomeController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="412">
+            <state relative-caret-position="574">
               <caret line="223" column="76" lean-forward="true" selection-start-line="223" selection-start-column="76" selection-end-line="223" selection-end-column="76" />
               <folding />
             </state>
@@ -122,16 +118,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="324">
               <caret line="18" column="5" lean-forward="false" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/web.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="67" column="39" lean-forward="false" selection-start-line="67" selection-start-column="17" selection-end-line="67" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -316,7 +302,6 @@
         <option value="$PROJECT_DIR$/app/CompanyPriorityValue.php" />
         <option value="$PROJECT_DIR$/database/migrations/2017_12_21_022544_create_candidate_recommendations_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2017_12_20_181805_create_company_priority_values_table.php" />
-        <option value="$PROJECT_DIR$/resources/views/recommendedJobs.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/jobseekerCertification/create.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/jobseekerTeam/view.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/partials/jobseekerSidebar.blade.php" />
@@ -329,10 +314,11 @@
         <option value="$PROJECT_DIR$/resources/views/companyPriorityValueCreate.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/companyPriorityValueEdit.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/CompanyController.php" />
         <option value="$PROJECT_DIR$/resources/views/jobseekerEducation/create.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/JobSeekerEducationController.php" />
         <option value="$PROJECT_DIR$/resources/views/jobseekerEducation/edit.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/recommendedJobs.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/CompanyController.php" />
       </list>
     </option>
   </component>
@@ -435,7 +421,7 @@
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php70" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="449" />
     <option name="width" value="831" />
     <option name="height" value="481" />
@@ -717,12 +703,12 @@
       <workItem from="1513774126410" duration="35420000" />
       <workItem from="1513817706825" duration="3633000" />
       <workItem from="1513821398099" duration="2698000" />
-      <workItem from="1513826161509" duration="12277000" />
+      <workItem from="1513826161509" duration="14773000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="513121000" />
+    <option name="totallyTimeSpent" value="515617000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -734,7 +720,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="449" y="0" width="1319" height="780" extended-state="7" />
+    <frame x="449" y="0" width="1319" height="780" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28717545" sideWeight="0.4924406" order="0" side_tool="false" content_ui="combo" />
@@ -1036,18 +1022,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/recommendedJobs.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="15" column="34" lean-forward="true" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
-          <folding>
-            <element signature="e#427#470#0#HTML" expanded="true" />
-            <element signature="e#1019#1038#0#HTML" expanded="true" />
-            <element signature="e#1621#1641#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/company/searchCandidateList.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
@@ -1254,29 +1228,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="223" column="76" lean-forward="true" selection-start-line="223" selection-start-column="76" selection-end-line="223" selection-end-column="76" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/CandidateRecommendation.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
           <caret line="18" column="5" lean-forward="false" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CompanyController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="384" column="107" lean-forward="false" selection-start-line="384" selection-start-column="107" selection-end-line="384" selection-end-column="107" />
-          <folding>
-            <element signature="e#40#72#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1298,9 +1254,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/jobseekerEducation/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="32" lean-forward="false" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
+        <state relative-caret-position="270">
+          <caret line="15" column="19" lean-forward="true" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/recommendedJobs.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="43" column="48" lean-forward="true" selection-start-line="43" selection-start-column="48" selection-end-line="43" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="574">
+          <caret line="223" column="76" lean-forward="true" selection-start-line="223" selection-start-column="76" selection-end-line="223" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CompanyController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="310" column="30" lean-forward="false" selection-start-line="310" selection-start-column="30" selection-end-line="310" selection-end-column="30" />
+          <folding>
+            <element signature="e#40#72#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

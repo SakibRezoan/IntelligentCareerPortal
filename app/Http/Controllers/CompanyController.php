@@ -308,58 +308,60 @@ class CompanyController extends Controller
         foreach($jobs as $job) {
             foreach ($jobseekers as $jobseeker) {
 
-                $jobPreferences = JobSeekerJobPreference::where('user_id', $jobseeker->id)->get();
-
-                foreach ($jobPreferences as $jobPreference) {
-                    if ($job->contract_type == $jobPreference) {
-                        $rank = $rank + $priorityValue->contract_type_weight;
-                        break;
-                    }
-                }
+                $jobPreference = JobSeekerJobPreference::where('user_id', $jobseeker->id)->first();
 
                 $workExperiences = JobSeekerWorkExperience::where('user_id', $jobseeker->id)->get();
 
-                foreach ($workExperiences as $workExperience) {
-                    if ($job->position == $workExperience->designation) {
-                        $rank = $rank + $priorityValue->position_weight;
+                if(count($workExperiences))
+                {
+                    foreach ($workExperiences as $workExperience) {
+                        if ($job->position == $workExperience->designation) {
+                            $rank = $rank + $priorityValue->position_weight;
+                        }
                     }
-                }
-                if ($job->isNegotiable) {
-                    $rank = $rank + $priorityValue->salary_weight;
-                }
-                elseif ($jobPreference->isNegotiable) {
-                    $rank = $rank + $priorityValue->salary_weight;
-                }
-                elseif ($jobPreference->minimum_compensation >= $job->salary_max) {
-                    $rank = $rank + $priorityValue->salary_weight;
-                }
-                elseif ($jobPreference->minimum_compensation >= $job->salary_min) {
-                    $rank = $rank + $priorityValue->salary_weight;
+
+                    for ($i = 0; $i< count($job->skill); $i++) {
+                        for($j = 0; $j< count($workExperience->skill); $j++) {
+
+                            if($job->skill[$i] == $workExperience->skill[$j] && $job->experience[$i] <= $workExperience->experience[$j] ){
+                                $rank = $rank + $priorityValue->skill_experience_weight;
+                            }
+                            elseif ($job->skill[$i] == $workExperience->skill[$j]){
+                                $rank = $rank + ($priorityValue->skill_experience_weight)/2;
+                            }
+
+                        }
+                    }
+
                 }
 
-                if ($job->isNegotiable) {
-                    $rank = $rank + $priorityValue->salary_weight;
+                if($jobPreference){
+                    if ($job->contract_type == $jobPreference->contract_type) {
+                        $rank = $rank + $priorityValue->contract_type_weight;
+                        break;
+                    }
+                    if ($job->isNegotiable) {
+                        $rank = $rank + $priorityValue->salary_weight;
+                    }
+                    elseif ($jobPreference->isNegotiable) {
+                        $rank = $rank + $priorityValue->salary_weight;
+                    }
+                    elseif ($jobPreference->minimum_compensation >= $job->salary_max) {
+                        $rank = $rank + $priorityValue->salary_weight;
+                    }
+                    elseif ($jobPreference->minimum_compensation >= $job->salary_min) {
+                        $rank = $rank + $priorityValue->salary_weight;
+                    }
                 }
 
                 $educations = JobSeekerEducation::where('user_id', $jobseeker->id)->get();
 
-                foreach ($educations as $education) {
-                    if ($job->required_degree == $education->degree) {
-                        $rank = $rank + $priorityValue->degree_weight;
-                        break;
-                    }
-                }
-
-                for ($i = 0; $i< count($job->skill); $i++) {
-                    for($j = 0; $j< count($workExperience->skill); $j++) {
-
-                        if($job->skill[$i] == $workExperience->skill[$j] && $job->experience[$i] <= $workExperience->experience[$j] ){
-                            $rank = $rank + $priorityValue->skill_experience_weight;
+                if(count($educations)>0){
+                    foreach ($educations as $education) {
+                        if ($job->required_degree == $education->degree) {
+                            $rank = $rank + $priorityValue->degree_weight;
+                            break;
                         }
-                        elseif ($job->skill[$i] == $workExperience->skill[$j]){
-                            $rank = $rank + ($priorityValue->skill_experience_weight)/2;
-                        }
-
                     }
                 }
 
