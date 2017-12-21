@@ -32,17 +32,17 @@
                                     <td class="text-justify">{{$recommendedJobsId->job->position}}</td>
                                     <td class="text-center" style="width: 130px">{{$recommendedJobsId->job->apply_due_date}}</td>
                                     <td class="text-center">
-                                        <a class="btn btn-sm btn-primary action-btn" href="{{route('job.show',$recommendedJobsId->job->job_title)}}">
+                                        <a class="btn btn-sm btn-primary action-btn" href="{{route('job.show',$recommendedJobsId->job->id)}}">
                                             <i class="glyphicon glyphicon-folder-open icon-white"></i>
                                             Show
                                         </a>
                                         <br><br>
-                                        <a class="btn btn-sm btn-info action-btn" href="{{route('job.save',$recommendedJobsId->job->job_title)}}">
+                                        <a class="btn btn-sm btn-info action-btn" href="{{route('job.save',$recommendedJobsId->job->id)}}">
                                             <i class="glyphicon glyphicon-save icon-white"></i>
                                             Save
                                         </a>
                                         <br><br>
-                                        <a class="btn btn-sm btn-success action-btn" href="{{route('job.apply',$recommendedJobsId->job->job_title)}}">
+                                        <a class="btn btn-sm btn-success action-btn" href="{{route('job.apply',$recommendedJobsId->job->id)}}">
                                             <i class="glyphicon glyphicon-send icon-white"></i>
                                             Apply
                                         </a>

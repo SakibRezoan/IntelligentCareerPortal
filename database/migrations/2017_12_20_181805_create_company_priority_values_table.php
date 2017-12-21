@@ -21,7 +21,7 @@ class CreateCompanyPriorityValuesTable extends Migration
             $table->integer('position_weight');
             $table->integer('salary_weight');
             $table->integer('degree_weight');
-            $table->integer('skill_experience');
+            $table->integer('skill_experience_weight');
             $table->timestamps();
         });
     }

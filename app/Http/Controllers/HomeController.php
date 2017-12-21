@@ -79,10 +79,6 @@ class HomeController extends Controller
         return redirect()->route('home')->with($notification);
     }
 
-    public function saveJob(){
-
-    }
-
     public function applyJob(){
 
     }
@@ -168,9 +164,12 @@ class HomeController extends Controller
                     break;
                 }
             }
-            if((CompanyInfo::where('id',$job->company_id)->first())->company_type
-                == $jobPreference->contract_type){
-                $rank = $rank + $priorityValue->oorganization_weight;
+            foreach ($jobPreference->organizations as $organization)
+            {
+                if((CompanyInfo::where('id',$job->company_id)->first())->company_type
+                    == $organization){
+                    $rank = $rank + $priorityValue->organization_weight;
+                }
             }
             foreach ($jobPreference->locations as $location){
                 if($job->job_location == $location){
@@ -221,7 +220,7 @@ class HomeController extends Controller
 
     public function recommendedJobsshow(){
         $user_id = Auth::user()->id;
-        $recommendedJobsIds = JobRecommendation::where('user_id',$user_id)->orderBy('rank', 'DESC')->limit(5)->get();
+        $recommendedJobsIds = JobRecommendation::where('user_id',$user_id)->orderBy('rank', 'DESC')->limit(2)->get();
         return view('recommendedJobs',['recommendedJobsIds' => $recommendedJobsIds]);
     }
 }

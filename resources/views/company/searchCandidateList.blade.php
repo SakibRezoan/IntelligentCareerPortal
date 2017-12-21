@@ -43,11 +43,6 @@
                                                 <i class="glyphicon glyphicon-arrow-left icon-white"></i>
                                                 Invite
                                             </a>
-                                            <br><br>
-                                            <a class="btn btn-sm btn-info action-btn" href="{{route('candidate.save',$user->id)}}">
-                                                <i class="glyphicon glyphicon-save icon-white"></i>
-                                                Save
-                                            </a>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -64,11 +59,6 @@
                                                 <i class="glyphicon glyphicon-arrow-left icon-white"></i>
                                                 Invite
                                             </a>
-                                            <br><br>
-                                            <a class="btn btn-sm btn-info action-btn" href="{{route('candidate.save',$user->user->id)}}">
-                                                <i class="glyphicon glyphicon-save icon-white"></i>
-                                                Save
-                                            </a>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -84,11 +74,6 @@
                                                 <i class="glyphicon glyphicon-arrow-left icon-white"></i>
                                                 Invite
                                             </a>
-                                            <br><br>
-                                            <a class="btn btn-sm btn-info action-btn" href="{{route('candidate.save',$user->user->id)}}">
-                                                <i class="glyphicon glyphicon-save icon-white"></i>
-                                                Save
-                                            </a>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -104,11 +89,6 @@
                                                 <i class="glyphicon glyphicon-arrow-left icon-white"></i>
                                                 Invite
                                             </a>
-                                            <br><br>
-                                            <a class="btn btn-sm btn-info action-btn" href="{{route('candidate.save',$user->user->id)}}">
-                                                <i class="glyphicon glyphicon-save icon-white"></i>
-                                                Save
-                                            </a>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -123,11 +103,6 @@
                                             <a class="btn btn-sm btn-success action-btn" href="{{route('candidate.invite',$user->user->id)}}">
                                                 <i class="glyphicon glyphicon-arrow-left icon-white"></i>
                                                 Invite
-                                            </a>
-                                            <br><br>
-                                            <a class="btn btn-sm btn-info action-btn" href="{{route('candidate.save',$user->user->id)}}">
-                                                <i class="glyphicon glyphicon-save icon-white"></i>
-                                                Save
                                             </a>
                                         </td>
                                     </tr>
@@ -143,11 +118,6 @@
                                             <a class="btn btn-sm btn-success action-btn" href="{{route('candidate.invite',$user->user->id)}}">
                                                 <i class="glyphicon glyphicon-arrow-left icon-white"></i>
                                                 Invite
-                                            </a>
-                                            <br><br>
-                                            <a class="btn btn-sm btn-info action-btn" href="{{route('candidate.save',$user->user->id)}}">
-                                                <i class="glyphicon glyphicon-save icon-white"></i>
-                                                Save
                                             </a>
                                         </td>
                                     </tr>
