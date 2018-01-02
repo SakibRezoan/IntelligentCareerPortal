@@ -18,41 +18,36 @@
                         <h3 class="panel-title" align="center">Team List</h3>
                     </div>
                     {{--<div class="panel-body">--}}
-                        <table class="table table-striped table-bordered bootstrap-datatable datatable responsive">
+                        <table id="teams" class="table table-striped table-bordered bootstrap-datatable datatable responsive">
                             <thead>
                             <tr>
-                                <th class="text-center">Company Name</th>
-                                <th class="text-center">Team Type</th>
-                                <th class="text-center">Designation</th>
-                                <th class="text-center">Client Name</th>
-                                <th class="text-center">Client Industry</th>
-                                <th class="text-center">Team Description</th>
-                                <th class="text-center">Product Name</th>
-                                <th class="text-center">Product URL</th>
-                                <th class="text-center">Action</th>
+                                <th class="table-data">Company</th>
+                                <th class="table-data">Team Type</th>
+                                <th class="table-data">Designation</th>
+                                <th class="table-data">Client</th>
+                                <th class="table-data">Product</th>
+                                <th class="table-data">Product URL</th>
+                                <th class="text-center table-action" style="width: 100px;">Action</th>
                             </tr>
                             </thead>
                             <tbody>
                             @foreach($jobseekerTeams as $jobseekerTeam)
                             <tr>
-                                <td class="text-left" style="text-align: justify">{{ $jobseekerTeam->company }}</td>
-                                <td class="text-left" style="text-align: justify">{{ $jobseekerTeam->type }}</td>
-                                <td class="text-left" style="text-align: justify">{{ $jobseekerTeam->designation }}</td>
-                                <td class="text-left" style="text-align: justify">{{ $jobseekerTeam->client }}</td>
-                                <td class="text-left" style="text-align: justify">{{ $jobseekerTeam->client_industry }}</td>
-                                <td class="text-left" style="text-align: justify">{!! $jobseekerTeam->description !!}</td>
-                                <td class="text-left" style="text-align: justify">{{ $jobseekerTeam->product }}</td>
-                                <td class="text-left" style="text-align: justify">
+                                <td class="table-data">{{ $jobseekerTeam->company }}</td>
+                                <td class="table-data">{{ $jobseekerTeam->type }}</td>
+                                <td class="table-data">{{ $jobseekerTeam->designation }}</td>
+                                <td class="table-data">{{ $jobseekerTeam->client }}</td>
+                                <td class="table-data">{{ $jobseekerTeam->product }}</td>
+                                <td class="table-data">
                                     <a target="_blank"
                                        href="{{ $jobseekerTeam->product_url }}">{{ $jobseekerTeam->product_url }}
                                     </a>
                                 </td>
-                                <td class="text-center">
+                                <td class="table_action">
                                     <a class="btn btn-sm btn-warning" title ="Edit" href="{{route('jobseekerTeam.edit',$jobseekerTeam->id)}}">
                                         <i class="glyphicon glyphicon-edit icon-white"></i>
                                     </a>
-                                    <br>
-                                    <br>
+                                    {{ " " }}
                                     {!! Form::open(['route' => ['jobseekerTeam.delete', $jobseekerTeam->id],'method'=>'GET','style' => 'display:inline']) !!}
                                     {!! Form::button('<i class="glyphicon glyphicon-trash" aria-hidden="true"></i>', array(
                                             'type' => 'submit',

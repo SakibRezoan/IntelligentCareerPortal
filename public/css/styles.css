@@ -228,3 +228,16 @@ body{
      padding-bottom: 20px;
      background: #ffffff;
  }
+#work_experience .table_data{
+    padding-left: 25px;
+}
+#work_experience .table_action{
+    text-align: center;
+}
+
+#teams .table_data{
+    padding-left: 25px;
+}
+#teams .table_action{
+    text-align: center;
+}

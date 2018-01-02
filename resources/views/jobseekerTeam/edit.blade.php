@@ -35,12 +35,6 @@
 								{{ Form::label('client', 'Client Name:') }}
 								{{ Form::text('client', null, array('class' => 'form-control', 'maxlength' => '255')) }}
 								<br>
-								{{ Form::label('client_industry', 'Client Industry:') }}
-								{{ Form::text('client_industry', null, array('class' => 'form-control', 'maxlength' => '255')) }}
-								<br>
-								{{ Form::label('description', 'Team Description:') }}
-								{{ Form::textarea('description',null, array('class' => 'form-control', 'maxlength' => '2000')) }}
-								<br>
 								{{ Form::label('product', 'Product Name:') }}
 								{{ Form::text('product',null, array('class' => 'form-control', 'maxlength' => '255')) }}
 								<br>

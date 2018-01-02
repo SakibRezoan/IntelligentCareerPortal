@@ -17,45 +17,40 @@
                     <div class="panel-heading" style="color:white;background-color:black;">
                         <h3 class="panel-title" align="center">Work Experience List</h3>
                     </div>
-                    {{--<div class="panel-body">--}}
-                    <table class="table table-condensed table-striped table-bordered bootstrap-datatable datatable responsive">
+                    <table id="work_experience" class="table table-condensed table-striped table-bordered bootstrap-datatable datatable responsive">
                         <thead>
                         <tr>
-                            <th class="text-center">Company Name</th>
-                            <th class="text-center">Designation</th>
-                            <th class="text-center">Company Location</th>
-                            <th class="text-center">Technical Skill</th>
-                            <th class="text-center">Work Experience</th>
-                            <th class="text-center">Action</th>
+                            <th class="table_data">Company </th>
+                            <th class="table_data">Designation</th>
+                            <th class="table_data">Company Location</th>
+                            <th class="table_data">Skill & Experience</th>
+                            <th class="table_action" style="width: 100px;">Action</th>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach($jobseekerExperiences as $jobseekerExperience)
                             <tr>
-                                <td class="text-left" style="text-align: justify">{{ $jobseekerExperience->company }}</td>
-                                <td class="text-left" style="text-align: justify">{{ $jobseekerExperience->designation }}</td>
-                                <td class="text-left" style="text-align: justify">{!! $jobseekerExperience->location !!}</td>
+                                <td class="table_data">{{ $jobseekerExperience->company }}</td>
+                                <td class="table_data">{{ $jobseekerExperience->designation }}</td>
+                                <td class="table_data">{!! $jobseekerExperience->location !!}</td>
                                 
-                                <td class=text-left" style="text-align: justify">
-                                    @foreach($jobseekerExperience->skill as $skill)
-                                        <ul style="list-style:none; padding-left:5px">
-                                            <li>{{ $skill }}<hr></li>
-                                        </ul>
-                                    @endforeach
+                                <td class=table_data" style="padding-left:25px; text-align:left; width: 300px">
+                                    
+                                    @for($i = 0; $i < count($jobseekerExperience->skill); $i++)
+                                        {{ $jobseekerExperience->skill[$i]." - ".$jobseekerExperience->experience[$i] }}
+                                        @if($jobseekerExperience->experience[$i]>1)
+                                            {{" years"}}
+                                        @else
+                                            {{" year" }}
+                                        @endif
+                                        <br>
+                                    @endfor
                                 </td>
-                                <td class="text-center">
-                                    @foreach($jobseekerExperience->experience as $experience)
-                                        <ul style="list-style:none; padding-left:5px">
-                                            <li>{{ $experience }}<hr></li>
-                                        </ul>
-                                    @endforeach
-                                </td>
-                                <td class="text-center">
+                                <td class="table_action">
                                     <a class="btn btn-sm btn-warning" title ="Edit" href="{{route('jobseekerExperience.edit',$jobseekerExperience->id)}}">
                                         <i class="glyphicon glyphicon-edit icon-white"></i>
                                     </a>
-                                    <br>
-                                    <br>
+                                    {{" "}}
                                     {!! Form::open(['route' => ['jobseekerExperience.delete', $jobseekerExperience->id],'method'=>'GET','style' => 'display:inline']) !!}
                                     {!! Form::button('<i class="glyphicon glyphicon-trash" aria-hidden="true"></i>', array(
                                             'type' => 'submit',
@@ -69,7 +64,6 @@
                         @endforeach
                         </tbody>
                     </table>
-                    {{--</div>--}}
                 </div>
             </div>
         </div>

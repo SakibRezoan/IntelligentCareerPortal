@@ -139,7 +139,7 @@ class JobSeekerJobPreferenceController extends Controller
         $jobseekerJobPreference->save();
 
         $notification = array(
-            'message' => 'Job Preference Updated Successfully  !',
+            'message' => 'Job Preference Updated Successfully!',
             'alert-type' => 'info'
         );
 

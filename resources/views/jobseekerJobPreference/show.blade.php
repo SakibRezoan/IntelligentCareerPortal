@@ -78,26 +78,22 @@
                                 @endif
                             </td>
                         </tr>
-                        <tfoot>
-                            <tr>
-                                <td class="text-center">
-                                    <a class="btn btn-sm btn-warning" title ="Edit" href="{{route('jobseekerJobPreference.edit',$jobseekerJobPreference->id)}}">
-                                        <i class="glyphicon glyphicon-edit icon-white"></i>
-                                    </a>
-                                    <br>
-                                    <br>
-                                    {!! Form::open(['route' => ['jobseekerJobPreference.delete', $jobseekerJobPreference->id],'method'=>'GET','style' => 'display:inline']) !!}
-                                    {!! Form::button('<i class="glyphicon glyphicon-trash" aria-hidden="true"></i>', array(
-                                            'type' => 'submit',
-                                            'class' => 'btn btn-danger btn-sm',
-                                            'title' => 'Delete',
-                                            'onclick'=>'return confirm("Confirm delete?")'
-                                    )) !!}
-                                    {!! Form::close() !!}
-                                </td>
-                            </tr>
-                        </tfoot>
                     </table>
+    
+                    <div class="panel-footer" align="center">
+                        <a align="left" href="{{route('jobseekerJobPreference.edit',$jobseekerJobPreference->id)}}"
+                           type="button" data-title="Edit" class="btn btn-md btn-warning "><i class="glyphicon glyphicon-edit" aria-hidden="true"></i>Update
+                        </a>
+                        {!! Form::open(['route' => ['jobseekerJobPreference.delete', $jobseekerJobPreference->id],'method'=>'GET','style' => 'display:inline']) !!}
+                        {!! Form::button('<i class="glyphicon glyphicon-trash" aria-hidden="true"></i> Delete', array(
+                                'type' => 'submit',
+                                'class' => 'btn btn-danger btn-md',
+                                'title' => 'Delete',
+                                'onclick'=>'return confirm("Confirm delete?")'
+                        )) !!}
+                        {!! Form::close() !!}
+                    </div>
+                    
                 </div>
             </div>
         </div>

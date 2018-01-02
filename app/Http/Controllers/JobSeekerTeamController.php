@@ -45,8 +45,6 @@ class JobSeekerTeamController extends Controller
             'type' => 'required|string|max:25',
             'designation' => 'required|string|max:255',
             'client' => 'string|max:255',
-            'client_industry' => 'string|max:255',
-            'description' => 'string|max:2000',
             'product' => 'string|max:255',
             'product_url' => 'string|max:255',
         ]);
@@ -58,15 +56,13 @@ class JobSeekerTeamController extends Controller
         $jobseekerTeam->type = $request->type;
         $jobseekerTeam->designation = $request->designation;
         $jobseekerTeam->client = $request->client;
-        $jobseekerTeam->client_industry = $request->client_industry;
-        $jobseekerTeam->description = $request->description;
         $jobseekerTeam->product = $request->product;
         $jobseekerTeam->product_url = $request->product_url;
 
         $jobseekerTeam->save();
 
         $notification = array(
-            'message' => 'Team Details Stored Successfully  !',
+            'message' => 'Team Details Stored Successfully!',
             'alert-type' => 'success'
         );
 
@@ -123,8 +119,6 @@ class JobSeekerTeamController extends Controller
             'type' => 'required|string|max:25',
             'designation' => 'required|string|max:255',
             'client' => 'string|max:255',
-            'client_industry' => 'string|max:255',
-            'description' => 'string|max:2000',
             'product' => 'string|max:255',
             'product_url' => 'string|max:255',
         ]);
@@ -135,15 +129,13 @@ class JobSeekerTeamController extends Controller
         $jobseekerTeam->type = $request->input('type');
         $jobseekerTeam->designation = $request->input('designation');
         $jobseekerTeam->client = $request->input('client');
-        $jobseekerTeam->client_industry = $request->input('client_industry');
-        $jobseekerTeam->description = $request->input('description');
         $jobseekerTeam->product = $request->input('product');
         $jobseekerTeam->product_url = $request->input('product_url');
 
         $jobseekerTeam->save();
 
         $notification = array(
-            'message' => 'Team Details Updated Successfully  !',
+            'message' => 'Team Details Updated Successfully!',
             'alert-type' => 'info'
         );
 
@@ -163,7 +155,7 @@ class JobSeekerTeamController extends Controller
         $jobseekerTeam->delete();
 
         $notification = array(
-            'message' => 'Team Details Deleted.!',
+            'message' => 'Team Details Deleted !',
             'alert-type' => 'warning'
         );
 
