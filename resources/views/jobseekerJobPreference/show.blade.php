@@ -13,56 +13,73 @@
                         <h3 class="panel-title" align="center">Job Preference</h3>
                     </div>
                     <table class="table table-striped table-bordered bootstrap-datatable datatable responsive">
-                        <thead>
                         <tr>
-                            <th class="text-center">Contract Type</th>
-                            <th class="text-center">Organization Type</th>
-                            <th class="text-center">Job Locations</th>
-                            <th class="text-center">Skills</th>
-                            <th class="text-center">Work Environment</th>
-                            <th class="text-center">Minimum Salary</th>
-                            <th class="text-center">Action</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="text-center">
-                                    @foreach($jobseekerJobPreference->contract_types as $ct)
-                                        <ul style="list-style:none; padding-left:5px">
-                                            <li>{{ $ct }}<hr></li>
-                                        </ul>
-                                    @endforeach
-                                </td>
-                                <td class="text-center">
-                                    @foreach($jobseekerJobPreference->organizations as $org)
-                                        <ul style="list-style:none; padding-left:5px">
-                                            <li>{{ $org }}<hr></li>
-                                        </ul>
-                                    @endforeach
-                                </td>
-                                <td class="text-center">
-                                    @foreach($jobseekerJobPreference->locations as $loc)
-                                        <ul style="list-style:none; padding-left:5px">
-                                            <li>{{ $loc }}<hr></li>
-                                        </ul>
-                                    @endforeach
-                                </td>
-                                <td class="text-center">
-                                    @foreach($jobseekerJobPreference->skill_wishlist as $skwl)
-                                        <ul style="list-style:none; padding-left:5px">
-                                            <li>{{ $skwl }}<hr></li>
-                                        </ul>
-                                    @endforeach
-                                </td>
-                                <td class="text-left" style="text-align: justify">{!! $jobseekerJobPreference->environment !!}</td>
-                                <td class="text-center">
-                                    {{ $jobseekerJobPreference->minimum_compensation." BDT" }}
-                                    @if($jobseekerJobPreference->isNegotiable)
-                                        <hr>{{"Negitiable"}}
+                            <th class="text-left" style="padding-left:100px;width: 300px;">Contract Type</th>
+                            <td class="text-left" style="padding-left:80px">
+                                @foreach($jobseekerJobPreference->contract_types as $contract_type)
+                                    
+                                    @if($loop->last)
+                                        {{ "    ".$contract_type." " }}
                                     @else
-                                        <hr>{{"Not Negitiable"}}
+                                        {{ "    ".$contract_type."," }}
                                     @endif
-                                </td>
+                                    
+                                @endforeach
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="text-left" style="padding-left:100px;width: 300px;">Organization Type</th>
+                            <td class="text-left" style="padding-left:80px">
+                                @foreach($jobseekerJobPreference->organizations as $organization)
+                                    @if($loop->last)
+                                        {{ "    ".$organization." " }}
+                                    @else
+                                        {{ "    ".$organization."," }}
+                                    @endif
+                                @endforeach
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="text-left" style="padding-left:100px;width: 300px;">Job Locations</th>
+                            <td class="text-left" style="padding-left:80px">
+                                @foreach($jobseekerJobPreference->locations as $location)
+                                    @if($loop->last)
+                                        {{ "    ".$location." " }}
+                                    @else
+                                        {{ "    ".$location."," }}
+                                    @endif
+                                @endforeach
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="text-left" style="padding-left:100px;width: 300px;">Skill Wish-List</th>
+                            <td class="text-left" style="padding-left:80px">
+                            @foreach($jobseekerJobPreference->skill_wishlist as $skill)
+                                    @if($loop->last)
+                                        {{ "    ".$skill." " }}
+                                    @else
+                                        {{ "    ".$skill."," }}
+                                    @endif
+                                @endforeach
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="text-left" style="padding-left:100px;width: 300px;">Work Environment</th>
+                            <td class="text-justify" style="padding-left:80px">
+                            {!! $jobseekerJobPreference->environment !!}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="text-left" style="padding-left:100px;width: 300px;">Minimum Salary</th>
+                            <td class="text-left" style="padding-left:80px">
+                                {{ $jobseekerJobPreference->minimum_compensation." BDT" }}
+                                @if($jobseekerJobPreference->isNegotiable) {{"(Negitiable)"}}
+                                @else {{"(Not Negitiable)"}}
+                                @endif
+                            </td>
+                        </tr>
+                        <tfoot>
+                            <tr>
                                 <td class="text-center">
                                     <a class="btn btn-sm btn-warning" title ="Edit" href="{{route('jobseekerJobPreference.edit',$jobseekerJobPreference->id)}}">
                                         <i class="glyphicon glyphicon-edit icon-white"></i>
@@ -79,7 +96,7 @@
                                     {!! Form::close() !!}
                                 </td>
                             </tr>
-                        </tbody>
+                        </tfoot>
                     </table>
                 </div>
             </div>

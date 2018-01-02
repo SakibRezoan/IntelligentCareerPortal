@@ -35,8 +35,7 @@
                                 </tr>
                                 <tr>
                                     <td class="general_info">Date of Birth:</td>
-                                    <td>{{ $info->date_of_birth }}</td>
-                                </tr>
+                                    <td> {{ \Carbon\Carbon::parse($info->date_of_birth)->format('d/m/Y')}}</td></tr>
                                 <tr>
                                     <td class="general_info">Gender:</td>
                                     <td>{{ $info->gender }}</td>
