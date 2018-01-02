@@ -33,11 +33,11 @@
                             <tbody>
                             @foreach($jobseeker_certificates as $jobseeker_certificate)
                             <tr>
-                                <td class="text-left">{{ $jobseeker_certificate->title }}</td>
-                                <td class="text-left">{{ $jobseeker_certificate->authority }}</td>
-                                <td class="text-left">{{ $jobseeker_certificate->license_no }}</td>
-                                <td class="text-left">{{ $jobseeker_certificate->date }}</td>
-                                <td class="text-left">{{ $jobseeker_certificate->link }}</td>
+                                <td class="text-center">{{ $jobseeker_certificate->title }}</td>
+                                <td class="text-center">{{ $jobseeker_certificate->authority }}</td>
+                                <td class="text-center">{{ $jobseeker_certificate->license_no }}</td>
+                                <td class="text-center">{{ $jobseeker_certificate->date }}</td>
+                                <td class="text-center">{{ $jobseeker_certificate->link }}</td>
                                 <td class="text-center">
                                     <a target="_blank" href="http://127.0.0.1:8000/storage/images/{{ $jobseeker_certificate->scanned_document }}">
                                     View</a>
@@ -46,8 +46,7 @@
                                     <a class="btn btn-sm btn-warning" title ="Edit" href="{{route('jobseekerCertification.edit',$jobseeker_certificate->id)}}">
                                         <i class="glyphicon glyphicon-edit icon-white"></i>
                                     </a>
-                                    <br>
-                                    <br>
+                                    {{ "     " }}
                                     {!! Form::open(['route' => ['jobseekerCertification.delete', $jobseeker_certificate->id],'method'=>'GET','style' => 'display:inline']) !!}
                                     {!! Form::button('<i class="glyphicon glyphicon-trash" aria-hidden="true"></i>', array(
                                             'type' => 'submit',

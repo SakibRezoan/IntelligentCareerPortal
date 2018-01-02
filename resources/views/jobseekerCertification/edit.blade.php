@@ -23,28 +23,27 @@
 								
 								{{ Form::label('title', 'Title:') }}
 								{{ Form::text('title', null, array('class' => 'form-control', 'required' => '', 'maxlength' => '255')) }}
-								
+								<br>
 								{{ Form::label('authority', 'Name of Authority:') }}
 								{{ Form::text('authority', null, array('class' => 'form-control', 'maxlength' => '255')) }}
-								
+								<br>
 								{{ Form::label('license_no', 'License Number:') }}
 								{{ Form::text('license_no',null, array('class' => 'form-control', 'required' => '', 'maxlength' => '255')) }}
-								
+								<br>
 								{{ Form::label('link', 'Official Link:') }}
 								{{ Form::text('link',null, array('class' => 'form-control', 'maxlength' => '255')) }}
-								
+								<br>
 								{{ Form::label('date', 'Certification Date:') }}
 								{{ Form::date('date', null, array('class' => 'form-control', 'required' => '')) }}
-								
 								<br>
 								{{ Form::label('scanned_document', 'Upload Scanned Document:') }}
 								{{ Form::file('scanned_document', null, ['class' => 'form-control',]) }}
-								
-								{{ Form::submit('Update', array('class' => 'btn btn-success btn-md', 'style' => 'margin-top: 20px;')) }}
+								{{ Form::submit('Submit', array('class' => 'btn btn-success btn-md', 'style' => 'margin-top: 20px;')) }}
 								
 								{{ Form::token() }}
 								
 								{!! Form::close() !!}
+								<br>
 							</div>
 						</div>
 					</div>

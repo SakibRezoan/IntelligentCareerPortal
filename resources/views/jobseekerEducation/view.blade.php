@@ -33,9 +33,9 @@
                             <tbody>
                             @foreach($jobseeker_educations as $jobseeker_education)
                             <tr>
-                                <td class="text-left">{{ $jobseeker_education->degree }}</td>
-                                <td class="text-left">{{ $jobseeker_education->group }}</td>
-                                <td class="text-left">{{ $jobseeker_education->institute }}</td>
+                                <td class="text-center">{{ $jobseeker_education->degree }}</td>
+                                <td class="text-center">{{ $jobseeker_education->group }}</td>
+                                <td class="text-center">{{ $jobseeker_education->institute }}</td>
                                 <td class="text-center">{{ $jobseeker_education->cgpa }}</td>
                                 <td class="text-center">
                                     @if($jobseeker_education->isStudying)
@@ -52,8 +52,7 @@
                                     <a class="btn btn-sm btn-warning" title ="Edit" href="{{route('jobseekerEducation.edit',$jobseeker_education->id)}}">
                                         <i class="glyphicon glyphicon-edit icon-white"></i>
                                     </a>
-                                    <br>
-                                    <br>
+                                    {{ "     " }}
                                     {!! Form::open(['route' => ['jobseekerEducation.delete', $jobseeker_education->id],'method'=>'GET','style' => 'display:inline']) !!}
                                     {!! Form::button('<i class="glyphicon glyphicon-trash" aria-hidden="true"></i>', array(
                                             'type' => 'submit',
