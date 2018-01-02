@@ -117,7 +117,7 @@ class HomeController extends Controller
             'alert-type' => 'success'
         );
 
-        return redirect()->route('home')->with($notification);
+        return redirect()->route('jobRecommendation')->with($notification);
     }
 
     public function priorityValueUpdate(Request $request, $id){
@@ -221,6 +221,13 @@ class HomeController extends Controller
     public function recommendedJobsshow(){
         $user_id = Auth::user()->id;
         $recommendedJobsIds = JobRecommendation::where('user_id',$user_id)->orderBy('rank', 'DESC')->limit(2)->get();
+        if(count($recommendedJobsIds) < 1){
+            $notification = array(
+                'message' => 'No recommended jobs for you. Try updating your profile',
+                'alert-type' => 'info'
+            );
+            return redirect()->route('home')->with($notification);
+        }
         return view('recommendedJobs',['recommendedJobsIds' => $recommendedJobsIds]);
     }
 }

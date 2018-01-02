@@ -21,8 +21,6 @@ class CreateJobSeekerTeamsTable extends Migration
             $table->string('type');
             $table->string('designation');
             $table->string('client')->nullable();
-            $table->string('client_industry')->nullable();
-            $table->longText('description');
             $table->string('product')->nullable();
             $table->string('product_url')->nullable();
             $table->timestamps();

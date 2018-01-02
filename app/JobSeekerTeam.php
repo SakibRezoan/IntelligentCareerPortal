@@ -9,8 +9,7 @@ class JobSeekerTeam extends Model
     protected $table = 'job_seeker_teams';
 
     protected $fillable = [
-        'user_id', 'company', 'type', 'designation','client',
-        'client_industry', 'description','product', 'product_url',
+        'user_id', 'company', 'type', 'designation','client', 'product', 'product_url',
     ];
 
     public function user(){
