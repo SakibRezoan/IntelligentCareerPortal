@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 use App\CompanyInfo;
 use App\JobRecommendation;
+use App\JobSeekerCertification;
+use App\JobSeekerEducation;
 use App\JobSeekerJobPreference;
+use App\JobSeekerTeam;
+use App\JobSeekerWorkExperience;
 use Illuminate\Http\Request;
 use App\JobSeekerGeneralInfo;
 use App\Job;
@@ -229,5 +233,24 @@ class HomeController extends Controller
             return redirect()->route('home')->with($notification);
         }
         return view('recommendedJobs',['recommendedJobsIds' => $recommendedJobsIds]);
+    }
+
+    public function jobseekerCvShow(){
+        $user_id = Auth::user()->id;
+        $generalInfo = JobSeekerGeneralInfo::where('user_id', $user_id)->first();
+        $educations = JobSeekerEducation::where('user_id', $user_id)->get();
+        $certificates = JobSeekerCertification::where('user_id', $user_id)->get();
+        $work_experiences = JobSeekerWorkExperience::where('user_id', $user_id)->get();
+        $team_experiences = JobSeekerTeam::where('user_id', $user_id)->get();
+        $job_preference = JobSeekerJobPreference::where('user_id', $user_id)->first();
+
+        return view('jobseekerCv.show',[
+            'generalInfo' => $generalInfo,
+            'educations' => $educations,
+            'certificates' => $certificates,
+            'work_experiences' => $work_experiences,
+            'team_experiences' => $team_experiences,
+            'job_preference' => $job_preference,
+        ]);
     }
 }

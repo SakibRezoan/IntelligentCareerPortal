@@ -135,6 +135,10 @@ Route::prefix('jobseekerProfile')-> group(function (){
     Route::get('recommendation/recommendedJobs',['uses' => 'HomeController@jobRecommendation', 'as' => 'jobRecommendation'] );
     Route::get('recommendation/viewRecommendedJobs',['uses' => 'HomeController@recommendedJobsshow', 'as' => 'recommendedJobs.show'] );
 
+    Route::get('cv/show',['uses' => 'HomeController@jobseekerCvShow', 'as' => 'jobseekerCv.show'] );
+
+
+
 });
     Route::post('/searchJobList', 'HomeController@searchJobList')->name('jobseeker.searchJobList');
 

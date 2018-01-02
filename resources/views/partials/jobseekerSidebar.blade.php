@@ -33,6 +33,9 @@
         <a href="{{route('recommendedJobs.show')}}" class="list-group-item list-group-item-warning {{ Request::is('jobseekerProfile/recommendation/*') ? "active" : ""}}">
             <i class="glyphicon glyphicon-folder-open"></i> Recommended Jobs
         </a>
+        <a href="{{route('jobseekerCv.show')}}" class="list-group-item list-group-item-warning {{ Request::is('jobseekerProfile/cv/*') ? "active" : ""}}">
+            <i class="glyphicon glyphicon-file"></i> Curriculam Vitae
+        </a>
         {{--<a href="#" class="list-group-item list-group-item-warning">--}}
             {{--<i class="glyphicon glyphicon-arrow-left"></i> Invited Jobs <span class="badge">14</span>--}}
         {{--</a>--}}
